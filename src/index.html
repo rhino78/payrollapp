@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Arts Pharmacy Payroll</title>
+    <script type="module" src="/main.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Navigation bar   -->
+    <nav>
+      <ul>
+        <li><a href="#"id="home-link">Home</a></li>
+        <li><a href="#"id="stocks-link">Stock Data</a></li>
+        <li><a href="#"id="employee-link">Employee</a></li>
+        <li><a href="#"id="about-link">About</a></li>
+      </ul>
+    </nav>
+
+    <div id="custom-modal" class="modal">
+      <div class="modal-content">
+        <span id="modal-close" class="close">&times;</span>
+        <p id="modal-message"></p>
+      </div>
+    </div>
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+      <h1>Home</h1>
+      <p>This is the home page.</p>
+    </div>
+
+    <!-- Stock Data Page -->
+    <div id="stocks-page" class="page">
+      <h1 id="greeting"></h1>
+      <div id="stock-data">
+        <h2>Stock Prices</h2>
+        <div id="walgreens-data"></div>
+        <div id="cvs-data"></div>
+      </div>
+      <div id="charts">
+        <h2>5-Day Charts</h2>
+        <canvas id="walgreens-chart"></canvas>
+        <canvas id="cvs-chart"></canvas>
+      </div>
+    </div>
+
+    <!--Employee Page-->
+    <div id="employee-page" class="page">
+      <h1>Employee Information</h1>
+      <form id="employee-form">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="State">State:</label>
+        <input type="text" id="state" name="state" required><br>
+
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" name="zip" required><br>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required><br>
+
+        <label for="number_of_dependents">Number of Dependents:</label>
+        <input type="text" id="number_of_dependents" name="number_of_dependents" required><br
+
+        <label for="martial_status">Marital Status:</label>
+        <select id="marital_status" name="marital_status" required>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+        </select><br>
+
+        <label for="wage">Wage:</label>
+        <input type="number" id="wage" name="wage" step="0.01"required><br>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!--About Page-->
+    <div id="about-page" class="page">
+      <h1>About</h1>
+      <p>This is a Tauri app.</p>
+      <p>Created by Ryan Shave 2025</p>
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
