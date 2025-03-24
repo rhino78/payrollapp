@@ -1,125 +1,586 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 20px;
-  background-color: #f4f4f4;
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #0f0f0f;
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
-#stock-data, #charts {
-  margin-top: 30px;
-}
-
-canvas {
-  max-width: 600px;
-  margin: 20px auto;
-  display: block;
-}
-
-nav {
+/* Navigation Bar Styles */
+.navbar {
   background-color: #333;
-  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-nav ul {
-  list-style-type: none;
+.navbar ul {
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.navbar li {
+  padding: 0;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #444;
+  color: #24c8db;
+}
+
+.navbar a.active {
+  background-color: #24c8db;
+  color: white;
+}
+
+/* Main Content Styles */
+.container {
+  margin: 0;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px; /* To account for the navbar */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: 0.75s;
+}
+
+.logo.tauri:hover {
+  filter: drop-shadow(0 0 2em #24c8db);
+}
+
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #ffe21c);
+}
+
+.row {
   display: flex;
   justify-content: center;
 }
 
-nav ul li {
-  margin-right: 20px;
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
 }
 
-nav ul li:last-child {
-  margin-right: 0;
+a:hover {
+  color: #535bf2;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 15px;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-  background-color: #555;
-}
-/* Page Styling */
-.page {
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 800px;
-}
-
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
-/* Employee Form Styles */
-#employee-page form {
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-#employee-page label {
-  display: block;
-  margin-top: 10px;
-}
-
-#employee-page input,
-#employee-page select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#employee-page button {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
+h1 {
   text-align: center;
 }
 
-#modal-close {
-  float: right;
+input,
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #0f0f0f;
+  background-color: #ffffff;
+  transition: border-color 0.25s;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+button {
   cursor: pointer;
+}
+
+button:hover {
+  border-color: #384480;
+}
+button:active {
+  border-color: #396cd8;
+  background-color: #e8e8e8;
+}
+
+input,
+button {
+  outline: none;
+}
+
+#greet-input {
+  margin-right: 5px;
+}
+
+/* Page-specific styles */
+.page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Enhanced Employee Management Styles */
+.employee-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.employee-list-section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee-form-section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.employee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.employee-item:hover {
+  background-color: #f9f9f9;
+}
+
+.employee-item:last-child {
+  border-bottom: none;
+}
+
+.employee-info {
+  flex: 2;
+}
+
+.employee-info p {
+  margin: 0;
+  color: #666;
+}
+
+.employee-info h3 {
+  margin: 0 0 5px;
+  font-size: 1.2em;
+}
+
+.employee-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.employee-details {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.employee-actions {
+  flex: 1;
+  text-align: right;
+}
+
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+}
+
+.search-container {
+  margin-bottom: 16px;
+}
+
+#employee-search {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+#employee-search:focus {
+  border-color: #24c8db;
+  outline: none;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #24c8db;
+  outline: none;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 16px !important;
+}
+
+* Specific form row customizations */
+.form-row.personal-info .form-group {
+  flex: 1; /* Equal width for first name and last name */
+}
+
+.form-row.address-line .form-group {
+  flex: 3; /* Make address take up full width */
+}
+
+.form-row.location .form-group:nth-child(1) {
+  flex: 2; /* City is wider */
+}
+
+.form-row.location .form-group:nth-child(2) {
+  flex: 1; /* State is narrower */
+}
+
+.form-row.location .form-group:nth-child(3) {
+  flex: 1; /* ZIP is narrower */
+}
+
+.form-row.phone-line .form-group {
+  flex: 1; /* Make phone take up full width */
+}
+
+.form-row.employment-details .form-group {
+  flex: 1; /* Equal width for employment fields */
+}
+
+
+
+.form-group {
+  margin-bottom: 0px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+  padding: 12px; /* Increased padding for bigger form fields */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+  font-size: 16px; /* Increased font size */
+  height: 45px; /* Fixed height to ensure proper sizing */
+  box-sizing: border-box; /* Ensure padding doesn't affect overall size */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #24c8db;
+  outline: none;
+}
+
+#save-employee-btn,
+#cancel-employee-btn{
+  padding: 12px 30px; /* Wider buttons */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px; /* Larger font */
+  font-weight: 500; /* Slightly bolder text */
+}
+
+#save-employee-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+#save-employee-btn:hover {
+  background-color: #45a049;
+}
+
+#cancel-employee-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+#cancel-employee-btn:hover {
+  background-color: #e53935;
+}
+
+.no-items {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+/* Add smooth transitions */
+.employee-item, .edit-btn, .delete-btn, #employee-search, .form-group input, .form-group select, #save-employee-btn, #cancel-employee-btn {
+  transition: all 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+
+/* Employee Form Section Resizing */
+.employee-form-section,
+.employee-list-section{
+      background-color: #333;
+      color: #f6f6f6;
+}
+
+  .employee-item {
+    border-bottom: 1px solid #444;
+  }
+
+  .employee-item:hover {
+    background-color: #444;
+  }
+
+  .employee-details {
+    color: #aaa;
+  }
+
+  #employee-search,
+  .form-group input,
+  .form-grouplect {
+    background-color: #222;
+    border-color: #444;
+    color: #f6f6f6;
+  }
+
+  .no-items {
+    color: #aaa;
+  }
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  color: white;
+  z-index: 2000;
+  animation: fade-in 0.3s, fade-out 0.3s 2.7s;
+}
+
+.notification.success {
+  background-color: #4CAF50;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
+
+.notification.info {
+  background-color: #2196F3;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #f6f6f6;
+    background-color: #2f2f2f;
+  }
+
+  a:hover {
+    color: #24c8db;
+  }
+
+  input,
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #5c6ac4;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+  }
+
+  button:active {
+    background-color: #0f0f0f69;
+  }
+  
+  .navbar {
+    background-color: #1a1a1a;
+  }
+  
+  .navbar a:hover {
+    background-color: #333;
+  }
+  
+  .employee-list-section,
+  .employee-form-section {
+    background-color: #333;
+    color: #f6f6f6;
+  }
+  
+  .employee-item {
+    border-bottom: 1px solid #444;
+  }
+  
+  .employee-details {
+    color: #aaa;
+  }
+  
+  #employee-search,
+  .form-group input,
+  .form-group select {
+    background-color: #222;
+    border-color: #444;
+    color: #f6f6f6;
+  }
+  
+  .no-items {
+    color: #aaa;
+  }
+}
+/* Filing Status Dropdown Styling */
+#filing-status {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+#filing-status option {
+  background-color: #333;
+  color: white;
+}
+
+/* Hover state for better UX */
+#filing-status:hover {
+  background-color: #444;
+  border-color: #666;
+}
+
+/* Focus state */
+#filing-status:focus {
+  border-color: #24c8db;
+  box-shadow: 0 0 0 2px rgba(36, 200, 219, 0.2);
+  outline: none;
+}
+
+/* Make dropdown arrow more visible on dark background */
+#filing-status {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 0.65em auto;
+  padding-right: 2.5em;
+}
+
+/* For dark mode, we need to ensure text is still visible */
+@media (prefers-color-scheme: dark) {
+  #filing-status {
+    background-color: #222;
+    color: white;
+    border-color: #444;
+  }
+  
+  #filing-status option {
+    background-color: #222;
+    color: white;
+  }
+  
+  #filing-status:hover {
+    background-color: #333;
+  }
 }
