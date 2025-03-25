@@ -50,6 +50,32 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     Ok(conn)
 }
 
+// Command to get employee by id
+#[tauri::command]
+fn get_employee_by_id(id: &str, state: State<'_, AppState>) -> Result<Vec<Employee>, String> {
+    let conn = state.db_connection.lock().unwrap();
+    let mut stmt = conn.prepare("SELECT * FROM employees WHERE id = ? LIMIT 1").map_err(|e| e.to_string())?;
+    
+    let employee_iter = stmt.query_map([id], |row| {
+        Ok(Employee {
+            id: Some(row.get(0)?),
+            first_name: row.get(1)?,
+            last_name: row.get(2)?,
+            address: row.get(3)?,
+            city: row.get(4)?,
+            state: row.get(5)?,
+            zip: row.get(6)?,
+            phone: row.get(7)?,
+            wage: row.get(8)?,
+            number_of_dependents: row.get(9)?,
+            filing_status: row.get(10)?,
+        })
+    }).map_err(|e| e.to_string())?;
+    
+    let employees: Result<Vec<Employee>, _> = employee_iter.collect();
+    employees.map_err(|e| e.to_string())
+}
+
 // Command to get all employees
 #[tauri::command]
 fn get_employees(state: State<'_, AppState>) -> Result<Vec<Employee>, String> {
@@ -180,6 +206,7 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             greet, 
             get_employees, 
+            get_employee_by_id,
             add_employee, 
             update_employee, 
             delete_employee

@@ -62,7 +62,8 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 50px; /* To account for the navbar */
+  margin-top: 50px;
+  /* To account for the navbar */
 }
 
 .logo {
@@ -120,6 +121,7 @@ button {
 button:hover {
   border-color: #384480;
 }
+
 button:active {
   border-color: #396cd8;
   background-color: #e8e8e8;
@@ -302,33 +304,39 @@ button {
   margin-bottom: 16px !important;
 }
 
-* Specific form row customizations */
-.form-row.personal-info .form-group {
-  flex: 1; /* Equal width for first name and last name */
+* Specific form row customizations */ .form-row.personal-info .form-group {
+  flex: 1;
+  /* Equal width for first name and last name */
 }
 
 .form-row.address-line .form-group {
-  flex: 3; /* Make address take up full width */
+  flex: 3;
+  /* Make address take up full width */
 }
 
 .form-row.location .form-group:nth-child(1) {
-  flex: 2; /* City is wider */
+  flex: 2;
+  /* City is wider */
 }
 
 .form-row.location .form-group:nth-child(2) {
-  flex: 1; /* State is narrower */
+  flex: 1;
+  /* State is narrower */
 }
 
 .form-row.location .form-group:nth-child(3) {
-  flex: 1; /* ZIP is narrower */
+  flex: 1;
+  /* ZIP is narrower */
 }
 
 .form-row.phone-line .form-group {
-  flex: 1; /* Make phone take up full width */
+  flex: 1;
+  /* Make phone take up full width */
 }
 
 .form-row.employment-details .form-group {
-  flex: 1; /* Equal width for employment fields */
+  flex: 1;
+  /* Equal width for employment fields */
 }
 
 
@@ -345,14 +353,18 @@ button {
 
 .form-group input,
 .form-group select {
-    width: 100%;
-  padding: 12px; /* Increased padding for bigger form fields */
+  width: 100%;
+  padding: 12px;
+  /* Increased padding for bigger form fields */
   border: 1px solid #ddd;
   border-radius: 4px;
   transition: border-color 0.3s;
-  font-size: 16px; /* Increased font size */
-  height: 45px; /* Fixed height to ensure proper sizing */
-  box-sizing: border-box; /* Ensure padding doesn't affect overall size */
+  font-size: 16px;
+  /* Increased font size */
+  height: 45px;
+  /* Fixed height to ensure proper sizing */
+  box-sizing: border-box;
+  /* Ensure padding doesn't affect overall size */
 }
 
 .form-group input:focus,
@@ -362,13 +374,16 @@ button {
 }
 
 #save-employee-btn,
-#cancel-employee-btn{
-  padding: 12px 30px; /* Wider buttons */
+#cancel-employee-btn {
+  padding: 12px 30px;
+  /* Wider buttons */
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 16px; /* Larger font */
-  font-weight: 500; /* Slightly bolder text */
+  font-size: 16px;
+  /* Larger font */
+  font-weight: 500;
+  /* Slightly bolder text */
 }
 
 #save-employee-btn {
@@ -398,18 +413,25 @@ button {
 }
 
 /* Add smooth transitions */
-.employee-item, .edit-btn, .delete-btn, #employee-search, .form-group input, .form-group select, #save-employee-btn, #cancel-employee-btn {
+.employee-item,
+.edit-btn,
+.delete-btn,
+#employee-search,
+.form-group input,
+.form-group select,
+#save-employee-btn,
+#cancel-employee-btn {
   transition: all 0.3s ease;
 }
 
 @media (prefers-color-scheme: dark) {
 
-/* Employee Form Section Resizing */
-.employee-form-section,
-.employee-list-section{
-      background-color: #333;
-      color: #f6f6f6;
-}
+  /* Employee Form Section Resizing */
+  .employee-form-section,
+  .employee-list-section {
+    background-color: #333;
+    color: #f6f6f6;
+  }
 
   .employee-item {
     border-bottom: 1px solid #444;
@@ -461,13 +483,27 @@ button {
 }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-out {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(20px); }
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 /* Dark mode support */
@@ -486,7 +522,6 @@ button {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    color: white;
     background-color: #5c6ac4;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -496,29 +531,29 @@ button {
   button:active {
     background-color: #0f0f0f69;
   }
-  
+
   .navbar {
     background-color: #1a1a1a;
   }
-  
+
   .navbar a:hover {
     background-color: #333;
   }
-  
+
   .employee-list-section,
   .employee-form-section {
     background-color: #333;
     color: #f6f6f6;
   }
-  
+
   .employee-item {
     border-bottom: 1px solid #444;
   }
-  
+
   .employee-details {
     color: #aaa;
   }
-  
+
   #employee-search,
   .form-group input,
   .form-group select {
@@ -526,61 +561,369 @@ button {
     border-color: #444;
     color: #f6f6f6;
   }
-  
+
   .no-items {
     color: #aaa;
   }
 }
-/* Filing Status Dropdown Styling */
-#filing-status {
-  background-color: #333;
-  color: white;
-  border: 1px solid #555;
-  cursor: pointer;
+
+/* Horizontal Form Styles for Payroll Page */
+.payroll-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-#filing-status option {
-  background-color: #333;
-  color: white;
+.horizontal-form .form-row {
+  display: flex;
+  align-items: flex-end;
+  /* Align form elements to bottom */
+  gap: 15px;
+  /* Space between form groups */
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
 }
 
-/* Hover state for better UX */
-#filing-status:hover {
-  background-color: #444;
-  border-color: #666;
+.horizontal-form .form-group {
+  flex: 0 1 auto;
+  /* Equal width for form groups */
+  width: auto;
 }
 
-/* Focus state */
-#filing-status:focus {
-  border-color: #24c8db;
-  box-shadow: 0 0 0 2px rgba(36, 200, 219, 0.2);
-  outline: none;
+.horizontal-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-/* Make dropdown arrow more visible on dark background */
-#filing-status {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.7em top 50%;
-  background-size: 0.65em auto;
-  padding-right: 2.5em;
+.horizontal-form .form-group input,
+.horizontal-form .form-group select {
+  width: 100px;
+  max-width: 150px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
 }
 
-/* For dark mode, we need to ensure text is still visible */
-@media (prefers-color-scheme: dark) {
+#hours-worked {
+  width: 80px;
+
+  #pay-period {
+    width: 130px;
+  }
+
+  #hours-worked {
+    width: 80px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .horizontal-form .form-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .horizontal-form .form-group {
+      margin-bottom: 15px;
+    }
+
+    .horizontal-form .form-group input,
+    .horizontal-form .form-group select {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  /* Button specific styling */
+  #calculate-payroll-btn {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  #calculate-payroll-btn:hover {
+    background-color: #45a049;
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+
+    .horizontal-form .form-group input,
+    .horizontal-form .form-group select {
+      background-color: #333;
+      border-color: #555;
+      color: #f6f6f6;
+    }
+  }
+
+  /* payroll form */
+  .payroll-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .employee-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .employee-selector label {
+    font-weight: 500;
+    white-space: nowrap;
+    color: #333;
+    margin-right: 10px;
+  }
+
+  .employee-select:focus {
+    border-color: #24c8db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(36, 200, 219, 0.2);
+  }
+
+  .employee-selector select {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    min-width: 200px;
+    background-color: white;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 100%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .employee-selector {
+      background-color: #444;
+    }
+
+    .employee-selector label {
+      background-color: #f0f0f0;
+    }
+
+    .employee-selector select {
+      background-color: #333;
+      border-color: #555;
+      color: #f0f0f0;
+    }
+
+    .employee-selector select option {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+  }
+
+  /* Ensure dropdown arrow is visible in both modes */
+  .employee-selector select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    background-size: 0.65em auto;
+    padding-right: 2em;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .employee-selector select {
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23f0f0f0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .payroll-header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .employee-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #f8f8f8;
+      /* Light gray background */
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+    }
+  }
+
+  .payroll-form {
+    margin-top: 0;
+  }
+
+  .payroll-form-group {
+    flex: 1;
+    flex-direction: column;
+    min-width: 120px;
+    flex: 1;
+  }
+
+  .payroll-form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .payroll-form-group input,
+  .payroll-form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  .payroll-form-group:has(button) {
+    min-width: 150px;
+  }
+
+  #process-payroll-btn {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 24px;
+    /* Align with input fields */
+  }
+
+  #process-payroll-btn:hover {
+    background-color: #45a049;
+  }
+
+  @media (max-width: 1200px) {
+    .payroll-form-group {
+      min-width: 100px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .payroll-form {
+      flex-direction: column;
+    }
+
+    .payroll-form-group {
+      width: 100%;
+    }
+
+    #process-payroll-btn {
+      width: 100%;
+    }
+
+    #process-payroll-btn {
+      margin-top: 10px;
+    }
+  }
+
+  /* Dark mode support*/
+  @media(prefers-color-scheme: dark) {
+    .payroll-form {
+      background-color: #333;
+    }
+
+    .payroll-form-group input,
+    .payroll-form-group select {
+      background-color: #222;
+      border-color: #444;
+      color: #f6f6f6;
+    }
+
+    #process-payroll-btn {
+      background-color: #2e7d32;
+    }
+
+    #process-payroll-btn:hover {
+      background-color: #1b5e20;
+    }
+  }
+
+  /* Filing Status Dropdown Styling */
   #filing-status {
-    background-color: #222;
-    color: white;
-    border-color: #444;
-  }
-  
-  #filing-status option {
-    background-color: #222;
-    color: white;
-  }
-  
-  #filing-status:hover {
     background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    cursor: pointer;
   }
+
+  #filing-status option {
+    background-color: #333;
+    color: white;
+  }
+
+  /* Hover state for better UX */
+  #filing-status:hover {
+    background-color: #444;
+    border-color: #666;
+  }
+
+  /* Focus state */
+  #filing-status:focus {
+    border-color: #24c8db;
+    box-shadow: 0 0 0 2px rgba(36, 200, 219, 0.2);
+    outline: none;
+  }
+
+  /* Make dropdown arrow more visible on dark background */
+  #filing-status {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    background-size: 0.65em auto;
+    padding-right: 2.5em;
+  }
+
+  /* For dark mode, we need to ensure text is still visible */
+  @media (prefers-color-scheme: dark) {
+    #filing-status {
+      background-color: #222;
+      color: white;
+      border-color: #444;
+    }
+
+    #filing-status option {
+      background-color: #222;
+      color: white;
+    }
+
+    #filing-status:hover {
+      background-color: #333;
+    }
+  }
+}
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+  -webkit-appearance: textfield; /* Safari, Chrome */
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0;
 }
