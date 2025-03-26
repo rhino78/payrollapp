@@ -100,6 +100,50 @@ h1 {
   text-align: center;
 }
 
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-group-addon {
+  background-color: #f1f1f1;
+  padding: 8px 12px;
+  border-right: 1px solid #ddd;
+  color: #666;
+}
+
+.input-group input {
+  border: none;
+  flex-grow: 1;
+  padding: 8px 12px;
+  width: calc(100% -40px);
+}
+
+input-group input:focus{
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(36, 200, 219, 0.2);
+}
+
+@media (prefers-color-scheme: dark){
+  .input-group {
+    border-color: #444;
+  }
+
+  .input-group-addon{
+    background-color: #333;
+    border-right-color: #4444;
+    color: #aaa;
+  }
+
+  .input-group input{
+    background-color: #222;
+    color: #f6f6f6;
+  }
+}
+
 input,
 button {
   border-radius: 8px;

@@ -1,9 +1,41 @@
 // payroll.js - Payroll processing functionality
 const { invoke } = window.__TAURI__.core;
 
+function generatePayPeriods() {
+  const payPeriodSelect = document.getElementById('pay-period');
+  const currentYear = new Date().getFullYear();
+
+  let currentDate = new Date(currentYear, 0, 1);
+
+  while (currentDate.getDay() !==5) {
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+
+  const payPeriods = [];
+  while (currentDate.getFullYear() === currentYear) {
+    const formattedDate = `${currentYear}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`
+
+    const displayDate = currentDate.toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+    });
+
+    payPeriods.push({ value: formattedDate, display: displayDate });
+    currentDate.setDate(currentDate.getDate() + 14);
+  }
+payPeriodSelect.innerHTML = `
+  <option value="">Select Pay Period</option>
+  ${payPeriods.map(period => 
+    `<option value="${period.value}">${period.display}</option>`
+  ).join('')}
+`;
+
+}
+
 async function loadEmployeeRate() {
   const employeeSelect = document.getElementById('payroll-employee');
-  const employeeId = employeeSelect.value;
+  const employeeId = parseInt(employeeSelect.value, 10);
   const payRateInput = document.getElementById('payroll-rate');
 
   if (!employeeId) {
@@ -17,7 +49,7 @@ async function loadEmployeeRate() {
       payRateInput.value = employee.wage.toFixed(2);
 
       const hoursWorked = document.getElementById('payroll-hours').value;
-      if (hours-worked) {
+      if (hoursWorked ) {
         calculateGross();
       }
     } else {
@@ -30,20 +62,30 @@ async function loadEmployeeRate() {
 }
 
 function calculateGross() {
+  console.log("calculating  gross");
   const hours = parseFloat(document.getElementById('payroll-hours').value) || 0;
-  const rate = parseFloat(document.getElementById('payroll-rate').dataset.rate) || 0;
+  const rate = parseFloat(document.getElementById('payroll-rate').value) || 0;
   const gross = hours * rate;
+
+  console.log(hours);
+  console.log(rate);
+  console.log(gross);
 
   document.getElementById('payroll-gross').value = gross.toFixed(2);
   calculateDeductions(gross);
-
 }
 
 function calculateDeductions(gross) {
+  console.log("calculating deductions");
   const withholding = gross * 0.2;
   const socialSecurity = gross * 0.062;
   const ira = gross * 0.03;
   const net = gross - withholding - socialSecurity - ira;
+
+  console.log(withholding);
+  console.log(socialSecurity);
+  console.log(ira);
+  console.log(net);
 
   document.getElementById('payroll-withholding').value = withholding.toFixed(2);
   document.getElementById('payroll-social-security').value = socialSecurity.toFixed(2);
@@ -59,6 +101,8 @@ export async function initPayrollPage() {
   const hoursInput = document.getElementById('payroll-hours');
   employeeSelect.addEventListener('change', loadEmployeeRate);
   hoursInput.addEventListener('change', calculateGross);
+
+  generatePayPeriods();
 
   // Load employees into the dropdown
   try {
