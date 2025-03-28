@@ -127,51 +127,51 @@ export const pages = {
             <label for="payroll-rate">Pay Rate:</label>
               <div class="input-group">
                 <span class="input-group-addon">$</span>
-              <input type="number" id="payroll-rate" name="payroll-rate" required>
+              <input type="number" id="payroll-rate" name="payroll-rate" step="0.01" class="monetary-input" required>
               </div>
             </div>
             <div class="form-group">
               <label for="payroll-hours">Hours Worked:</label>
-              <input type="number" id="payroll-hours" name="payroll-hours" required>
+              <input type="number" id="payroll-hours" name="payroll-hours" step="0.01" required>
             </div>
             <div class="form-group">
               <label for="payroll-gross">Gross:</label>
               <div class="input-group">
                 <span class="input-group-addon">$</span>
-              <input type="number" id="payroll-gross" name="payroll-gross" required>
+              <input type="number" id="payroll-gross" name="payroll-gross" step="0.01" required>
             </div>
             </div>
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
               <label for="payroll-withholding">Withholding:</label>
-              <input type="number" id="payroll-withholding" name="payroll-withholding" required>
+              <input type="number" id="payroll-withholding" name="payroll-withholding" step="0.01" required>
             </div>
             </div>
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
               <label for="payroll-social-security">Social Security:</label>
-              <input type="number" id="payroll-social-security" name="payroll-social-security" required>
+              <input type="number" id="payroll-social-security" name="payroll-social-security" step="0.01" required>
             </div>
             </div>
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
               <label for="payroll-ira">IRA:</label>
-              <input type="number" id="payroll-ira" name="payroll-ira" required>
+              <input type="number" id="payroll-ira" name="payroll-ira" step="0.01" required>
             </div>
             </div>
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
               <label for="payroll-net">Net:</label>
-              <input type="number" id="payroll-net" name="net">
+              <input type="number" id="payroll-net" name="net" step="0.01" required>
             </div>
             </div>
             <div class="form-group">
-              <label for="calculate-payroll-btn">Calculate:</label>
-              <button type="submit" id="calculate-payroll-btn">Calculate Payroll</button>
+              <label for="save-payroll-btn">Save Record:</label>
+              <button type="submit" id="save-payroll-btn">Save Record</button>
             </div>
           </div>
         </form>

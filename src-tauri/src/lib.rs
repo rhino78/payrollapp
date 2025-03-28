@@ -9,6 +9,20 @@ struct AppState {
     db_connection: Mutex<Connection>,
 }
 
+// Define Payroll struct for serialization
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Payroll {
+    id: Option<i64>,
+    emp_id: i64,
+    date_of_pay: String,
+    hours_worked: f64,
+    gross: f64,
+    withholding: f64,
+    social_security: f64,
+    ira: f64,
+    net: f64,
+}
+
 // Define Employee struct for serialization
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Employee {
@@ -28,7 +42,22 @@ pub struct Employee {
 // Initialize the database connection and create tables
 fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     let db_path = app_dir.join("payroll.db");
+    println!("the database is in here: {:?}", db_path);
     let conn = Connection::open(db_path)?;
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS payroll (
+            id INTEGER PRIMARY KEY,
+            emp_id INTEGER,
+            hours_worked REAL,
+            date_of_pay TEXT,
+            gross REAL,
+            withholding REAL,
+            social_security REAL,   
+            roth_ira REAL,
+            net REAL)",
+        [],
+    )?;
 
     conn.execute(
         "CREATE TABLE IF NOT EXISTS employees (
@@ -53,8 +82,6 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
 // Command to get employee by id
 #[tauri::command]
 fn get_employee_by_id(state: State<'_, AppState>, id: i64) -> Result<Option<Employee>, String> {
-    println!("getting id: {}", id);
-
     let conn = state.db_connection.lock().unwrap();
     let mut stmt = conn
         .prepare("SELECT * FROM employees WHERE id = ?")
@@ -111,6 +138,34 @@ fn get_employees(state: State<'_, AppState>) -> Result<Vec<Employee>, String> {
         .collect::<Result<Vec<Employee>, _>>()
         .map_err(|e| e.to_string())?;
     Ok(employees)
+}
+
+// Command to add a new payroll record
+#[tauri::command]
+fn add_payroll(payroll: Payroll, state: State<'_, AppState>) -> Result<i64, String> {
+    println!("Adding payroll for employee: {:#?}", payroll.emp_id);
+    let conn = state.db_connection.lock().unwrap();
+
+    let _employee_id = conn
+        .execute(
+            "INSERT INTO payroll (
+            emp_id, date_of_pay, hours_worked, gross, withholding, social_security, roth_ira, net
+        ) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)",
+            params![
+                payroll.emp_id,
+                payroll.date_of_pay,
+                payroll.hours_worked,
+                payroll.gross,
+                payroll.withholding,
+                payroll.social_security,
+                payroll.ira,
+                payroll.net,
+            ],
+        )
+        .map_err(|e| e.to_string())?;
+
+    println!("Inserted payroll with Id: {}", payroll.emp_id);
+    Ok(conn.last_insert_rowid())
 }
 
 // Command to add a new employee
@@ -210,6 +265,7 @@ fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+///main
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -221,7 +277,8 @@ pub fn run() {
             get_employee_by_id,
             add_employee,
             update_employee,
-            delete_employee
+            delete_employee,
+            add_payroll
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

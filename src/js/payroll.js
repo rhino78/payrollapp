@@ -62,35 +62,24 @@ async function loadEmployeeRate() {
 }
 
 function calculateGross() {
-  console.log("calculating  gross");
   const hours = parseFloat(document.getElementById('payroll-hours').value) || 0;
   const rate = parseFloat(document.getElementById('payroll-rate').value) || 0;
   const gross = hours * rate;
 
-  console.log(hours);
-  console.log(rate);
-  console.log(gross);
-
-  document.getElementById('payroll-gross').value = gross.toFixed(2);
+  document.getElementById('payroll-gross').value = gross.toFixed(2).toString();
   calculateDeductions(gross);
 }
 
 function calculateDeductions(gross) {
-  console.log("calculating deductions");
   const withholding = gross * 0.2;
   const socialSecurity = gross * 0.062;
   const ira = gross * 0.03;
   const net = gross - withholding - socialSecurity - ira;
 
-  console.log(withholding);
-  console.log(socialSecurity);
-  console.log(ira);
-  console.log(net);
-
-  document.getElementById('payroll-withholding').value = withholding.toFixed(2);
-  document.getElementById('payroll-social-security').value = socialSecurity.toFixed(2);
-  document.getElementById('payroll-ira').value = ira.toFixed(2);
-  document.getElementById('payroll-net').value = net.toFixed(2);
+  document.getElementById('payroll-withholding').value = withholding.toFixed(2).toString();
+  document.getElementById('payroll-social-security').value = socialSecurity.toFixed(2).toString();
+  document.getElementById('payroll-ira').value = ira.toFixed(2).toString();
+  document.getElementById('payroll-net').value = net.toFixed(2).toString();
 }
 
 export async function initPayrollPage() {
@@ -117,29 +106,51 @@ export async function initPayrollPage() {
 
   payrollForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    await processPayroll();
+    await savePayrollRecord();
   });
 }
 
-async function processPayroll() {
+async function savePayrollRecord() {
+  const payrollForm = document.getElementById('payroll-form');
   try {
     const formData = {
-      employeeId: document.getElementById('payroll-employee').value,
-      payPeriod: document.getElementById('pay-period').value,
-      hoursWorked: document.getElementById('payroll-hours').value,
-      payRate: document.getElementById('payroll-rate').value,
-      gross: document.getElementById('payroll-gross').value,
-      withholding: document.getElementById('payroll-withholding').value,
-      socialSecurity: document.getElementById('payroll-social-security').value,
-      ira: document.getElementById('payroll-ira').value,
-      net: document.getElementById('payroll-net').value,
+      emp_id: parseInt(document.getElementById('payroll-employee').value),
+      date_of_pay: document.getElementById('pay-period').value,
+      hours_worked: parseFloat(document.getElementById('payroll-hours').value),
+      pay_rate: parseFloat(document.getElementById('payroll-rate').value),
+      gross: parseFloat(document.getElementById('payroll-gross').value),
+      withholding: parseFloat(document.getElementById('payroll-withholding').value),
+      social_security: parseFloat(document.getElementById('payroll-social-security').value),
+      ira: parseFloat(document.getElementById('payroll-ira').value),
+      net: parseFloat(document.getElementById('payroll-net').value),
     };
 
-    const result = await invoke('process_payroll', { formData });
-    console.log('Payroll processed:', result);
-    showNotification('Payroll processed successfully.', 'success');
+    const requiredFields = ['emp_id', 'date_of_pay', 'hours_worked', 'pay_rate', 'gross', 'withholding', 'social_security', 'ira', 'net'];
+    const missingFields = requiredFields.filter(field => formData[field] === undefined || formData[field] === null || formData[field] == '');
+
+    if (missingFields.length > 0 ) {
+      showNotification(`Please fill in all required fields: ${missingFields.join(',')}`, 'error');
+      return;
+    }
+
+    console.log('Preparing to save payrroll record: ', formData);
+    showNotification('Payroll is ready to be saved', 'info');
+    const result = await invoke('add_payroll', { payroll: formData});
+    payrollForm.reset();
+    return result;
   } catch (error) {
     console.error('Error processing payroll:', error);
     showNotification('Failed to process payroll. Please try again.', 'error');
   }
+}
+
+function showNotification(message, type= 'info') {
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.textContent = message;
+
+  document.body.appendChild(notification);
+  setTimeout(() => {
+    notification.remove();
+  }, 3000);
 }
