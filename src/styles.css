@@ -307,8 +307,9 @@ button {
 
 .form-group label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-weight: 500;
+  text-align: center;
 }
 
 .form-group input,
@@ -318,6 +319,18 @@ button {
   border: 1px solid #ddd;
   border-radius: 4px;
   transition: border-color 0.3s;
+}
+
+.form-group select,
+#pay-period {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+  font-size: 16px;
+  height: 45px;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -640,6 +653,7 @@ button {
   margin-bottom: 8px;
   font-weight: 500;
   white-space: nowrap;
+  text-align: center;
 }
 
 .horizontal-form .form-group input,
@@ -989,3 +1003,160 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.payroll-history-section {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#payroll-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#payroll-history-table th,
+#payroll-history-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#payroll-history-table th {
+  background-color: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .payroll-history-section {
+    background-color: #333;
+    color: #f6f6f6;
+  }
+
+  #payroll-history-table th {
+    background-color: #444;
+  }
+
+  #payroll-history-table td {
+    color: #f6f6f6;
+  }
+}
+
+/* Fix pay period dropdown visibility */
+#pay-period,
+#pay-period option {
+  background-color: #fff;
+  color: #000;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  #pay-period,
+  #pay-period option {
+    background-color: #222;
+    color: #f6f6f6;
+  }
+}
+.uniform-select {
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  font-weight: 500;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='292.4' height='292.4'%3E%3Cpath fill='%23333' d='M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75em center;
+  background-size: 0.65em auto;
+  padding-right: 2em;
+}
+
+.uniform-select:focus {
+  border-color: #24c8db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(36, 200, 219, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .uniform-select {
+    background-color: #222;
+    color: #f6f6f6;
+    border-color: #555;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='292.4' height='292.4'%3E%3Cpath fill='%23f0f0f0' d='M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z'/%3E%3C/svg%3E");
+  }
+}
+
+/* Set consistent max-widths on payroll fields */
+.payroll-page .form-group input,
+.payroll-page .form-group select {
+  max-width: 120px;
+  min-width: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+}
+
+.payroll-page .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.payroll-page #save-payroll-btn {
+  margin-top: auto;
+  height: 45px;
+  text-align: center;
+}
+
+.horizontal-form .form-row {
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .horizontal-form .form-row {
+    flex-wrap: wrap;
+  }
+
+  .payroll-page .form-group input,
+  .payroll-page .form-group select {
+    max-width: 100%;
+  }
+}
+
+/* Make the pay-period group slightly wider */
+#pay-period.form-control,
+#pay-period {
+  min-width: 160px;
+  max-width: 180px;
+}
+
+/* Optionally, give the whole form-group more flex space */
+#pay-period-group {
+  flex: 1.5;
+}
+
+.dollar-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dollar-symbol {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.dollar-input {
+  padding-left: 24px;
+  width: 100%;
+}
+

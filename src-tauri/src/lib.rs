@@ -79,7 +79,42 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     Ok(conn)
 }
 
-// Command to get employee by id
+
+//command to get all payroll for an employee
+#[tauri::command]
+fn get_payroll_by_id(state: State<'_, AppState>, emp_id: i64) -> Result<Vec<Payroll>, String> {
+    let conn = state.db_connection.lock().unwrap();
+
+    let mut stmt = conn
+        .prepare("SELECT id, emp_id, date_of_pay, hours_worked, gross, withholding, social_security, roth_ira, net
+             FROM payroll WHERE emp_id = ? ORDER BY date_of_pay DESC",
+        )
+        .map_err(|e| e.to_string())?;
+
+    let payroll_iter  = stmt
+        .query_map([emp_id], |row| {
+            Ok(Payroll {
+                id: Some(row.get(0)?),
+                emp_id: row.get(1)?,
+                date_of_pay: row.get(2)?,
+                hours_worked: row.get(3)?,  
+                gross: row.get(4)?,
+                withholding: row.get(5)?,
+                social_security: row.get(6)?,
+                ira: row.get(7)?,
+                net: row.get(8)?
+            })
+        })
+    .map_err(|e| e.to_string())?;
+
+    let payrolls: Vec<Payroll> = payroll_iter
+        .collect::<Result<Vec<Payroll>, _>>()
+        .map_err(|e| e.to_string())?;
+
+    Ok(payrolls)
+}
+
+// Command to get employee data by id
 #[tauri::command]
 fn get_employee_by_id(state: State<'_, AppState>, id: i64) -> Result<Option<Employee>, String> {
     let conn = state.db_connection.lock().unwrap();
@@ -143,7 +178,6 @@ fn get_employees(state: State<'_, AppState>) -> Result<Vec<Employee>, String> {
 // Command to add a new payroll record
 #[tauri::command]
 fn add_payroll(payroll: Payroll, state: State<'_, AppState>) -> Result<i64, String> {
-    println!("Adding payroll for employee: {:#?}", payroll.emp_id);
     let conn = state.db_connection.lock().unwrap();
 
     let _employee_id = conn
@@ -164,14 +198,12 @@ fn add_payroll(payroll: Payroll, state: State<'_, AppState>) -> Result<i64, Stri
         )
         .map_err(|e| e.to_string())?;
 
-    println!("Inserted payroll with Id: {}", payroll.emp_id);
     Ok(conn.last_insert_rowid())
 }
 
 // Command to add a new employee
 #[tauri::command]
 fn add_employee(employee: Employee, state: State<'_, AppState>) -> Result<i64, String> {
-    println!("Adding employee: {:#?}", employee);
     let conn = state.db_connection.lock().unwrap();
 
     let _employee_id = conn.execute(
@@ -192,7 +224,6 @@ fn add_employee(employee: Employee, state: State<'_, AppState>) -> Result<i64, S
         ],
     ).map_err(|e| e.to_string())?;
 
-    println!("Inserted employee with Name: {}", employee.first_name);
     Ok(conn.last_insert_rowid())
 }
 
@@ -244,12 +275,6 @@ fn delete_employee(id: i64, state: State<'_, AppState>) -> Result<(), String> {
     Ok(())
 }
 
-// Original greet command
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
-
 // Setup the application state
 fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     let app_dir = app
@@ -272,13 +297,13 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .setup(setup_app)
         .invoke_handler(tauri::generate_handler![
-            greet,
             get_employees,
             get_employee_by_id,
             add_employee,
             update_employee,
             delete_employee,
-            add_payroll
+            add_payroll,
+            get_payroll_by_id
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
