@@ -79,6 +79,24 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     Ok(conn)
 }
 
+//get date_of_pay by employee
+#[tauri::command]
+fn get_date_of_pay(state: State<'_, AppState>, emp_id: i64) -> Result<Vec<String>, String> {
+    let conn = state.db_connection.lock().unwrap();
+
+    let mut stmt = conn
+        .prepare("SELECT date_of_pay FROM payroll WHERE emp_id = ? ORDER BY date_of_pay DESC")
+        .map_err(|e| e.to_string())?;
+
+    let date_of_pay_iter = stmt
+        .query_map([emp_id], |row| Ok(row.get(0)?))
+        .map_err(|e| e.to_string())?;
+
+    let date_of_pays: Vec<String> = date_of_pay_iter
+        .collect::<Result<Vec<String>, _>>()
+        .map_err(|e| e.to_string())?;
+    Ok(date_of_pays)
+}
 
 //command to get all payroll for an employee
 #[tauri::command]
@@ -275,6 +293,17 @@ fn delete_employee(id: i64, state: State<'_, AppState>) -> Result<(), String> {
     Ok(())
 }
 
+// Command to delete a payroll record
+#[tauri::command]
+fn delete_payroll(payroll_id: i64, state: State<'_, AppState>) -> Result<(), String> {
+    let conn = state.db_connection.lock().unwrap();
+
+    conn.execute("DELETE FROM payroll WHERE id = ?1", params![payroll_id])
+        .map_err(|e| e.to_string())?;
+
+    Ok(())
+}
+
 // Setup the application state
 fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     let app_dir = app
@@ -290,6 +319,7 @@ fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+
 ///main
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -303,7 +333,9 @@ pub fn run() {
             update_employee,
             delete_employee,
             add_payroll,
-            get_payroll_by_id
+            get_payroll_by_id,
+            delete_payroll,
+            get_date_of_pay
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

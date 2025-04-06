@@ -4,10 +4,17 @@
       <div class="payroll-header">
         <div class="payroll-employee">
           <label for="payroll-employe">Employee:</label>
-  <select id="payroll-employee" name="employee" class="uniform-select" required>
+          <select id="payroll-employee" name="employee" class="uniform-select" required>
               <option value="">Select Employee</option>
               <!-- Options would be dynamically populated -->
             </select>
+            <div id="employee-details" class="employee-info">
+              <!-- Employee details will be displayed here -->
+              <p><strong>Address:</strong> <span id="emp-address"></span></p>
+              <p><strong>City/State/ZIP:</strong> <span id="emp-location"></span></p>
+              <p><strong>Wage:</strong> <span id="emp-wage"></span></p>
+              <p><strong>Dependents:</strong> <span id="emp-dependents"></span></p>
+          </div>
         </div>
     </div>
       <div class="payroll-container">
@@ -73,24 +80,26 @@
         </form>
       </div>
       <div id="payroll-results" class="payroll-results"></div>
-  <div id="payroll-history" class="payroll-history-section">
-    <h2>Payroll History</h2>
-  <table id="payroll-history-table">
-  <thead>
-  <tr>
-  <th>Date</th>
-  <th>Hours</th>
-  <th>Gross</th>
-  <th>Withholding</th>
-  <th>SS</th>
-  <th>IRA</th>
-  <th>Net</th>
-  </tr>
-  </thread>
-  <tbody>
-  <!--payroll entries will be injected here -->
-  </tbody>
-  </table>
-  </div>
+    <div id="payroll-history" class="payroll-history-section">
+      <h2>Payroll History</h2>
+      <table id="payroll-history-table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Hours</th>
+            <th>Gross</th>
+            <th>Holding</th>
+            <th>SS</th>
+            <th>IRA</th>
+            <th>Net</th>
+            <th>Delete</th>
+          </tr>
+        </thread>
+          <tbody>
+          <!--payroll entries will be injected here -->
+          </tbody>
+      </table>
+    </div>
     </div>
   `;

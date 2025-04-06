@@ -13,7 +13,10 @@ function generatePayPeriods() {
 
         const payPeriods = [];
         while (currentDate.getFullYear() === currentYear) {
-                const formattedDate = `${currentYear}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`
+                const year = currentDate.getFullYear();
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getDate()).padStart(2, '0');
+                const formattedDate = `${year}-${month}-${day}`; // Full date for DB
 
                 const displayDate = currentDate.toLocaleDateString('en-US', {
                         weekday: 'short',
@@ -33,6 +36,52 @@ function generatePayPeriods() {
 
 }
 
+async function filterPayPeriods(empId) {
+        const payPeriodSelect = document.getElementById('pay-period');  
+        if (!empId || !payPeriodSelect) return;
+
+        try {
+                const usedDates = await invoke('get_date_of_pay', { empId: empId });
+
+                const currentYear = new Date().getFullYear();
+                let currentDate = new Date(currentYear, 0, 1);
+
+                if (isNaN(currentDate)) throw new Error('Invalid date');
+
+                while (currentDate.getDay() !==5){
+                        currentDate.setDate(currentDate.getDate() + 1);
+                }
+
+                const payPeriods = [];
+
+                while (currentDate.getFullYear() === currentYear){
+                        const year = currentDate.getFullYear();
+                        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                        const day = String(currentDate.getDate()).padStart(2, '0');
+                        const fullDate = `${year}-${month}-${day}`; // Full date for DB
+
+                        if (!usedDates.includes(fullDate)){
+                                const label = currentDate.toLocaleString('en-US', {
+                                        weekday: 'short',
+                                        month: 'short',
+                                        day: 'numeric',
+                                });
+                                payPeriods.push({value: fullDate, display: label});
+                        }
+                        currentDate.setDate(currentDate.getDate() + 14);
+                }
+
+                payPeriodSelect.innerHTML = `
+                        <option value="">Select Pay Period</option>
+                        ${payPeriods.map(p =>
+                                `<option value="${p.value}">${p.display}</option>`
+                        ).join('')}
+                `;
+        } catch (error) {
+                console.error('Error filtering pay periods:', error);
+        }
+}
+
 async function loadEmployeeRate() {
         const employeeSelect = document.getElementById('payroll-employee');
         const employeeId = parseInt(employeeSelect.value, 10);
@@ -40,6 +89,10 @@ async function loadEmployeeRate() {
 
         if (!employeeId) {
                 payRateInput.value = '';
+                document.getElementById('emp-address').textContent = '';
+                document.getElementById('emp-location').textContent = '';
+                document.getElementById('emp-wage').textContent = '';
+                document.getElementById('emp-dependents').textContent = '';
                 return;
         }
 
@@ -49,11 +102,16 @@ async function loadEmployeeRate() {
                         payRateInput.value = employee.wage.toFixed(2);
                         console.log("getting payroll for id: ", employeeId);
                         await loadPayrollHistory(employeeId);
+                        await filterPayPeriods(employeeId);
 
                         const hoursWorked = document.getElementById('payroll-hours').value;
                         if (hoursWorked) {
                                 calculateGross();
                         }
+                        document.getElementById('emp-address').textContent = employee.address;
+                        document.getElementById('emp-location').textContent = employee.city + ', ' + employee.state + ' ' + employee.zip;
+                        document.getElementById('emp-wage').textContent = employee.wage;
+                        document.getElementById('emp-dependents').textContent = employee.dependents;
                 } else {
                         console.warn('No wage found for employee:', employeeId);
                         payRateInput.value = '';
@@ -135,9 +193,11 @@ async function savePayrollRecord() {
                         return;
                 }
 
+                console.log('Saving payroll record:', formData);
                 const result = await invoke('add_payroll', { payroll: formData });
                 showNotification('Payroll saved!', 'info');
                 payrollForm.reset();
+                await loadPayrollHistory(formData.emp_id);
                 return result;
         } catch (error) {
                 console.error('Error processing payroll:', error);
@@ -159,22 +219,47 @@ async function loadPayrollHistory(empId) {
                         return;
                 }
 
+                generatePayPeriods();
+
                 tbody.innerHTML = payrolls.map(payroll => `
-                      <tr>
-                        <td>${payroll.date_of_pay}</td>
-                        <td>${payroll.hours_worked.toFixed(2)}</td>
-                        <td>${payroll.gross.toFixed(2)}</td>
-                        <td>${payroll.withholding.toFixed(2)}</td>
-                        <td>${payroll.social_security.toFixed(2)}</td>
-                        <td>${payroll.ira.toFixed(2)}</td>
-                        <td>${payroll.net.toFixed(2)}</td>
+                <tr data-id="${payroll.id}">
+                        <td id="payroll-id">${payroll.id}</td>
+                        <td>${formatDate(payroll.date_of_pay)}</td>
+                        <td>${Math.round(payroll.hours_worked)}</td>
+                        <td>$${payroll.gross.toFixed(2)}</td>
+                        <td>$${payroll.withholding.toFixed(2)}</td>
+                        <td>$${payroll.social_security.toFixed(2)}</td>
+                        <td>$${payroll.ira.toFixed(2)}</td>
+                        <td>$${payroll.net.toFixed(2)}</td>
+                         <td><button class="delete-payroll-btn">🗑️</button></td>
                       </tr>
                     `).join('');
+
+                tbody.querySelectorAll('.delete-payroll-btn').forEach(button => {
+                        button.addEventListener('click', async (e) => {
+                                const row = e.target.closest('tr');
+                                const payrollId = row.getAttribute('data-id');
+                                if (confirm('Are you sure you want to delete this payroll entry?')) {
+                                        try {
+                                                await invoke('delete_payroll', { payrollId: parseInt(payrollId, 10) });
+                                                row.remove();
+                                                showNotification('Payroll entry deleted successfully!', 'info');
+                                        } catch (err) {
+                                                console.error('Error deleting payroll entry:', err);
+                                                showNotification('Failed to delete payroll entry. Please try again.', 'error');
+                                        }
+                                }
+                        });
+                });
         } catch (err) {
                 console.error('Error loading employee history:', err);
                 tbody.innerHTML = '<tr><td colspan="7" class="no-items">Failed to load employee history. Please try again.</td></tr>';
         }
+}
 
+function formatDate(dateString) {
+        const [year, month, day] = dateString.split('-');
+        return `${month}-${day}-${year}`;
 }
 
 function showNotification(message, type = 'info') {

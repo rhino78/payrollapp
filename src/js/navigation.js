@@ -1,6 +1,7 @@
 import { pages } from './pages.js';
 import { initEmployeesPage } from './employees.js';
 import { initPayrollPage } from './payroll.js';
+import { initReportsPage } from './reports.js';
 
 export function navigateToPage(page) {
   const contentEl = document.getElementById('content');
@@ -16,6 +17,10 @@ export function navigateToPage(page) {
 
   if (page === 'employees') {
     initEmployeesPage();
+  }
+
+  if (page === 'reports') {
+    initReportsPage();
   }
 
   if (page === 'payroll') {
