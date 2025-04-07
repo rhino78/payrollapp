@@ -196,6 +196,23 @@ button {
   text-align: left;
 }
 
+.employee-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.payroll-employee {
+  flex: 1;
+  min-width: 200px;
+}
+
+#employee-details {
+  flex: 2;
+  min-width: 200px;
+}
+
 .employee-list-section {
   flex: 1;
   background-color: #fff;
@@ -236,11 +253,12 @@ button {
 
 .employee-info {
   flex: 2;
+  text-align: left;
 }
 
 .employee-info p {
   margin: 0;
-  color: #666;
+  color: #f6f6f6;
 }
 
 .employee-info h3 {
@@ -679,7 +697,7 @@ button {
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .horizontal-form .form-row {
+    .horizontal-form .form-row .employee-row {
       flex-direction: column;
       align-items: stretch;
     }

@@ -2,12 +2,14 @@
     <div class="page payroll-page">
       <h1>Payroll Processing</h1>
       <div class="payroll-header">
-        <div class="payroll-employee">
-          <label for="payroll-employe">Employee:</label>
-          <select id="payroll-employee" name="employee" class="uniform-select" required>
+        <div class="employee-row">
+          <div class="payroll-employee">
+            <label for="payroll-employee">Employee:</label>
+            <select id="payroll-employee" name="employee" class="uniform-select" required>
               <option value="">Select Employee</option>
               <!-- Options would be dynamically populated -->
             </select>
+          </div>
             <div id="employee-details" class="employee-info">
               <!-- Employee details will be displayed here -->
               <p><strong>Address:</strong> <span id="emp-address"></span></p>
