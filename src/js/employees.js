@@ -139,7 +139,6 @@ async function saveEmployee() {
   const formData = new FormData(employeeForm);
 
   const employee = {
-    //id: currentEmployeeId,
     first_name: formData.get('first_name'),
     last_name: formData.get('last_name'),
     phone: formData.get('phone'),
@@ -151,6 +150,10 @@ async function saveEmployee() {
     number_of_dependents: parseInt(formData.get('number_of_dependents')),
     filing_status: formData.get('filing_status'),
   };
+
+  if (currentEmployeeId) {
+    employee.id = currentEmployeeId;
+  }
 
   try {
     if (currentEmployeeId) {

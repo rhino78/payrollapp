@@ -99,6 +99,7 @@ async function loadEmployeeRate() {
         try {
                 const employee = await invoke('get_employee_by_id', { id: employeeId });
                 if (employee && employee.wage) {
+                        console.log("the deps: ", employee.number_of_dependents);
                         payRateInput.value = employee.wage.toFixed(2);
                         console.log("getting payroll for id: ", employeeId);
                         await loadPayrollHistory(employeeId);
@@ -111,7 +112,7 @@ async function loadEmployeeRate() {
                         document.getElementById('emp-address').textContent = employee.address;
                         document.getElementById('emp-location').textContent = employee.city + ', ' + employee.state + ' ' + employee.zip;
                         document.getElementById('emp-wage').textContent = employee.wage;
-                        document.getElementById('emp-dependents').textContent = employee.dependents;
+                        document.getElementById('emp-dependents').textContent = employee.number_of_dependents;
                 } else {
                         console.warn('No wage found for employee:', employeeId);
                         payRateInput.value = '';

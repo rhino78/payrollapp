@@ -6,9 +6,6 @@
           <div class="payroll-employee">
             <label for="payroll-employee">Employee:</label>
             <select id="payroll-employee" name="employee" class="uniform-select" required>
-        <div class="payroll-employee">
-          <label for="payroll-employe">Employee:</label>
-          <select id="payroll-employee" name="employee" class="uniform-select" required>
               <option value="">Select Employee</option>
               <!-- Options would be dynamically populated -->
             </select>
