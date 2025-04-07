@@ -2,8 +2,9 @@ import { pages } from './pages.js';
 import { initEmployeesPage } from './employees.js';
 import { initPayrollPage } from './payroll.js';
 import { initReportsPage } from './reports.js';
+import { initAboutPage } from './about.js';
 
-export function navigateToPage(page) {
+export async function navigateToPage(page) {
   const contentEl = document.getElementById('content');
   contentEl.innerHTML = pages[page];
 
@@ -16,7 +17,11 @@ export function navigateToPage(page) {
   });
 
   if (page === 'employees') {
-    initEmployeesPage();
+    await initEmployeesPage();
+  }
+
+  if (page === 'about') {
+    await initAboutPage();
   }
 
   if (page === 'reports') {
@@ -24,6 +29,6 @@ export function navigateToPage(page) {
   }
 
   if (page === 'payroll') {
-    initPayrollPage();
+    await initPayrollPage();
   }
 }

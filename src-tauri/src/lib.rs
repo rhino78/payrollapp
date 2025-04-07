@@ -109,21 +109,21 @@ fn get_payroll_by_id(state: State<'_, AppState>, emp_id: i64) -> Result<Vec<Payr
         )
         .map_err(|e| e.to_string())?;
 
-    let payroll_iter  = stmt
+    let payroll_iter = stmt
         .query_map([emp_id], |row| {
             Ok(Payroll {
                 id: Some(row.get(0)?),
                 emp_id: row.get(1)?,
                 date_of_pay: row.get(2)?,
-                hours_worked: row.get(3)?,  
+                hours_worked: row.get(3)?,
                 gross: row.get(4)?,
                 withholding: row.get(5)?,
                 social_security: row.get(6)?,
                 ira: row.get(7)?,
-                net: row.get(8)?
+                net: row.get(8)?,
             })
         })
-    .map_err(|e| e.to_string())?;
+        .map_err(|e| e.to_string())?;
 
     let payrolls: Vec<Payroll> = payroll_iter
         .collect::<Result<Vec<Payroll>, _>>()
@@ -319,12 +319,11 @@ fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-
 ///main
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .setup(setup_app)
         .invoke_handler(tauri::generate_handler![
             get_employees,

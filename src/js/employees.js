@@ -16,7 +16,6 @@ function showNotification(message, type= 'info') {
 }
 
 export async function initEmployeesPage() {
-  const employeeList = document.getElementById('employee-list');
   const employeeForm = document.getElementById('employee-form');
   const addEmployeeBtn = document.getElementById('add-employee-btn');
   const cancelEmployeeBtn = document.getElementById('cancel-employee-btn');
@@ -100,7 +99,6 @@ function resetForm() {
 }
 
 function editEmployee(employee) {
-  const employeeForm = document.getElementById('employee-form');
   const formTitle = document.getElementById('form-title');
 
   formTitle.textContent = `Edit Employee: ${employee.first_name} ${employee.last_name}`;
