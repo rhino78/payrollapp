@@ -4,42 +4,62 @@ export async function initReportsPage() {
   const listContainer = document.getElementById('employee-toggle-list');
   const runButton = document.getElementById('run-report-btn');
   const reportOutput = document.getElementById('report-output');
+  const payPeriodSelect = document.getElementById('report-pay-period');
 
-  try {
-    const employees = await invoke('get_employees');
+  listContainer.innerHTML = '<p class="no-items">Please select a pay period.</p>';
 
-    listContainer.innerHTML = employees.map(emp => `
-      <label class="employee-toggle">
-        <input type="checkbox" value="${emp.id}" />
-        ${emp.first_name} ${emp.last_name}
-      </label>
-    `).join('');
+  payPeriodSelect.addEventListener('change', async () => {
+    const selectedPeriod = payPeriodSelect.value;
 
-    runButton.addEventListener('click', () => {
-      const selectedIds = Array.from(
-        listContainer.querySelectorAll('input[type="checkbox"]:checked')
-      ).map(cb => parseInt(cb.value));
+    if (!selectedPeriod) {
+        listContainer.innerHTML = '<p class="no-items">Please select a pay period.</p>';
+      return;
+    }
 
-      if (selectedIds.length === 0) {
-        showNotification("Please select at least one employee.", "error");
+    try {
+      const employees = await invoke('get_employees_by_pay_date', {pay_date: selectedPeriod});
+
+      if (employees.length === 0 ) {
+        listContainer.innerHTML = '<p class="no-items">No employees found for this pay period.</p>'
         return;
       }
 
-      // For now, just display the IDs
-      reportOutput.innerHTML = `
-        <h3>Selected Employees:</h3>
-        <p>${selectedIds.join(', ')}</p>
-      `;
-
-      // Later: fetch report data from Tauri using selectedIds
-    });
-
-    generatePayPeriods();
-
+      listContainer.innerHTML = employees.map(emp => `
+        <label class="employee-toggle">
+          <input type="checkbox" value="${emp.id}" />
+          ${emp.first_name} ${emp.last_name}
+        </label>
+      `).join('');
   } catch (err) {
     console.error("Error loading employees for reports:", err);
     listContainer.innerHTML = '<p class="no-items">Failed to load employees.</p>';
-  }
+    }
+  });
+
+  runButton.addEventListener('click', () => {
+    const selectedIds = Array.from(
+      listContainer.querySelectorAll('input[type="checkbox"]:checked')
+    ).map(cb => parseInt(cb.value));
+
+    if (selectedIds.length === 0) {
+      showNotification("Please  select at least one employee", "error");
+      return;
+    }
+
+    const payPeriod = payPeriodSelect.value;
+    if (!payPeriod) {
+      showNotification("Please select a pay period", "error");
+      return;
+    }
+
+    reportOutput.innerHTML = `
+      <h3>Selected Pay Period: ${payPeriod}</h3>
+      <p>Selected Employees: ${selectedIds.join(', ')}</p>
+      `;
+
+  });
+
+  generatePayPeriods();
 }
 
 function generatePayPeriods() {

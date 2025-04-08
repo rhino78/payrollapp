@@ -1,4 +1,3 @@
-use reqwest;
 use rusqlite::{params, Connection, Result as SqlResult};
 use semver::Version;
 use serde::{Deserialize, Serialize};
@@ -164,6 +163,47 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     )?;
 
     Ok(conn)
+}
+
+//get employees by paydates
+#[tauri::command]
+fn get_employees_by_pay_date(
+    state: State<'_, AppState>,
+    pay_date: String,
+) -> Result<Vec<Employee>, String> {
+    let conn = state.db_connection.lock().unwrap();
+
+    let mut stmt = conn
+        .prepare(
+            "SELECT DISTINCT e.* FROM employees e
+             INNER JOIN payroll p ON e.id = p.emp_id
+             WHERE p.date_of_pay = ?1",
+        )
+        .map_err(|e| e.to_string())?;
+
+    let employee_iter = stmt
+        .query_map([pay_date], |row| {
+            Ok(Employee {
+                id: Some(row.get(0)?),
+                first_name: row.get(1)?,
+                last_name: row.get(2)?,
+                address: row.get(3)?,
+                city: row.get(4)?,
+                state: row.get(5)?,
+                zip: row.get(6)?,
+                phone: row.get(7)?,
+                wage: row.get(8)?,
+                number_of_dependents: row.get(9)?,
+                filing_status: row.get(10)?,
+            })
+        })
+        .map_err(|e| e.to_string())?;
+
+    let employees: Vec<Employee> = employee_iter
+        .collect::<Result<Vec<Employee>, _>>()
+        .map_err(|e| e.to_string())?;
+
+    Ok(employees)
 }
 
 //get date_of_pay by employee
@@ -391,6 +431,31 @@ fn delete_payroll(payroll_id: i64, state: State<'_, AppState>) -> Result<(), Str
     Ok(())
 }
 
+// Command to update the system
+#[tauri::command]
+fn perform_update_tauri() -> Result<String, String> {
+    match self_update::backends::github::Update::configure()
+        .repo_owner("rhino78")
+        .repo_name("payrollapp")
+        .bin_name("payroll")
+        .show_download_progress(true)
+        .current_version(CURRENT_VERSION)
+        .build()
+        .and_then(|u| u.update())
+    {
+        Ok(status) => {
+            let msg = format!("✅ Updated to version {}", status.version());
+            println!("{}", msg);
+            Ok(msg)
+        }
+        Err(err) => {
+            let err_msg = format!("❌ Update failed: {}", err);
+            println!("{}", err_msg);
+            Err(err_msg)
+        }
+    }
+}
+
 // Setup the application state
 fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     let app_dir = app
@@ -422,7 +487,9 @@ pub fn run() {
             get_payroll_by_id,
             delete_payroll,
             get_date_of_pay,
-            check_for_updates_tauri
+            check_for_updates_tauri,
+            perform_update_tauri,
+            get_employees_by_pay_date
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
