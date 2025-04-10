@@ -17,7 +17,7 @@ export async function initReportsPage() {
     }
 
     try {
-      const employees = await invoke('get_employees_by_pay_date', {pay_date: selectedPeriod});
+      const employees = await invoke('get_employees_by_pay_date', {payDate: selectedPeriod});
 
       if (employees.length === 0 ) {
         listContainer.innerHTML = '<p class="no-items">No employees found for this pay period.</p>'

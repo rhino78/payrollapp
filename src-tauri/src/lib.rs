@@ -15,6 +15,19 @@ struct AppState {
     db_connection: Mutex<Connection>,
 }
 
+#[derive(Serialize)]
+struct PayrollExport {
+    first_name: String,
+    last_name: String,
+    pay_date: String,
+    hours: f64,
+    gross: f64,
+    wh: f64,
+    ss: f64,
+    ira: f64,
+    net: f64,
+}
+
 // Define Payroll struct for serialization
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Payroll {
@@ -165,6 +178,51 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     Ok(conn)
 }
 
+//get employees by paydates
+#[tauri::command]
+fn get_payroll_report(state: State<`_, AppState>, employee_ids: Vec<i32>, pay_date: String) -> Result<Vec<PayrollExport>, String>{
+    let conn = state.db_connection.lock().unwrap();
+    let mut stmt = conn
+        .prepare(
+            "SELECT e.first_name, e.last_name, p.date_of_pay, p.hours, p.gross, p.wh, p.ss, p.ira, p.net
+             FROM payroll p
+             JOIN employees e ON p.emp_id = e.id
+             WHERE p.emp_id IN ("
+                .to_string()
+                + &employee_ids.iter().map(|_| "?").collect::<Vec<_>>().join(", ")
+                + ") AND p.date_of_pay = ?",
+        )
+        .map_err(|e| e.to_string())?;
+
+    let mut params: Vec<&dyn rusqlite::ToSql> = employee_ids
+        .iter()
+        .map(|id| id as &dyn rusqlite::ToSql)
+        .collect();
+    params.push(&pay_date);
+
+    let rows = stmt
+        .query_map(params, |row| {
+            Ok(PayrollExport {
+                first_name: row.get(0)?,
+                last_name: row.get(1)?,
+                pay_date: row.get(2)?,
+                hours: row.get(3)?,
+                gross: row.get(4)?,
+                wh: row.get(5)?,
+                ss: row.get(6)?,
+                ira: row.get(7)?,
+                net: row.get(8)?,
+            })
+        })
+        .map_err(|e| e.to_string())?;
+
+    let results: Vec<PayrollExport> = rows
+        .collect::<Result<Vec<_>, _>>()
+        .map_err(|e| e.to_string())?;
+
+    Ok(results)
+
+}
 //get employees by paydates
 #[tauri::command]
 fn get_employees_by_pay_date(
