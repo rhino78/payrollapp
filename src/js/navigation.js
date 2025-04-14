@@ -3,6 +3,7 @@ import { initEmployeesPage } from './employees.js';
 import { initPayrollPage } from './payroll.js';
 import { initReportsPage } from './reports.js';
 import { initAboutPage } from './about.js';
+import { initHomePage } from './home.js';
 
 export async function navigateToPage(page) {
   const contentEl = document.getElementById('content');
@@ -15,6 +16,10 @@ export async function navigateToPage(page) {
       link.classList.remove('active');
     }
   });
+
+  if (page === 'home') {
+    await initHomePage();
+  }
 
   if (page === 'employees') {
     await initEmployeesPage();

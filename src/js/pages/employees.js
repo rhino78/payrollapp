@@ -49,10 +49,6 @@
         <label for="phone">Phone:</label>
         <input type="text" id="phone" name="phone" required>
       </div>
-    </div>
-
-    <!-- Fifth Row: Wage, Dependents, Filing Status -->
-    <div class="form-row employment-details">
       <div class="form-group">
         <label for="wage">Wage:</label>
         <input type="number" step="0.01" id="wage" name="wage" required>
@@ -61,6 +57,10 @@
         <label for="dependents">Dependents:</label>
         <input type="number" id="dependents" name="number_of_dependents" required>
       </div>
+    </div>
+
+    <!-- Fifth Row: Wage, Dependents, Filing Status -->
+    <div class="form-row employment-details">
       <div class="form-group">
         <label for="filing-status">Filing Status:</label>
         <select id="filing-status" name="filing_status" class="uniform-select" required>
@@ -82,9 +82,6 @@
       <!-- List Section on the Right -->
       <div class="employee-list-section">
         <h2>Current Employees</h2>
-        <div class="search-container">
-          <input type="text" id="employee-search" placeholder="Search employees..." />
-        </div>
         <div id="employee-list" class="employee-list"></div>
         <button id="add-employee-btn" class="action-button">Add New Employee</button>
       </div>

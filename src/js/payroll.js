@@ -99,9 +99,7 @@ async function loadEmployeeRate() {
         try {
                 const employee = await invoke('get_employee_by_id', { id: employeeId });
                 if (employee && employee.wage) {
-                        console.log("the deps: ", employee.number_of_dependents);
                         payRateInput.value = employee.wage.toFixed(2);
-                        console.log("getting payroll for id: ", employeeId);
                         await loadPayrollHistory(employeeId);
                         await filterPayPeriods(employeeId);
 
@@ -194,7 +192,6 @@ async function savePayrollRecord() {
                         return;
                 }
 
-                console.log('Saving payroll record:', formData);
                 const result = await invoke('add_payroll', { payroll: formData });
                 showNotification('Payroll saved!', 'info');
                 payrollForm.reset();

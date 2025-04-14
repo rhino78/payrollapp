@@ -20,15 +20,8 @@ export async function initEmployeesPage() {
   const addEmployeeBtn = document.getElementById('add-employee-btn');
   const cancelEmployeeBtn = document.getElementById('cancel-employee-btn');
   const formTitle = document.getElementById('form-title');
-  const employeeSearch = document.getElementById('employee-search');
 
   await loadEmployees();
-
-  employeeSearch.addEventListener('input', async (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    const filteredEmployees = employees.filter(employee => employee.first_name.toLowerCase().includes(searchTerm) || employee.last_name.toLowerCase().includes(searchTerm));
-    renderEmployeeList(filteredEmployees);
-  });
 
   addEmployeeBtn.addEventListener('click', () => {
     resetForm();

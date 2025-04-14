@@ -83,16 +83,13 @@ pub fn check_for_updates_blocking(
         .send()?;
 
     if response.status() != reqwest::StatusCode::OK {
-        println!("Status: {}", response.status());
         let error_text = response.text()?;
-        println!("Error response: {}", error_text);
         return Err(format!("status error: {}", error_text).into());
     }
 
     if !response.status().is_success() {
         let status = response.status();
         let body = response.text()?;
-        println!("HTTP Error: {}: {}", status, body);
         return Err(format!("HTTP Error {}: {}", status, body).into());
     }
 
@@ -118,11 +115,6 @@ pub fn check_for_updates_blocking(
 
     let current_version = Version::parse(CURRENT_VERSION)?;
     let latest_version = Version::parse(&latest_version_str)?;
-
-    println!("Current Version: {}", current_version);
-    println!("Latest Version: {}", latest_version);
-    println!("Current Notes: {}", release_notes);
-
     let update_available = if latest_version > current_version {
         Some(latest_version_str)
     } else {
@@ -187,7 +179,6 @@ fn get_payroll_report<'a>(
 ) -> Result<Vec<PayrollExport>, String> {
     let conn = state.db_connection.lock().unwrap();
 
-    println!("the paydate is: {:?}", pay_date);
     if employee_ids.is_empty() {
         return Ok(vec![]);
     }
@@ -197,11 +188,7 @@ fn get_payroll_report<'a>(
      JOIN employees e ON p.emp_id = e.id
      WHERE p.date_of_pay = ?";
 
-    println!("the sql statement is : {:?}", sql);
-    println!("params: {:?}", pay_date);
-
     let mut stmt = conn.prepare(&sql).map_err(|e| e.to_string())?;
-
     let rows = stmt
         .query_map([&pay_date as &dyn rusqlite::ToSql], |row| {
             Ok(PayrollExport {
@@ -221,8 +208,6 @@ fn get_payroll_report<'a>(
     let results: Vec<PayrollExport> = rows
         .collect::<Result<Vec<_>, _>>()
         .map_err(|e| e.to_string())?;
-
-    println!("rows found: {}", results.len());
 
     Ok(results)
 }
@@ -507,7 +492,6 @@ fn perform_update_tauri() -> Result<String, String> {
     {
         Ok(status) => {
             let msg = format!("✅ Updated to version {}", status.version());
-            println!("{}", msg);
             Ok(msg)
         }
         Err(err) => {
