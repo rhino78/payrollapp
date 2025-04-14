@@ -461,6 +461,16 @@ button {
   /* Slightly bolder text */
 }
 
+#clear-form-btn {
+  background-color: #808080;
+  color: white;
+  border: none;
+}
+
+#clear-form-btn:hover {
+  background-color: #A9A9A9;
+}
+
 #save-employee-btn {
   background-color: #4CAF50;
   color: white;

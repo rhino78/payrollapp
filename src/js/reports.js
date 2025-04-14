@@ -59,8 +59,6 @@ export async function initReportsPage() {
         payDate: payPeriod
       });
 
-      console.log(records);
-
       if(!records.length) {
         showNotification("No payroll data found", "error");
         return;

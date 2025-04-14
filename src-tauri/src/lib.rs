@@ -1,4 +1,4 @@
-use rusqlite::{params, params_from_iter, Connection, Result as SqlResult};
+use rusqlite::{params, Connection, Result as SqlResult};
 use semver::Version;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
@@ -168,6 +168,13 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     )?;
 
     Ok(conn)
+}
+
+//get payroll report
+#[tauri::command]
+fn get_api_key() -> Result<String, String> {
+    let api_key = env::var("STOCK_API_KEY").map_err(|e| e.to_string())?;
+    Ok(api_key)
 }
 
 //get payroll report
@@ -536,6 +543,7 @@ pub fn run() {
             check_for_updates_tauri,
             perform_update_tauri,
             get_employees_by_pay_date,
+            get_api_key,
             get_payroll_report
         ])
         .run(tauri::generate_context!())

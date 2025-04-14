@@ -1,7 +1,9 @@
+const { invoke } = window.__TAURI__.core;
+
 export async function initHomePage() {
   await loadChartJS();
-
-    const API_KEY = '67RFYwuUL3jCWbV3gHDNIwvqwngt9OWk';
+    // const API_KEY = '67RFYwuUL3jCWbV3gHDNIwvqwngt9OWk';
+    const API_KEY = await invoke('get_api_key');
 
     try {
       const [cvsRes, wbaRes, cvsHistRes, wbaHistRes] = await Promise.all([

@@ -17,13 +17,13 @@ function showNotification(message, type= 'info') {
 
 export async function initEmployeesPage() {
   const employeeForm = document.getElementById('employee-form');
-  const addEmployeeBtn = document.getElementById('add-employee-btn');
+  const clearFormBtn = document.getElementById('clear-form-btn');
   const cancelEmployeeBtn = document.getElementById('cancel-employee-btn');
   const formTitle = document.getElementById('form-title');
 
   await loadEmployees();
 
-  addEmployeeBtn.addEventListener('click', () => {
+  clearFormBtn.addEventListener('click', () => {
     resetForm();
     formTitle.textContent = 'Add New Employee';
     currentEmployeeId = null;

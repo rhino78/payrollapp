@@ -73,8 +73,9 @@
 
     <!-- Form Actions: Save and Cancel Buttons -->
     <div class="form-actions">
-      <button type="submit" id="save-employee-btn">Save</button>
-      <button type="button" id="cancel-employee-btn">Cancel</button>
+        <button id="clear-form-btn" class="action-button">Clear Form</button>
+        <button type="submit" id="save-employee-btn">Save</button>
+        <button type="button" id="cancel-employee-btn">Cancel</button>
     </div>
   </form>
 </div>
@@ -83,7 +84,6 @@
       <div class="employee-list-section">
         <h2>Current Employees</h2>
         <div id="employee-list" class="employee-list"></div>
-        <button id="add-employee-btn" class="action-button">Add New Employee</button>
       </div>
     </div>
     
