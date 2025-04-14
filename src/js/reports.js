@@ -36,26 +36,62 @@ export async function initReportsPage() {
     }
   });
 
-  runButton.addEventListener('click', () => {
+  runButton.addEventListener('click', async () => {
     const selectedIds = Array.from(
       listContainer.querySelectorAll('input[type="checkbox"]:checked')
     ).map(cb => parseInt(cb.value));
+
+    const payPeriod = payPeriodSelect.value;
 
     if (selectedIds.length === 0) {
       showNotification("Please  select at least one employee", "error");
       return;
     }
 
-    const payPeriod = payPeriodSelect.value;
     if (!payPeriod) {
       showNotification("Please select a pay period", "error");
       return;
     }
 
-    reportOutput.innerHTML = `
-      <h3>Selected Pay Period: ${payPeriod}</h3>
-      <p>Selected Employees: ${selectedIds.join(', ')}</p>
-      `;
+    try {
+      const records = await invoke('get_payroll_report', {
+        employeeIds: selectedIds,
+        payDate: payPeriod
+      });
+
+      console.log(records);
+
+      if(!records.length) {
+        showNotification("No payroll data found", "error");
+        return;
+      }
+
+      let csv = 'First Name,Last Name,Pay Date,Hours,Gross,WH,SS,IRA,NET\n';
+      let totalWH = 0, totalSS = 0, totalNET = 0;
+
+      records.forEach(r => {
+        csv += `${r.first_name},${r.last_name},${r.pay_date},${r.hours},${r.gross},${r.wh},${r.ss},${r.ira},${r.net}\n`;
+        totalWH += r.wh;
+        totalSS += r.ss;
+        totalNET += r.net;
+      });
+
+      csv += `,,,,,,\nTOTALS,,,,,${totalWH.toFixed(2)},${totalSS.toFixed(2)},,${totalNET.toFixed(2)}\n`;
+      const blob = new Blob([csv], {type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Payroll_Report_${payPeriod}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+
+
+      showNotification("Report downloaded", "success");
+
+    } catch (err) {
+      console.error("Error Generating report: ", err);
+      showNotification("Failed to generate report", "error");
+    }
 
   });
 
@@ -97,3 +133,13 @@ function generatePayPeriods() {
 
 }
 
+function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+
+        document.body.appendChild(notification);
+        setTimeout(() => {
+                notification.remove();
+        }, 3000);
+}

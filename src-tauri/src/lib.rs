@@ -1,4 +1,4 @@
-use rusqlite::{params, Connection, Result as SqlResult};
+use rusqlite::{params, params_from_iter, Connection, Result as SqlResult};
 use semver::Version;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
@@ -178,30 +178,32 @@ fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     Ok(conn)
 }
 
-//get employees by paydates
+//get payroll report
 #[tauri::command]
-fn get_payroll_report(state: State<`_, AppState>, employee_ids: Vec<i32>, pay_date: String) -> Result<Vec<PayrollExport>, String>{
+fn get_payroll_report<'a>(
+    state: State<'a, AppState>,
+    employee_ids: Vec<i32>,
+    pay_date: String,
+) -> Result<Vec<PayrollExport>, String> {
     let conn = state.db_connection.lock().unwrap();
-    let mut stmt = conn
-        .prepare(
-            "SELECT e.first_name, e.last_name, p.date_of_pay, p.hours, p.gross, p.wh, p.ss, p.ira, p.net
-             FROM payroll p
-             JOIN employees e ON p.emp_id = e.id
-             WHERE p.emp_id IN ("
-                .to_string()
-                + &employee_ids.iter().map(|_| "?").collect::<Vec<_>>().join(", ")
-                + ") AND p.date_of_pay = ?",
-        )
-        .map_err(|e| e.to_string())?;
 
-    let mut params: Vec<&dyn rusqlite::ToSql> = employee_ids
-        .iter()
-        .map(|id| id as &dyn rusqlite::ToSql)
-        .collect();
-    params.push(&pay_date);
+    println!("the paydate is: {:?}", pay_date);
+    if employee_ids.is_empty() {
+        return Ok(vec![]);
+    }
+
+    let sql = "SELECT e.first_name, e.last_name, p.date_of_pay, p.hours_worked, p.gross, p.withholding, p.social_security, p.roth_ira, p.net
+     FROM payroll p
+     JOIN employees e ON p.emp_id = e.id
+     WHERE p.date_of_pay = ?";
+
+    println!("the sql statement is : {:?}", sql);
+    println!("params: {:?}", pay_date);
+
+    let mut stmt = conn.prepare(&sql).map_err(|e| e.to_string())?;
 
     let rows = stmt
-        .query_map(params, |row| {
+        .query_map([&pay_date as &dyn rusqlite::ToSql], |row| {
             Ok(PayrollExport {
                 first_name: row.get(0)?,
                 last_name: row.get(1)?,
@@ -220,9 +222,11 @@ fn get_payroll_report(state: State<`_, AppState>, employee_ids: Vec<i32>, pay_da
         .collect::<Result<Vec<_>, _>>()
         .map_err(|e| e.to_string())?;
 
-    Ok(results)
+    println!("rows found: {}", results.len());
 
+    Ok(results)
 }
+
 //get employees by paydates
 #[tauri::command]
 fn get_employees_by_pay_date(
@@ -547,7 +551,8 @@ pub fn run() {
             get_date_of_pay,
             check_for_updates_tauri,
             perform_update_tauri,
-            get_employees_by_pay_date
+            get_employees_by_pay_date,
+            get_payroll_report
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
