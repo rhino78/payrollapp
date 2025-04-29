@@ -1,5 +1,5 @@
 // payroll.js - Payroll processing functionality
-const { invoke } = window.__TAURI__.core;
+import { invoke } from '@tauri-apps/api/core';
 
 function generatePayPeriods() {
         const payPeriodSelect = document.getElementById('pay-period');
