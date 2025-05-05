@@ -1,5 +1,8 @@
 export const homePage = `
   <div class="page">
+    <div id="import-overlay" class="overlay hidden">
+      <script type="module" src="./home.js"></script>
+    </div>
     <h1>Welcome to Medical Arts Pharmacy Payroll</h1>
     <div class="market-update">
       <h2>Pharmacy Market Update</h2>

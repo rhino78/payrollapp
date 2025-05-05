@@ -4,7 +4,7 @@
   line-height: 24px;
   font-weight: 400;
 
-  color: #0f0f0f;
+  color: #374151;
   background-color: #f6f6f6;
 
   font-synthesis: none;
@@ -16,53 +16,86 @@
 
 /* Navigation Bar Styles */
 .navbar {
-  background-color: #333;
+  background-color: #bfdbfe;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 17 px;
 }
 
 .navbar ul {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  margin-right: auto;
+  padding: 14px 16px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #1e3a8a;
+  gap: 10px;
+}
+
+.navbar-brand i {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+}
+
+.navbar li.nav-link {
+  margin-left: 10px;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: auto;
 }
 
 .navbar li {
   padding: 0;
 }
 
+.navbar li a i {
+  padding-right: 8px;
+}
+
 .navbar a {
-  display: block;
-  color: white;
+  display: flex;
+  color: #374151;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .navbar a:hover {
-  background-color: #444;
-  color: #24c8db;
+  background-color: #eff6ff;
+  color: #374151;
 }
 
 .navbar a.active {
-  background-color: #24c8db;
-  color: white;
+  background-color: #eff6ff;
+  color: black;
 }
+
 
 /* Main Content Styles */
 .container {
-  margin: 0;
-  padding-top: 10vh;
+  margin: 0 auto;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 50px;
   /* To account for the navbar */
 }
 
@@ -122,23 +155,23 @@ h1 {
   width: calc(100% -40px);
 }
 
-input-group input:focus{
+input-group input:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(36, 200, 219, 0.2);
 }
 
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme: dark) {
   .input-group {
     border-color: #444;
   }
 
-  .input-group-addon{
+  .input-group-addon {
     background-color: #333;
     border-right-color: #4444;
     color: #aaa;
   }
 
-  .input-group input{
+  .input-group input {
     background-color: #222;
     color: #f6f6f6;
   }
@@ -206,6 +239,7 @@ button {
 .payroll-employee {
   flex: 1;
   min-width: 200px;
+  font-weight: 600;
 }
 
 #employee-details {
@@ -253,12 +287,14 @@ button {
 
 .employee-info {
   flex: 2;
-  text-align: left;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .employee-info p {
   margin: 0;
-  color: black;
+  /*color: black;*/
 }
 
 .employee-info h3 {
@@ -346,7 +382,7 @@ button {
   border: 1px solid #ddd;
   border-radius: 4px;
   transition: border-color 0.3s;
-  font-size: 16px;
+  font-size: 14px;
   height: 45px;
   box-sizing: border-box;
 }
@@ -567,6 +603,49 @@ button {
   background-color: #2196F3;
 }
 
+#update-notification {
+  cursor: pointer;
+  background-color: #2563eb;
+  /* nice blue */
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+  /* hidden by default */
+}
+
+#update-notification:hover {
+  background-color: #1d4ed8;
+  /* slightly darker on hover */
+}
+
+
+.pulse-badge {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -654,10 +733,12 @@ button {
 
 /* Horizontal Form Styles for Payroll Page */
 .payroll-container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   margin-top: 20px;
+  background-color: #fff;
 }
 
 .horizontal-form .form-row {
@@ -1021,22 +1102,25 @@ input[type="number"]:invalid {
 }
 
 input[type=number] {
-  -moz-appearance: textfield; /* Firefox */
+  -moz-appearance: textfield;
+  /* Firefox */
   appearance: textfield;
-  -webkit-appearance: textfield; /* Safari, Chrome */
+  -webkit-appearance: textfield;
+  /* Safari, Chrome */
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .payroll-history-section {
   margin-top: 30px;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 #payroll-history-table {
@@ -1080,12 +1164,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (prefers-color-scheme: dark) {
+
   #pay-period,
   #pay-period option {
     background-color: #222;
     color: #f6f6f6;
   }
 }
+
 .uniform-select {
   padding: 10px 12px;
   border: 2px solid #ddd;
@@ -1138,6 +1224,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: auto;
   height: 45px;
   text-align: center;
+  background-color: #4CAF50;
 }
 
 .horizontal-form .form-row {
@@ -1202,20 +1289,15 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 8px 12px;
   border: 1px solid #555;
   border-radius: 6px;
-  background-color: #555;
+  background-color: #bfdbfe;
   cursor: pointer;
   user-select: none;
 }
 
 .employee-toggle input[type="checkbox"] {
   transform: scale(1.2);
-  outline: 2px solid #24c8db;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.employee-toggle:hover {
-  background-color: #777;
 }
 
 .market-update {
@@ -1236,3 +1318,24 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 10px;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.progress-container {
+  text-align: center;
+  color: white;
+}

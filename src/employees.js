@@ -1,5 +1,5 @@
 // employees.js - Employee management functionality
-const { invoke } = window.__TAURI__.core;
+import { invoke } from '@tauri-apps/api/core';
 
 let employees = [];
 let currentEmployeeId = null;
