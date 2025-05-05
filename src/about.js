@@ -4,16 +4,15 @@ import { getVersion } from "@tauri-apps/api/app";
 export async function initAboutPage() {
   const databasePath = await invoke("get_db_path");
   const databaseInfoDiv = document.getElementById("database-info");
-  console.log("the path is: " + databasePath);
   databaseInfoDiv.textContent = "the database is located: " + databasePath;
+}
 
+export async function initAboutPage() {
   const releaseNotesDiv = document.getElementById("release-notes");
 
   try {
     const appVersion = await getVersion();
     const [latestVersion, notes] = await invoke("check_for_updates_tauri");
-    console.log(latestVersion + " " + notes);
-
     const isUpdateAvailable = !!latestVersion;
     const badgeColor = isUpdateAvailable ? "#3b82f6" : "22c55e";
     const badgeText = isUpdateAvailable ? "Update Available" : "Up to Date";

@@ -10,6 +10,7 @@ mod payroll;
 mod updates;
 
 use db::{auto_backup, cleanup_old_backups, get_db_path, init_database, AppState};
+use db::{init_database, AppState};
 use employee::{
     add_employee, delete_employee, get_employee_by_id, get_employees, get_employees_by_pay_date,
     update_employee,

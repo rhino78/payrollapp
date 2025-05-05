@@ -18,5 +18,6 @@ export const pub15Page = `
     <div id="import-progress-container" style="margin-top: 10px; height: 20px; background: #eee; border-radius: 5px;">
       <div id="import-progress-bar" style="height: 100%; width: 0%; background: #3b82f6; border-radius: 5px;"></div>
     </div>
+    <div id="import-status"></div>
   </div>
 `;

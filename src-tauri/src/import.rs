@@ -5,6 +5,7 @@ use std::path::Path;
 use tauri::Emitter;
 use tauri::State;
 use tauri::Window;
+use tauri::State;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct ReleaseInfo {
@@ -17,6 +18,8 @@ fn import_file(
     filing_status: &str,
     window: &Window,
 ) -> SqlResult<()> {
+
+fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> SqlResult<()> {
     use quick_xml::events::Event;
     use quick_xml::Reader;
     use std::fs::File;
@@ -40,7 +43,8 @@ fn import_file(
                 let text = e.unescape().unwrap_or_default().to_string();
                 current_row.push(text);
             }
-            Event::End(ref e) if e.name().as_ref() == b"row" => {
+            Event::Start(ref e) if e.name().as_ref() == b"row" => current_row.clear(),
+            Event::Text(e) => current_row.push(e.unescape().unwrap_or_default().to_string()),
                 if current_row.len() >= 13 {
                     let wage_min = current_row[0]
                         .replace("$", "")
@@ -79,6 +83,7 @@ fn import_file(
         let progress = ((i + 1) as f64 / total as f64 * 100.0) as u8;
         let msg = format!("{}:{}", filing_status, progress);
         let _ = window.emit("import_progress", msg);
+    for (_i, (wage_min, wage_max, withholding)) in entries.iter().enumerate() {
 
         tx.execute(
             "INSERT INTO withholding (
@@ -122,6 +127,8 @@ pub fn start_withholding_import(
 ) -> Result<(), String> {
     println!("starting withholing import");
     check_import_files(state, married_path, single_path, &window).map_err(|e| e.to_string())
+) -> Result<(), String> {
+    check_import_files(state, married_path, single_path).map_err(|e| e.to_string())
 }
 
 ///check the import files location and import the data if needed
@@ -136,6 +143,13 @@ fn check_import_files(
     if Path::new(married_path).exists() && Path::new(single_path).exists() {
         import_file(&mut *conn, married_path, "married", window)?;
         import_file(&mut *conn, single_path, "single", window)?;
+) -> SqlResult<()> {
+    println!("the path should be: {}", married_path);
+    let mut conn = state.db_connection.lock().unwrap();
+
+    if Path::new(married_path).exists() && Path::new(single_path).exists() {
+        import_file(&mut *conn, married_path, "married")?;
+        import_file(&mut *conn, single_path, "single")?;
     } else {
         println!("One of both of the files are missing");
     }

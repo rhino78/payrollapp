@@ -101,6 +101,17 @@ pub fn update_employee(employee: Employee, state: State<'_, AppState>) -> Result
             wage = ?8,
             number_of_dependents = ?9,
             filing_status = ?10
+        "UPDATE employees SET
+            first_name = ?1,
+            last_name = ?2,
+            address = ?3,
+            city = ?4,
+            state = ?5,
+            zip = ?6,
+            phone = ?7,
+            wage = ?8,
+            number_of_dependents = ?9,
+            filing_status = ?10
         WHERE id = ?11",
         params![
             employee.first_name,
