@@ -1,4 +1,4 @@
-  export const payrollPage = `
+export const payrollPage = `
     <div class="page payroll-page">
       <h1>Payroll Processing</h1>
       <div class="payroll-header">
@@ -16,6 +16,7 @@
               <p><strong>City/State/ZIP:</strong> <span id="emp-location"></span></p>
               <p><strong>Wage:</strong> <span id="emp-wage"></span></p>
               <p><strong>Dependents:</strong> <span id="emp-dependents"></span></p>
+              <p><strong>Filing Status:</strong> <span id="emp-status"></span></p>
           </div>
         </div>
     </div>

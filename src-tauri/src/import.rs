@@ -2,9 +2,6 @@ use crate::AppState;
 use rusqlite::{params, Connection, Result as SqlResult};
 use serde::{Deserialize, Serialize};
 use std::path::Path;
-use tauri::Emitter;
-use tauri::State;
-use tauri::Window;
 use tauri::State;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -12,14 +9,8 @@ struct ReleaseInfo {
     tag_name: Option<String>,
 }
 
-fn import_file(
-    conn: &mut Connection,
-    file_path: &str,
-    filing_status: &str,
-    window: &Window,
-) -> SqlResult<()> {
-
 fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> SqlResult<()> {
+    println!("importing file");
     use quick_xml::events::Event;
     use quick_xml::Reader;
     use std::fs::File;
@@ -43,22 +34,31 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
                 let text = e.unescape().unwrap_or_default().to_string();
                 current_row.push(text);
             }
-            Event::Start(ref e) if e.name().as_ref() == b"row" => current_row.clear(),
-            Event::Text(e) => current_row.push(e.unescape().unwrap_or_default().to_string()),
-                if current_row.len() >= 13 {
-                    let wage_min = current_row[0]
+            Event::End(ref e) if e.name().as_ref() == b"row" => {
+                let filtered: Vec<String> = current_row
+                    .iter()
+                    .map(|s| s.trim())
+                    .filter(|s| !s.is_empty())
+                    .map(|s| s.to_string())
+                    .collect();
+
+                println!("raw current_row: {:?}", current_row);
+                println!("filtered: {:?}", filtered);
+
+                if filtered.len() >= 13 {
+                    let wage_min = filtered[0]
                         .replace("$", "")
                         .replace(",", "")
                         .parse()
                         .unwrap_or(0.0);
-                    let wage_max = current_row[1]
+                    let wage_max = filtered[1]
                         .replace("$", "")
                         .replace(",", "")
                         .parse()
                         .unwrap_or(0.0);
                     let mut withholding = [0.0; 11];
                     for i in 0..11 {
-                        withholding[i] = current_row[i + 2]
+                        withholding[i] = filtered[i + 2]
                             .replace("$", "")
                             .replace(",", "")
                             .parse()
@@ -77,13 +77,17 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
 
     let status = filing_status.to_string();
     let total = entries.len();
+    println!("the total is: {}", total);
     let tx = conn.transaction()?;
+    println!("begining sql updates");
 
-    for (i, (wage_min, wage_max, withholding)) in entries.iter().enumerate() {
-        let progress = ((i + 1) as f64 / total as f64 * 100.0) as u8;
-        let msg = format!("{}:{}", filing_status, progress);
-        let _ = window.emit("import_progress", msg);
     for (_i, (wage_min, wage_max, withholding)) in entries.iter().enumerate() {
+        // let _ = window.emit("import_progress", format!("{}:{}:{}", status, i + 1, total));
+        println!("withholding 1 is {:?}", withholding[0]);
+        println!("inserting: {}", _i);
+        for k in withholding.iter().enumerate() {
+            println!("{:?} | {:?}", k, withholding[0]);
+        }
 
         tx.execute(
             "INSERT INTO withholding (
@@ -113,8 +117,17 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
         )?;
     }
 
+    println!("bruh");
+
     tx.commit()?;
     println!("Imported {} entries for {}", total, status);
+    Ok(())
+}
+
+fn clear_withholding_table(state: State<'_, AppState>) -> SqlResult<()> {
+    let conn = &state.db_connection.lock().unwrap();
+    conn.execute("DELETE FROM withholding", params![])
+        .map_err(|e| e.to_string());
     Ok(())
 }
 
@@ -123,11 +136,8 @@ pub fn start_withholding_import(
     state: State<'_, AppState>,
     married_path: &str,
     single_path: &str,
-    window: tauri::Window,
 ) -> Result<(), String> {
-    println!("starting withholing import");
-    check_import_files(state, married_path, single_path, &window).map_err(|e| e.to_string())
-) -> Result<(), String> {
+    let _ = clear_withholding_table(state.clone());
     check_import_files(state, married_path, single_path).map_err(|e| e.to_string())
 }
 
@@ -136,15 +146,7 @@ fn check_import_files(
     state: State<'_, AppState>,
     married_path: &str,
     single_path: &str,
-    window: &Window,
 ) -> SqlResult<()> {
-    let mut conn = state.db_connection.lock().unwrap();
-
-    if Path::new(married_path).exists() && Path::new(single_path).exists() {
-        import_file(&mut *conn, married_path, "married", window)?;
-        import_file(&mut *conn, single_path, "single", window)?;
-) -> SqlResult<()> {
-    println!("the path should be: {}", married_path);
     let mut conn = state.db_connection.lock().unwrap();
 
     if Path::new(married_path).exists() && Path::new(single_path).exists() {
@@ -160,43 +162,22 @@ fn check_import_files(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use rusqlite::{Connection, Result};
+    use rusqlite::Connection;
 
     #[test]
-    fn test_parse_valid_xml_input() -> Result<()> {
-        let xml_data = r#"
-            <root>
-                <row>
-                    <column>$0</column><column>$100</column>
-                    <column>$1</column><column>$2</column><column>$3</column><column>$4</column><column>$5</column>
-                    <column>$6</column><column>$7</column><column>$8</column><column>$9</column><column>$10</column><column>$11</column>
-                </row>
-            </root>
-        "#;
-        let cursor = std::io::Cursor::new(xml_data);
-        let mut reader = quick_xml::Reader::from_reader(cursor);
-        let mut buf = Vec::new();
-        let mut current_row = Vec::new();
-        let mut count = 0;
-        while let Ok(event) = reader.read_event_into(&mut buf) {
-            match event {
-                quick_xml::events::Event::Start(ref e) if e.name().as_ref() == b"row" => {
-                    current_row.clear();
-                }
-                quick_xml::events::Event::Text(e) => {
-                    current_row.push(e.unescape().unwrap_or_default().to_string());
-                }
-                quick_xml::events::Event::End(ref e) if e.name().as_ref() == b"row" => {
-                    count += 1;
-                    assert_eq!(current_row.len(), 13);
-                }
-                quick_xml::events::Event::Eof => break,
-                _ => {}
-            }
-            buf.clear();
-        }
-
-        assert_eq!(count, 1);
-        Ok(())
+    fn quick_import() {
+        let mut conn = Connection::open("../test.db").expect("failed to open database");
+        conn.execute("DELETE FROM withholding", params![])
+            .map_err(|e| e.to_string());
+        println!("withholding deleted");
+        let married_path = "../biweekly_Married.xml";
+        assert!(Path::new(married_path).exists(), "Married XML not found!");
+        let result_1 = import_file(&mut conn, married_path, "married");
+        let single_path = "../biweekly_Single.xml";
+        assert!(Path::new(single_path).exists(), "Single XML not found!");
+        let result_2 = import_file(&mut conn, single_path, "single");
+        let mut stmt = conn.prepare("SELECT COUNT(*) FROM withholding").unwrap();
+        let count: i64 = stmt.query_row([], |row| row.get(0)).unwrap();
+        println!("Withholding rows imported: {}", count);
     }
 }

@@ -101,17 +101,6 @@ pub fn update_employee(employee: Employee, state: State<'_, AppState>) -> Result
             wage = ?8,
             number_of_dependents = ?9,
             filing_status = ?10
-        "UPDATE employees SET
-            first_name = ?1,
-            last_name = ?2,
-            address = ?3,
-            city = ?4,
-            state = ?5,
-            zip = ?6,
-            phone = ?7,
-            wage = ?8,
-            number_of_dependents = ?9,
-            filing_status = ?10
         WHERE id = ?11",
         params![
             employee.first_name,
@@ -137,7 +126,7 @@ pub fn update_employee(employee: Employee, state: State<'_, AppState>) -> Result
 pub fn get_employees(state: State<'_, AppState>) -> Result<Vec<Employee>, String> {
     let conn = state.db_connection.lock().unwrap();
     let mut stmt = conn
-        .prepare("SELECT * FROM employees")
+        .prepare("SELECT * FROM employees ")
         .map_err(|e| e.to_string())?;
 
     let employee_iter = stmt
@@ -237,7 +226,7 @@ mod tests {
             id: None,
             first_name: "Jane".into(),
             last_name: "Doe".into(),
-            address: "123 main st".into(),
+            address: "123 main st ".into(),
             city: "Austin".into(),
             state: "Tx".into(),
             zip: "78681".into(),

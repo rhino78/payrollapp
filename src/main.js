@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 async function cleanUpOldBackups() {
   try {
-    await invoke("cleanup_old_bakcups", { keep_days: 5 });
+    await invoke("cleanup_old_backups", { keepDays: 5 });
 
     console.log("Auto backup clean check complete");
   } catch (err) {

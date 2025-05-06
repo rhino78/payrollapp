@@ -5,9 +5,7 @@ export async function initAboutPage() {
   const databasePath = await invoke("get_db_path");
   const databaseInfoDiv = document.getElementById("database-info");
   databaseInfoDiv.textContent = "the database is located: " + databasePath;
-}
 
-export async function initAboutPage() {
   const releaseNotesDiv = document.getElementById("release-notes");
 
   try {

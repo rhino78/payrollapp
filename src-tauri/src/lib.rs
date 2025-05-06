@@ -10,14 +10,14 @@ mod payroll;
 mod updates;
 
 use db::{auto_backup, cleanup_old_backups, get_db_path, init_database, AppState};
-use db::{init_database, AppState};
 use employee::{
     add_employee, delete_employee, get_employee_by_id, get_employees, get_employees_by_pay_date,
     update_employee,
 };
 use import::start_withholding_import;
 use payroll::{
-    add_payroll, delete_payroll, get_date_of_pay, get_payroll_by_id, get_payroll_report,
+    add_payroll, calculate_withholding, delete_payroll, get_date_of_pay, get_payroll_by_id,
+    get_payroll_report,
 };
 use updates::{check_for_updates_tauri, perform_update_tauri};
 
@@ -70,6 +70,7 @@ pub fn run() {
             get_db_path,
             auto_backup,
             cleanup_old_backups,
+            calculate_withholding,
             start_withholding_import
         ])
         .run(tauri::generate_context!())

@@ -1,4 +1,4 @@
-use rusqlite::params;
+use rusqlite::{params, Connection};
 use serde::{Deserialize, Serialize};
 use tauri::State;
 
@@ -29,6 +29,49 @@ pub struct Payroll {
     social_security: f64,
     ira: f64,
     net: f64,
+}
+
+#[tauri::command]
+pub fn calculate_withholding(
+    gross: f64,
+    filing: String,
+    dependents: f64,
+    state: State<'_, AppState>,
+) -> Result<f64, String> {
+    let conn = state.db_connection.lock().unwrap();
+    get_withholding_from_db(gross, filing, dependents, &*conn)
+}
+
+fn get_withholding_from_db(
+    gross: f64,
+    filing: String,
+    dependents: f64,
+    conn: &Connection,
+) -> Result<f64, String> {
+    let wage_min = gross - 10.0;
+    let wage_max = gross + 10.0;
+
+    let dep_index = dependents as usize;
+    if dep_index > 10 {
+        return Err("Dependents must be between 0 and 10".into());
+    }
+
+    let column_name = format!("dependents_{}", dep_index);
+
+    let sql = format!(
+    "SELECT {} FROM withholding WHERE wage_min <= ?1 AND wage_max >= ?2 AND filing_status = ?3 ORDER BY wage_min LIMIT 1", column_name
+);
+
+    println!("the query is: {}", sql);
+    let mut stmt = conn.prepare(&sql).map_err(|e| e.to_string())?;
+
+    let result = stmt
+        .query_row(params![wage_min, wage_max, filing], |row| {
+            row.get::<_, f64>(0)
+        })
+        .map_err(|e| e.to_string())?;
+
+    Ok(result)
 }
 
 #[tauri::command]
@@ -181,6 +224,48 @@ mod tests {
         )
         .unwrap();
         conn
+    }
+
+    #[test]
+    fn calculate_withholding_test() {
+        let conn = rusqlite::Connection::open("../test.db").unwrap();
+        let test_1 = get_withholding_from_db(500.00, "married".to_string(), 1.0, &conn).unwrap();
+        let test_2 = get_withholding_from_db(600.00, "married".to_string(), 1.0, &conn).unwrap();
+        let test_3 = get_withholding_from_db(700.00, "married".to_string(), 1.0, &conn).unwrap();
+        let test_4 = get_withholding_from_db(800.00, "married".to_string(), 1.0, &conn).unwrap();
+        let test_5 = get_withholding_from_db(900.00, "married".to_string(), 1.0, &conn).unwrap();
+        let test_6 = get_withholding_from_db(1000.00, "married".to_string(), 1.0, &conn).unwrap();
+
+        assert_eq!(
+            test_1, 0.0,
+            "we are testing addition with {} and {}",
+            test_1, 0
+        );
+        assert_eq!(
+            test_2, 0.0,
+            "we are testing addition with {} and {}",
+            test_2, 0
+        );
+        assert_eq!(
+            test_3, 5.0,
+            "we are testing addition with {} and {}",
+            test_3, 5
+        );
+        assert_eq!(
+            test_4, 15.0,
+            "we are testing addition with {} and {}",
+            test_4, 15
+        );
+        assert_eq!(
+            test_5, 25.0,
+            "we are testing addition with {} and {}",
+            test_5, 25
+        );
+        assert_eq!(
+            test_6, 35.0,
+            "we are testing addition with {} and {}",
+            test_6, 35
+        );
     }
 
     #[test]

@@ -104,13 +104,6 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
     }
 
     Ok(())
-use rusqlite::{Connection, Result as SqlResult};
-use std::path::PathBuf;
-use std::sync::Mutex;
-
-// Define a struct to represent the database connection
-pub struct AppState {
-    pub db_connection: Mutex<Connection>,
 }
 
 // Initialize the database connection and create tables
@@ -206,6 +199,4 @@ mod tests {
 
         assert!(table_exists);
     }
-}
-    Ok(conn)
 }
