@@ -94,7 +94,7 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
         println!("Created dates backup at {:?}", backup_path);
 
         let mut dest_conn = Connection::open(&backup_path)?;
-        let mut backup = rusqlite::backup::Backup::new(&src_conn, &mut dest_conn)?;
+        let backup = rusqlite::backup::Backup::new(&src_conn, &mut dest_conn)?;
         backup.step(-1)?;
 
         set_last_backup_timestamp(&src_conn, now)?;

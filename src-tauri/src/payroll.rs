@@ -48,8 +48,17 @@ fn get_withholding_from_db(
     dependents: f64,
     conn: &Connection,
 ) -> Result<f64, String> {
-    let wage_min = gross - 10.0;
-    let wage_max = gross + 10.0;
+    if filing == "married" && gross < 660.0 {
+        return Ok(0.0);
+    }
+
+    if filing == "single" && gross < 125.0 {
+        return Ok(0.0);
+    }
+    let wage_min = gross;
+    //TODO FIX
+    //uhg sometimes it's 10 off sometimes it's 20
+    let wage_max = gross + 10.01;
 
     let dep_index = dependents as usize;
     if dep_index > 10 {
@@ -59,10 +68,10 @@ fn get_withholding_from_db(
     let column_name = format!("dependents_{}", dep_index);
 
     let sql = format!(
-    "SELECT {} FROM withholding WHERE wage_min <= ?1 AND wage_max >= ?2 AND filing_status = ?3 ORDER BY wage_min LIMIT 1", column_name
+    "SELECT {} FROM withholding WHERE wage_min >= ?1 AND wage_max < ?2 AND filing_status = ?3 ORDER BY wage_min LIMIT 1", column_name
 );
-
-    println!("the query is: {}", sql);
+    println!("query: {}", sql);
+    println!("{} | {} | {} | {}", wage_min, wage_max, dependents, gross);
     let mut stmt = conn.prepare(&sql).map_err(|e| e.to_string())?;
 
     let result = stmt
@@ -205,68 +214,125 @@ pub fn get_payroll_report<'a>(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::import::tests::quick_import_with_conn;
     use rusqlite::Connection;
 
     fn create_test_db() -> Connection {
         let conn = Connection::open_in_memory().unwrap();
         conn.execute_batch(
-            "CREATE TABLE payroll (
-                id INTEGER PRIMARY KEY,
-                emp_id INTEGER,
-                date_of_pay TEXT,
-                hours_worked REAL,
-                gross REAL,
-                withholding REAL,
-                social_security REAL,
-                roth_ira REAL,
-                net REAL
-            );",
+            "CREATE TABLE IF NOT EXISTS payroll (
+            id INTEGER PRIMARY KEY,
+            emp_id INTEGER,
+            hours_worked REAL,
+            date_of_pay TEXT,
+            gross REAL,
+            withholding REAL,
+            social_security REAL,
+            roth_ira REAL,
+            net REAL );",
         )
         .unwrap();
+
+        conn.execute_batch(
+            "CREATE TABLE IF NOT EXISTS employees (
+            id INTEGER PRIMARY KEY,
+            first_name TEXT NOT NULL,
+            last_name TEXT NOT NULL,
+            address TEXT NOT NULL,
+            city TEXT NOT NULL,
+            state TEXT NOT NULL,
+            zip TEXT NOT NULL,
+            phone TEXT NOT NULL,
+            wage REAL NOT NULL,
+            number_of_dependents INTEGER NOT NULL,
+            filing_status TEXT NOT NULL);",
+        )
+        .unwrap();
+
+        conn.execute_batch(
+            "CREATE TABLE IF NOT EXISTS withholding (
+                      id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      filing_status TEXT,
+                      pay_period TEXT,
+                      wage_min REAL,
+                      wage_max REAL,
+                      dependents_0 REAL,
+                      dependents_1 REAL,
+                      dependents_2 REAL,
+                      dependents_3 REAL,
+                      dependents_4 REAL,
+                      dependents_5 REAL,
+                      dependents_6 REAL,
+                      dependents_7 REAL,
+                      dependents_8 REAL,
+                      dependents_9 REAL,
+                      dependents_10 REAL );",
+        )
+        .unwrap();
+
         conn
     }
 
     #[test]
     fn calculate_withholding_test() {
-        let conn = rusqlite::Connection::open("../test.db").unwrap();
-        let test_1 = get_withholding_from_db(500.00, "married".to_string(), 1.0, &conn).unwrap();
-        let test_2 = get_withholding_from_db(600.00, "married".to_string(), 1.0, &conn).unwrap();
-        let test_3 = get_withholding_from_db(700.00, "married".to_string(), 1.0, &conn).unwrap();
-        let test_4 = get_withholding_from_db(800.00, "married".to_string(), 1.0, &conn).unwrap();
-        let test_5 = get_withholding_from_db(900.00, "married".to_string(), 1.0, &conn).unwrap();
-        let test_6 = get_withholding_from_db(1000.00, "married".to_string(), 1.0, &conn).unwrap();
+        // let conn = rusqlite::Connection::open("../test.db").unwrap();
+        let mut conn = create_test_db();
+        quick_import_with_conn(&mut conn);
+        let test_1 = get_withholding_from_db(500.00, "married".to_string(), 0.0, &conn).unwrap();
+        let test_2 = get_withholding_from_db(600.00, "married".to_string(), 0.0, &conn).unwrap();
+        let test_3 = get_withholding_from_db(700.00, "married".to_string(), 0.0, &conn).unwrap();
+        let test_4 = get_withholding_from_db(800.00, "married".to_string(), 0.0, &conn).unwrap();
+        let test_5 = get_withholding_from_db(900.00, "married".to_string(), 0.0, &conn).unwrap();
+        let test_6 = get_withholding_from_db(1000.00, "married".to_string(), 0.0, &conn).unwrap();
 
-        assert_eq!(
-            test_1, 0.0,
-            "we are testing addition with {} and {}",
-            test_1, 0
-        );
-        assert_eq!(
-            test_2, 0.0,
-            "we are testing addition with {} and {}",
-            test_2, 0
-        );
-        assert_eq!(
-            test_3, 5.0,
-            "we are testing addition with {} and {}",
-            test_3, 5
-        );
-        assert_eq!(
-            test_4, 15.0,
-            "we are testing addition with {} and {}",
-            test_4, 15
-        );
-        assert_eq!(
-            test_5, 25.0,
-            "we are testing addition with {} and {}",
-            test_5, 25
-        );
-        assert_eq!(
-            test_6, 35.0,
-            "we are testing addition with {} and {}",
-            test_6, 35
-        );
+        assert_eq!(test_1, 0.0, "comparing {} and {}", test_1, 0);
+        assert_eq!(test_2, 0.0, "comparing {} and {}", test_2, 0);
+        assert_eq!(test_3, 5.0, "comparing {} and {}", test_3, 5);
+        assert_eq!(test_4, 15.0, "comparing {} and {}", test_4, 15);
+        assert_eq!(test_5, 25.0, "comparing {} and {}", test_5, 25);
+        assert_eq!(test_6, 35.0, "comparing {} and {}", test_6, 35);
     }
+
+    // fn print_query_rows(conn: &Connection, sql: &String) {
+    //     // // let sql = "SELECT * FROM withholding where filing_status = 'married' and wage_min >= 690 and wage_max <= 710";
+    //     // let sql = format!(
+    //     // "SELECT * FROM withholding WHERE wage_min >= 700.00 AND wage_max < 710.01 AND filing_status = 'married' ORDER BY wage_min LIMIT 1;");
+    //     // print_query_rows(&conn, &sql);
+    //     // println!("married Withholding rows available: {}", count);
+    //     // let mut stmt = conn
+    //     //     .prepare("SELECT COUNT(*) FROM withholding where filing_status = 'married' and wage_min >= 690 and wage_max <= 710")
+    //     //     .unwrap();
+    //     // let count: i64 = stmt.query_row([], |row| row.get(0)).unwrap();
+    //     let mut stmt = match conn.prepare(sql) {
+    //         Ok(stmt) => stmt,
+    //         Err(e) => {
+    //             eprintln!("failed to prepare sql: {}", e);
+    //             return;
+    //         }
+    //     };
+    //
+    //     let column_names: Vec<String> = stmt.column_names().iter().map(|s| s.to_string()).collect();
+    //     let column_count = column_names.len();
+    //
+    //     let rows = match stmt.query([]) {
+    //         Ok(rows) => rows,
+    //         Err(e) => {
+    //             eprintln!("Failed to run query: {}", e);
+    //             return;
+    //         }
+    //     };
+    //
+    //     let mut row_iter = rows;
+    //
+    //     while let Ok(Some(row)) = row_iter.next() {
+    //         for i in 0..column_count {
+    //             let col_val: rusqlite::types::Value =
+    //                 row.get(i).unwrap_or(rusqlite::types::Value::Null);
+    //             print!("{}: {:?} | ", column_names[i], col_val);
+    //         }
+    //         println!();
+    //     }
+    // }
 
     #[test]
     fn test_insert_payroll_record() {

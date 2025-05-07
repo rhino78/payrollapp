@@ -10,7 +10,6 @@ struct ReleaseInfo {
 }
 
 fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> SqlResult<()> {
-    println!("importing file");
     use quick_xml::events::Event;
     use quick_xml::Reader;
     use std::fs::File;
@@ -41,9 +40,6 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
                     .filter(|s| !s.is_empty())
                     .map(|s| s.to_string())
                     .collect();
-
-                println!("raw current_row: {:?}", current_row);
-                println!("filtered: {:?}", filtered);
 
                 if filtered.len() >= 13 {
                     let wage_min = filtered[0]
@@ -76,19 +72,9 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
     }
 
     let status = filing_status.to_string();
-    let total = entries.len();
-    println!("the total is: {}", total);
     let tx = conn.transaction()?;
-    println!("begining sql updates");
 
     for (_i, (wage_min, wage_max, withholding)) in entries.iter().enumerate() {
-        // let _ = window.emit("import_progress", format!("{}:{}:{}", status, i + 1, total));
-        println!("withholding 1 is {:?}", withholding[0]);
-        println!("inserting: {}", _i);
-        for k in withholding.iter().enumerate() {
-            println!("{:?} | {:?}", k, withholding[0]);
-        }
-
         tx.execute(
             "INSERT INTO withholding (
                 filing_status, pay_period, wage_min, wage_max,
@@ -117,17 +103,13 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
         )?;
     }
 
-    println!("bruh");
-
     tx.commit()?;
-    println!("Imported {} entries for {}", total, status);
     Ok(())
 }
 
 fn clear_withholding_table(state: State<'_, AppState>) -> SqlResult<()> {
     let conn = &state.db_connection.lock().unwrap();
-    conn.execute("DELETE FROM withholding", params![])
-        .map_err(|e| e.to_string());
+    let _ = conn.execute("DELETE FROM withholding", params![])?;
     Ok(())
 }
 
@@ -137,7 +119,7 @@ pub fn start_withholding_import(
     married_path: &str,
     single_path: &str,
 ) -> Result<(), String> {
-    let _ = clear_withholding_table(state.clone());
+    let _ = clear_withholding_table(state.clone()).map_err(|e| e.to_string())?;
     check_import_files(state, married_path, single_path).map_err(|e| e.to_string())
 }
 
@@ -160,24 +142,33 @@ fn check_import_files(
 }
 
 #[cfg(test)]
-mod tests {
+pub mod tests {
     use super::*;
-    use rusqlite::Connection;
+    use crate::db::init_database;
+    use tempfile::tempdir;
 
     #[test]
-    fn quick_import() {
-        let mut conn = Connection::open("../test.db").expect("failed to open database");
-        conn.execute("DELETE FROM withholding", params![])
-            .map_err(|e| e.to_string());
-        println!("withholding deleted");
+    pub fn quick_import() {
+        let dir = tempdir().expect("Failed to create temp dir");
+        let mut conn = init_database(dir.path().to_path_buf()).expect("DB init failed");
+        quick_import_with_conn(&mut conn);
+    }
+
+    pub fn quick_import_with_conn(conn: &mut Connection) {
+        // let mut conn = Connection::open("../test.db").expect("failed to open database");
         let married_path = "../biweekly_Married.xml";
-        assert!(Path::new(married_path).exists(), "Married XML not found!");
-        let result_1 = import_file(&mut conn, married_path, "married");
         let single_path = "../biweekly_Single.xml";
+        assert!(Path::new(married_path).exists(), "Married XML not found!");
         assert!(Path::new(single_path).exists(), "Single XML not found!");
-        let result_2 = import_file(&mut conn, single_path, "single");
+
+        let _ = conn
+            .execute("DELETE FROM withholding", params![])
+            .map_err(|e| e.to_string());
+
+        let _result_1 = import_file(conn, married_path, "married");
+        let _result_2 = import_file(conn, single_path, "single");
         let mut stmt = conn.prepare("SELECT COUNT(*) FROM withholding").unwrap();
         let count: i64 = stmt.query_row([], |row| row.get(0)).unwrap();
-        println!("Withholding rows imported: {}", count);
+        assert_eq!(count, 263);
     }
 }
