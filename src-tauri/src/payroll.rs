@@ -1,6 +1,7 @@
 use rusqlite::{params, Connection};
 use serde::{Deserialize, Serialize};
 use tauri::State;
+use tracing::info;
 
 use crate::db::AppState;
 

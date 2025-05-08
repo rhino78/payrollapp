@@ -21,7 +21,7 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
     let reader = BufReader::new(file);
     let mut xml = Reader::from_reader(reader);
 
-    info!("begining import: {}", file);
+    info!("begining import");
     let mut buf = Vec::new();
     let mut current_row: Vec<String> = Vec::new();
     let mut entries: Vec<(f64, f64, [f64; 11])> = Vec::new();
