@@ -2,6 +2,8 @@ use dotenvy::dotenv;
 use semver::Version;
 use serde_json::Value;
 use std::env;
+use tracing::info;
+use tracing::error;
 
 const CURRENT_VERSION: &str = env!("CARGO_PKG_VERSION");
 const API_URL: &str = "https://api.github.com/repos/rhino78/payrollapp/releases/latest";
@@ -15,6 +17,8 @@ struct AppVersion {
 // Command to update the system
 #[tauri::command]
 pub fn perform_update_tauri() -> Result<String, String> {
+    info!("begining update");
+
     match self_update::backends::github::Update::configure()
         .repo_owner("rhino78")
         .repo_name("payrollapp")
@@ -31,6 +35,7 @@ pub fn perform_update_tauri() -> Result<String, String> {
         Err(err) => {
             let err_msg = format!("❌ Update failed: {}", err);
             println!("{}", err_msg);
+            error!("{}", err_msg);
             Err(err_msg)
         }
     }
@@ -42,6 +47,7 @@ fn check_for_updates_blocking() -> Result<AppVersion, String> {
     match env::var("GITHUB_PAT") {
         Ok(s) => _ = s,
         Err(e) => {
+            error!("No token: {}", e);
             println!("github err: {}", e);
             return Err(format!("No token: {}", e).into());
         }
@@ -61,6 +67,7 @@ fn check_for_updates_blocking() -> Result<AppVersion, String> {
     if !response.status().is_success() {
         let error_text = response.text().unwrap_or_default();
         println!("Request error: {}", error_text);
+        error!("Request error: {}", error_text);
         return Err(format!("Request failed: {}", error_text));
     }
 

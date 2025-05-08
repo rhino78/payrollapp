@@ -8,10 +8,10 @@ export async function initHomePage() {
   try {
     const [cvsRes, wbaRes] = await Promise.all([
       fetch(
-        `https://api.twelvedata.com/time_series?symbol=CVS&interval=1day&outputsize=30&apikey=${API_KEY}`,
+        `https://api.twelvedata.com/time_series?symbol=CVS&interval=5day&outputsize=30&apikey=${API_KEY}`,
       ),
       fetch(
-        `https://api.twelvedata.com/time_series?symbol=WBA&interval=1day&outputsize=30&apikey=${API_KEY}`,
+        `https://api.twelvedata.com/time_series?symbol=WBA&interval=5day&outputsize=30&apikey=${API_KEY}`,
       ),
     ]);
 

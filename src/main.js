@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   checkForUpdatesOnLoad();
   checkForBackupOnLoad();
   cleanUpOldBackups();
+  checkEnvAndWithholding();
   document.querySelectorAll(".navbar a").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -13,6 +14,27 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   navigateToPage("home");
 });
+
+async function checkEnvAndWithholding() {
+  try {
+    await invoke("check_env_vars");
+  } catch (err) {
+    alert("⚠️ Environment variable missing: " + err);
+  }
+
+  try {
+    await invoke("check_withholding_data");
+  } catch (err) {
+    const userConfirmed = confirm(
+      "⚠️ " + err + "\n\nDo you want to import data now?",
+    );
+    if (userConfirmed) {
+      import("./navigation.js").then(({ navigateToPage }) =>
+        navigateToPage("pub15"),
+      );
+    }
+  }
+}
 
 async function cleanUpOldBackups() {
   try {

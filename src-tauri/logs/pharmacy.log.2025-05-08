@@ -1,0 +1,110 @@
+[2m2025-05-08T18:41:06.905621Z[0m [32m INFO[0m [2mapp_lib[0m[2m:[0m logging system initialized
+[2m2025-05-08T18:41:07.954529Z[0m [32m INFO[0m [2mapp_lib::db[0m[2m:[0m [3mevent[0m[2m=[0m"init" [3mresult[0m[2m=[0m"inititalized"
+[2m2025-05-08T18:41:08.551989Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m (ThreadId(1)) park without timeout    
+[2m2025-05-08T18:41:08.551997Z[0m [35mTRACE[0m [2mreqwest::blocking::client[0m[2m:[0m (ThreadId(5)) start runtime::block_on    
+[2m2025-05-08T18:41:08.553230Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m wait at most 30s    
+[2m2025-05-08T18:41:08.553273Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m (ThreadId(1)) park timeout 29.999997s    
+[2m2025-05-08T18:41:08.553721Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", api.github.com)
+[2m2025-05-08T18:41:08.554022Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://api.github.com/    
+[2m2025-05-08T18:41:08.554196Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+[2m2025-05-08T18:41:08.581705Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 140.82.112.5:443
+[2m2025-05-08T18:41:08.643868Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 140.82.112.5:443
+[2m2025-05-08T18:41:08.807201Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2025-05-08T18:41:08.807393Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", api.github.com)
+[2m2025-05-08T18:41:08.971373Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m wait at most 30s    
+[2m2025-05-08T18:41:08.971587Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m (ThreadId(1)) park timeout 29.9998237s    
+[2m2025-05-08T18:41:08.971731Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m (ThreadId(1)) park timeout 29.9996809s    
+[2m2025-05-08T18:41:08.971758Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m (ThreadId(1)) park timeout 29.9996506s    
+[2m2025-05-08T18:41:08.971885Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m (ThreadId(1)) park timeout 29.9995266s    
+[2m2025-05-08T18:41:08.972082Z[0m [35mTRACE[0m [2mreqwest::blocking::wait[0m[2m:[0m (ThreadId(1)) park timeout 29.9993442s    
+[2m2025-05-08T18:41:08.972203Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m put; add idle connection for ("https", api.github.com)
+[2m2025-05-08T18:41:08.972296Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pooling idle connection for ("https", api.github.com)
+[2m2025-05-08T18:41:08.972681Z[0m [35mTRACE[0m [2mreqwest::blocking::client[0m[2m:[0m closing runtime thread (ThreadId(5))    
+[2m2025-05-08T18:41:08.972720Z[0m [35mTRACE[0m [2mreqwest::blocking::client[0m[2m:[0m signaled close for runtime thread (ThreadId(5))    
+[2m2025-05-08T18:41:08.972800Z[0m [35mTRACE[0m [2mreqwest::blocking::client[0m[2m:[0m (ThreadId(5)) Receiver is shutdown    
+[2m2025-05-08T18:41:08.972838Z[0m [35mTRACE[0m [2mreqwest::blocking::client[0m[2m:[0m (ThreadId(5)) end runtime::block_on    
+[2m2025-05-08T18:41:08.973611Z[0m [35mTRACE[0m [2mreqwest::blocking::client[0m[2m:[0m (ThreadId(5)) finished    
+[2m2025-05-08T18:41:08.973825Z[0m [35mTRACE[0m [2mreqwest::blocking::client[0m[2m:[0m closed runtime thread (ThreadId(5))    
+[2m2025-05-08T18:41:08.976067Z[0m [32m INFO[0m [2mapp_lib::db[0m[2m:[0m [3mevent[0m[2m=[0m"backup" [3mresult[0m[2m=[0m"skipped"
+2025-05-08T18:53:34.346485Z  INFO app_lib: logging system initialized
+2025-05-08T18:53:35.364907Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-08T18:53:36.147498Z TRACE reqwest::blocking::client: (ThreadId(5)) start runtime::block_on    
+2025-05-08T18:53:36.147498Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-08T18:53:36.148592Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-08T18:53:36.148637Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9999961s    
+2025-05-08T18:53:36.148965Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-08T18:53:36.149173Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-08T18:53:36.149283Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-08T18:53:36.174882Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.113.6:443
+2025-05-08T18:53:36.225891Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.113.6:443
+2025-05-08T18:53:36.402912Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-08T18:53:36.403152Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-08T18:53:36.573975Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-08T18:53:36.574172Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9998692s    
+2025-05-08T18:53:36.574343Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9996989s    
+2025-05-08T18:53:36.574476Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9995642s    
+2025-05-08T18:53:36.574613Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9994312s    
+2025-05-08T18:53:36.574745Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9992945s    
+2025-05-08T18:53:36.574890Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-08T18:53:36.574942Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-08T18:53:36.575338Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(5))    
+2025-05-08T18:53:36.575377Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(5))    
+2025-05-08T18:53:36.575435Z TRACE reqwest::blocking::client: (ThreadId(5)) Receiver is shutdown    
+2025-05-08T18:53:36.575497Z TRACE reqwest::blocking::client: (ThreadId(5)) end runtime::block_on    
+2025-05-08T18:53:36.576224Z TRACE reqwest::blocking::client: (ThreadId(5)) finished    
+2025-05-08T18:53:36.576483Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(5))    
+2025-05-08T18:53:36.578682Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-08T19:28:50.337951Z  INFO app_lib: logging system initialized
+2025-05-08T19:28:51.768038Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-08T19:28:52.332948Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-08T19:28:52.332948Z TRACE reqwest::blocking::client: (ThreadId(5)) start runtime::block_on    
+2025-05-08T19:28:52.333972Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-08T19:28:52.334002Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9999982s    
+2025-05-08T19:28:52.334302Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-08T19:28:52.334525Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-08T19:28:52.334681Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-08T19:28:52.358959Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.112.5:443
+2025-05-08T19:28:52.415722Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.112.5:443
+2025-05-08T19:28:52.592068Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-08T19:28:52.592342Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-08T19:28:52.881101Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-08T19:28:52.881276Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9998694s    
+2025-05-08T19:28:52.881375Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9997722s    
+2025-05-08T19:28:52.881439Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9997073s    
+2025-05-08T19:28:52.881557Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9995893s    
+2025-05-08T19:28:52.881710Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9994364s    
+2025-05-08T19:28:52.881798Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-08T19:28:52.881852Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-08T19:28:52.882171Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(5))    
+2025-05-08T19:28:52.882196Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(5))    
+2025-05-08T19:28:52.882243Z TRACE reqwest::blocking::client: (ThreadId(5)) Receiver is shutdown    
+2025-05-08T19:28:52.882295Z TRACE reqwest::blocking::client: (ThreadId(5)) end runtime::block_on    
+2025-05-08T19:28:52.882994Z TRACE reqwest::blocking::client: (ThreadId(5)) finished    
+2025-05-08T19:28:52.883239Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(5))    
+2025-05-08T19:28:52.885464Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-08T19:30:02.294647Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-08T19:30:02.294692Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-08T19:30:02.294956Z TRACE reqwest::blocking::client: (ThreadId(7)) start runtime::block_on    
+2025-05-08T19:30:02.295590Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-08T19:30:02.295616Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9999982s    
+2025-05-08T19:30:02.295693Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-08T19:30:02.295820Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-08T19:30:02.295855Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-08T19:30:02.300094Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.112.5:443
+2025-05-08T19:30:02.353698Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.112.5:443
+2025-05-08T19:30:02.478660Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-08T19:30:02.478796Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-08T19:30:02.649134Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-08T19:30:02.649267Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9999535s    
+2025-05-08T19:30:02.649340Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9998823s    
+2025-05-08T19:30:02.649410Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9998119s    
+2025-05-08T19:30:02.649522Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9997003s    
+2025-05-08T19:30:02.649599Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.9996225s    
+2025-05-08T19:30:02.649696Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-08T19:30:02.649733Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-08T19:30:02.650276Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(7))    
+2025-05-08T19:30:02.650325Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(7))    
+2025-05-08T19:30:02.650352Z TRACE reqwest::blocking::client: (ThreadId(7)) Receiver is shutdown    
+2025-05-08T19:30:02.650395Z TRACE reqwest::blocking::client: (ThreadId(7)) end runtime::block_on    
+2025-05-08T19:30:02.651247Z TRACE reqwest::blocking::client: (ThreadId(7)) finished    
+2025-05-08T19:30:02.651449Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(7))    

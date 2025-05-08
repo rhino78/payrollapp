@@ -2,6 +2,9 @@ use dotenvy::dotenv;
 use std::env;
 use std::sync::Mutex;
 use tauri::Manager;
+use tracing::{error, info, warn};
+use tracing_appender::rolling;
+use tracing_subscriber::{fmt, EnvFilter};
 
 mod db;
 mod employee;
@@ -9,17 +12,28 @@ mod import;
 mod payroll;
 mod updates;
 
-use db::{auto_backup, cleanup_old_backups, get_db_path, init_database, AppState};
+use db::{auto_backup, cleanup_old_backups, count_backups, get_db_path, init_database, AppState};
 use employee::{
     add_employee, delete_employee, get_employee_by_id, get_employees, get_employees_by_pay_date,
     update_employee,
 };
 use import::start_withholding_import;
 use payroll::{
-    add_payroll, calculate_withholding, delete_payroll, get_date_of_pay, get_payroll_by_id,
-    get_payroll_report,
+    add_payroll, calculate_withholding, check_withholding_data, delete_payroll, get_date_of_pay,
+    get_payroll_by_id, get_payroll_report,
 };
 use updates::{check_for_updates_tauri, perform_update_tauri};
+
+//check env vars before doing anything
+#[tauri::command]
+fn check_env_vars() -> Result<(), String> {
+    dotenv().ok();
+    if env::var("TWELVE_KEY").is_err() {
+        return Err("Missing enviornment variable: TWELVE_KEY".into());
+    }
+
+    Ok(())
+}
 
 //get api key for chart api
 #[tauri::command]
@@ -48,6 +62,18 @@ fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
 ///main
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    let file_appender = rolling::daily("logs", "pharmacy.log");
+    let (non_blocking, _guard) = tracing_appender::non_blocking(file_appender);
+
+    tracing_subscriber::fmt()
+        .with_writer(non_blocking)
+        .with_env_filter(EnvFilter::new("trace"))
+        .with_ansi(false)
+        .compact()
+        .init();
+
+    info!("logging system initialized");
+
     tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
@@ -71,6 +97,9 @@ pub fn run() {
             auto_backup,
             cleanup_old_backups,
             calculate_withholding,
+            check_withholding_data,
+            check_env_vars,
+            count_backups,
             start_withholding_import
         ])
         .run(tauri::generate_context!())

@@ -3,6 +3,7 @@ use rusqlite::{params, Connection, Result as SqlResult};
 use serde::{Deserialize, Serialize};
 use std::path::Path;
 use tauri::State;
+use tracing::info;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct ReleaseInfo {
@@ -20,6 +21,7 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
     let reader = BufReader::new(file);
     let mut xml = Reader::from_reader(reader);
 
+    info!("begining import: {}", file);
     let mut buf = Vec::new();
     let mut current_row: Vec<String> = Vec::new();
     let mut entries: Vec<(f64, f64, [f64; 11])> = Vec::new();
@@ -104,12 +106,14 @@ fn import_file(conn: &mut Connection, file_path: &str, filing_status: &str) -> S
     }
 
     tx.commit()?;
+    info!("Import complete");
     Ok(())
 }
 
 fn clear_withholding_table(state: State<'_, AppState>) -> SqlResult<()> {
     let conn = &state.db_connection.lock().unwrap();
     let _ = conn.execute("DELETE FROM withholding", params![])?;
+    info!("Withholding table cleared");
     Ok(())
 }
 
@@ -155,7 +159,6 @@ pub mod tests {
     }
 
     pub fn quick_import_with_conn(conn: &mut Connection) {
-        // let mut conn = Connection::open("../test.db").expect("failed to open database");
         let married_path = "../biweekly_Married.xml";
         let single_path = "../biweekly_Single.xml";
         assert!(Path::new(married_path).exists(), "Married XML not found!");

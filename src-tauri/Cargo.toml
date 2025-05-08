@@ -36,3 +36,6 @@ dotenvy = "0.15"
 quick-xml = "0.37"
 tauri-plugin-dialog = "2"
 chrono = "0.4"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-appender = "0.2"

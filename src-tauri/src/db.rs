@@ -5,6 +5,7 @@ use std::path::PathBuf;
 use std::sync::Mutex;
 use std::time::{SystemTime, UNIX_EPOCH};
 use tauri::State;
+use tracing::info;
 
 const DB_NAME: &str = "payroll.db";
 // Define a struct to represent the database connection
@@ -18,6 +19,22 @@ pub struct AppState {
 pub fn get_db_path(state: State<'_, AppState>) -> String {
     let db_path = state.db_path.join(DB_NAME);
     db_path.display().to_string()
+}
+
+#[tauri::command]
+pub fn count_backups(state: State<AppState>) -> Result<usize, String> {
+    let backup_dir = state.db_path.join("backups");
+
+    let count = std::fs::read_dir(backup_dir)
+        .map_err(|e| e.to_string())?
+        .filter_map(|entry| entry.ok())
+        .filter(|e| {
+            e.file_name()
+                .to_string_lossy()
+                .starts_with("payroll_backup")
+        })
+        .count();
+    Ok(count)
 }
 
 // auto run of backup cleanup
@@ -46,6 +63,7 @@ pub fn cleanup_old_backups(keep_days: usize, state: State<'_, AppState>) {
     files.reverse();
 
     for file in files.iter().skip(keep_days) {
+        info!(event = "backup", result = "skipped");
         let _ = fs::remove_file(file.path());
     }
 }
@@ -92,6 +110,7 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
         let backup_path = backup_dir.join(format!("payroll_backup_{}.db", date_str));
 
         println!("Created dates backup at {:?}", backup_path);
+        info!("Created dates backup at {:?}", backup_path);
 
         let mut dest_conn = Connection::open(&backup_path)?;
         let backup = rusqlite::backup::Backup::new(&src_conn, &mut dest_conn)?;
@@ -101,6 +120,7 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
         println!("Backup completed")
     } else {
         println!("Backup skipped (only {} seconds since last)", age);
+        info!(event = "backup", result = "skipped");
     }
 
     Ok(())
@@ -108,6 +128,7 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
 
 // Initialize the database connection and create tables
 pub fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
+    info!(event = "init", result = "inititalized");
     let db_path = app_dir.join(DB_NAME);
     let conn = Connection::open(db_path)?;
 

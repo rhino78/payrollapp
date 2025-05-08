@@ -3,8 +3,18 @@ import { getVersion } from "@tauri-apps/api/app";
 
 export async function initAboutPage() {
   const databasePath = await invoke("get_db_path");
+  const backupCountSpan = document.createElement("dvi");
+  backupCountSpan.style.marginTop = "10px";
+  try {
+    const backupCount = await invoke("count_backups");
+    backupCountSpan.textContent = `🗂️ Number of backups: ${backupCount}`;
+  } catch (err) {
+    backupCountSpan.textContent = "❌ Could not fetch backup count.";
+  }
+
   const databaseInfoDiv = document.getElementById("database-info");
   databaseInfoDiv.textContent = "the database is located: " + databasePath;
+  databaseInfoDiv.appendChild(backupCountSpan);
 
   const releaseNotesDiv = document.getElementById("release-notes");
 

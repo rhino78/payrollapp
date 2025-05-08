@@ -142,7 +142,6 @@ async function calculateDeductions(gross) {
   let dependentsText = document.getElementById("emp-dependents").textContent;
   let dependents = parseFloat(dependentsText);
 
-  console.log(dependentsText + " " + filing + " " + dependents);
   const withholding = await invoke("calculate_withholding", {
     gross,
     filing,
@@ -228,7 +227,7 @@ async function savePayrollRecord() {
       (field) =>
         formData[field] === undefined ||
         formData[field] === null ||
-        formData[field] == "",
+        (typeof formData[field] !== "number" && formData[field] === ""),
     );
 
     if (missingFields.length > 0) {

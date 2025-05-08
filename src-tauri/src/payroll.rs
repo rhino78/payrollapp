@@ -56,8 +56,6 @@ fn get_withholding_from_db(
         return Ok(0.0);
     }
     let wage_min = gross;
-    //TODO FIX
-    //uhg sometimes it's 10 off sometimes it's 20
     let wage_max = gross + 10.01;
 
     let dep_index = dependents as usize;
@@ -68,10 +66,12 @@ fn get_withholding_from_db(
     let column_name = format!("dependents_{}", dep_index);
 
     let sql = format!(
-    "SELECT {} FROM withholding WHERE wage_min >= ?1 AND wage_max < ?2 AND filing_status = ?3 ORDER BY wage_min LIMIT 1", column_name
-);
-    println!("query: {}", sql);
-    println!("{} | {} | {} | {}", wage_min, wage_max, dependents, gross);
+        "SELECT {} FROM withholding WHERE ?1 >= wage_min AND ?1 < wage_max AND filing_status = ?3 ORDER BY wage_min;",
+        column_name
+    );
+
+    //println!("query: {}", sql);
+    //println!("{} | {} | {} | {}", wage_min, wage_max, dependents, gross);
     let mut stmt = conn.prepare(&sql).map_err(|e| e.to_string())?;
 
     let result = stmt
@@ -81,6 +81,24 @@ fn get_withholding_from_db(
         .map_err(|e| e.to_string())?;
 
     Ok(result)
+}
+
+#[tauri::command]
+pub fn check_withholding_data(state: State<AppState>) -> Result<(), String> {
+    let conn = state.db_connection.lock().unwrap();
+
+    let mut stmt = conn
+        .prepare("SELECT COUNT(*) FROM withholding")
+        .map_err(|e| e.to_string())?;
+
+    let count: i64 = stmt
+        .query_row([], |row| row.get(0))
+        .map_err(|e| e.to_string())?;
+    if count == 0 {
+        return Err("Withholding table is empty. Please import data".into());
+    }
+
+    Ok(())
 }
 
 #[tauri::command]
@@ -177,6 +195,10 @@ pub fn get_payroll_report<'a>(
     pay_date: String,
 ) -> Result<Vec<PayrollExport>, String> {
     let conn = state.db_connection.lock().unwrap();
+    info!(
+        "get_payroll_report: employee_ids: {:?}, pay_date: {}",
+        employee_ids, pay_date
+    );
 
     if employee_ids.is_empty() {
         return Ok(vec![]);
@@ -275,7 +297,6 @@ mod tests {
 
     #[test]
     fn calculate_withholding_test() {
-        // let conn = rusqlite::Connection::open("../test.db").unwrap();
         let mut conn = create_test_db();
         quick_import_with_conn(&mut conn);
         let test_1 = get_withholding_from_db(500.00, "married".to_string(), 0.0, &conn).unwrap();
@@ -285,12 +306,74 @@ mod tests {
         let test_5 = get_withholding_from_db(900.00, "married".to_string(), 0.0, &conn).unwrap();
         let test_6 = get_withholding_from_db(1000.00, "married".to_string(), 0.0, &conn).unwrap();
 
-        assert_eq!(test_1, 0.0, "comparing {} and {}", test_1, 0);
-        assert_eq!(test_2, 0.0, "comparing {} and {}", test_2, 0);
-        assert_eq!(test_3, 5.0, "comparing {} and {}", test_3, 5);
-        assert_eq!(test_4, 15.0, "comparing {} and {}", test_4, 15);
-        assert_eq!(test_5, 25.0, "comparing {} and {}", test_5, 25);
-        assert_eq!(test_6, 35.0, "comparing {} and {}", test_6, 35);
+        let test_7 = get_withholding_from_db(2910.00, "single".to_string(), 1.0, &conn).unwrap();
+        let test_8 = get_withholding_from_db(530.00, "single".to_string(), 1.0, &conn).unwrap();
+        let test_9 = get_withholding_from_db(1690.00, "single".to_string(), 4.0, &conn).unwrap();
+        let test_10 = get_withholding_from_db(250.00, "single".to_string(), 0.0, &conn).unwrap();
+        let test_11 = get_withholding_from_db(940.00, "single".to_string(), 3.0, &conn).unwrap();
+        let test_12 = get_withholding_from_db(490.00, "single".to_string(), 0.0, &conn).unwrap();
+
+        assert_eq!(
+            test_1, 0.0,
+            "test 1 failed comparing {} and {} married",
+            test_1, 0
+        );
+        assert_eq!(
+            test_2, 0.0,
+            "test 2 failed comparing {} and {} married",
+            test_2, 0
+        );
+        assert_eq!(
+            test_3, 5.0,
+            "test 3 failed comparing {} and {} married",
+            test_3, 5
+        );
+        assert_eq!(
+            test_4, 15.0,
+            "test 4 failed comparing {} and {} married",
+            test_4, 15
+        );
+        assert_eq!(
+            test_5, 25.0,
+            "test 5 failed comparing {} and {} married",
+            test_5, 25
+        );
+        assert_eq!(
+            test_6, 35.0,
+            "test 6 failed comparing {} and {} married",
+            test_6, 35
+        );
+
+        assert_eq!(
+            test_7, 360.0,
+            "test 7 failed comparing {} and {} single",
+            test_6, 360
+        );
+        assert_eq!(
+            test_8, 12.0,
+            "test 8 failed comparing {} and {} single",
+            test_6, 12
+        );
+        assert_eq!(
+            test_9, 87.0,
+            "test 9 failed comparing {} and {} single",
+            test_6, 87
+        );
+        assert_eq!(
+            test_10, 1.0,
+            "test 10 failed comparing {} and {} single",
+            test_6, 1
+        );
+        assert_eq!(
+            test_11, 21.0,
+            "test 11 failed comparing {} and {} single",
+            test_6, 21
+        );
+        assert_eq!(
+            test_12, 25.0,
+            "test 12 failed comparing {} and {} single",
+            test_6, 25
+        );
     }
 
     // fn print_query_rows(conn: &Connection, sql: &String) {
