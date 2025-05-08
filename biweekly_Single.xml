@@ -1,0 +1,1958 @@
+<informaltable fontsize="8" frame="none" keep="off" pgbrk="0" pgwide="1">
+<tgroup cols="13">
+<colspec colname="col1" colnum="1" colwidth="9*"/>
+<colspec colname="col2" colnum="2" colwidth="9*"/>
+<colspec colname="col3" colnum="3" colwidth="9*"/>
+<colspec colname="col4" colnum="4" colwidth="9*"/>
+<colspec colname="col5" colnum="5" colwidth="9*"/>
+<colspec colname="col6" colnum="6" colwidth="9*"/>
+<colspec colname="col7" colnum="7" colwidth="9*"/>
+<colspec colname="col8" colnum="8" colwidth="9*"/>
+<colspec colname="col9" colnum="9" colwidth="9*"/>
+<colspec colname="col10" colnum="10" colwidth="9*"/>
+<colspec colname="col11" colnum="11" colwidth="9*"/>
+<colspec colname="col12" colnum="12" colwidth="9*"/>
+<colspec colname="col13" colnum="13" colwidth="9*"/>
+<thead>
+<row>
+<entry align="center" colname="col1" nameend="col13" namest="col1">2025 Wage Bracket Method Tables for Manual Payroll Systems With Forms W-4 From 2019 or Earlier</entry>
+</row>
+<row>
+<entry align="center" colname="col1" nameend="col13" namest="col1" rowsep="1">BIWEEKLY Payroll Period</entry>
+</row>
+<row>
+<entry align="center" colname="col1" colsep="1" morerows="1" nameend="col2" namest="col1" rowsep="1">
+<rom>If the </rom>
+Wage Amount
+<l/>
+<rom>
+(line 1a)
+<l/>
+is
+</rom>
+</entry>
+<entry align="center" colname="col3" colsep="1" nameend="col13" namest="col3" rowsep="1">
+SINGLE
+<rom> Persons</rom>
+</entry>
+</row>
+<row>
+<entry align="center" colname="col3" emph="rom" nameend="col13" namest="col3" rowsep="1">And the number of allowances is:</entry>
+</row>
+<row>
+<entry align="right" colname="col1" emph="rom" morerows="1" rowsep="1" valign="bottom">At least</entry>
+<entry align="right" colname="col2" colsep="1" emph="rom" morerows="1" rowsep="1" valign="bottom">
+But less
+<l/>
+than
+</entry>
+<entry align="center" colsep="1" rowsep="1">0</entry>
+<entry align="center" colsep="1" rowsep="1">1</entry>
+<entry align="center" colsep="1" rowsep="1">2</entry>
+<entry align="center" colsep="1" rowsep="1">3</entry>
+<entry align="center" colsep="1" rowsep="1">4</entry>
+<entry align="center" colsep="1" rowsep="1">5</entry>
+<entry align="center" colsep="1" rowsep="1">6</entry>
+<entry align="center" colsep="1" rowsep="1">7</entry>
+<entry align="center" colsep="1" rowsep="1">8</entry>
+<entry align="center" colsep="1" rowsep="1">9</entry>
+<entry align="center" colsep="1" rowsep="1">10</entry>
+</row>
+<row>
+<entry align="center" colname="col3" emph="rom" nameend="col13" namest="col3" rowsep="1">The Tentative Withholding Amount is:</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$0</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$250</entry>
+<entry align="right" colname="col3" colsep="1">$0</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$250</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$260</entry>
+<entry align="right" colname="col3" colsep="1">$1</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$260</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$270</entry>
+<entry align="right" colname="col3" colsep="1">$2</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$270</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$280</entry>
+<entry align="right" colname="col3" colsep="1">$3</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$280</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$290</entry>
+<entry align="right" colname="col3" colsep="1">$4</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$290</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$300</entry>
+<entry align="right" colname="col3" colsep="1">$5</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$300</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$310</entry>
+<entry align="right" colname="col3" colsep="1">$6</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$310</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$320</entry>
+<entry align="right" colname="col3" colsep="1">$7</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$320</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$330</entry>
+<entry align="right" colname="col3" colsep="1">$8</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$330</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$340</entry>
+<entry align="right" colname="col3" colsep="1">$9</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$340</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$350</entry>
+<entry align="right" colname="col3" colsep="1">$10</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$350</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$360</entry>
+<entry align="right" colname="col3" colsep="1">$11</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$360</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$370</entry>
+<entry align="right" colname="col3" colsep="1">$12</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$370</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$380</entry>
+<entry align="right" colname="col3" colsep="1">$13</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$380</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$390</entry>
+<entry align="right" colname="col3" colsep="1">$14</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$390</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$400</entry>
+<entry align="right" colname="col3" colsep="1">$15</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$400</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$410</entry>
+<entry align="right" colname="col3" colsep="1">$16</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$410</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$420</entry>
+<entry align="right" colname="col3" colsep="1">$17</entry>
+<entry align="right" colname="col4" colsep="1">$0</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$420</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$430</entry>
+<entry align="right" colname="col3" colsep="1">$18</entry>
+<entry align="right" colname="col4" colsep="1">$1</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$430</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$440</entry>
+<entry align="right" colname="col3" colsep="1">$19</entry>
+<entry align="right" colname="col4" colsep="1">$2</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$440</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$450</entry>
+<entry align="right" colname="col3" colsep="1">$20</entry>
+<entry align="right" colname="col4" colsep="1">$3</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$450</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$460</entry>
+<entry align="right" colname="col3" colsep="1">$21</entry>
+<entry align="right" colname="col4" colsep="1">$4</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$460</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$470</entry>
+<entry align="right" colname="col3" colsep="1">$22</entry>
+<entry align="right" colname="col4" colsep="1">$5</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$470</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$480</entry>
+<entry align="right" colname="col3" colsep="1">$23</entry>
+<entry align="right" colname="col4" colsep="1">$6</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$480</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$490</entry>
+<entry align="right" colname="col3" colsep="1">$24</entry>
+<entry align="right" colname="col4" colsep="1">$7</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$490</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$500</entry>
+<entry align="right" colname="col3" colsep="1">$25</entry>
+<entry align="right" colname="col4" colsep="1">$8</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$500</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$510</entry>
+<entry align="right" colname="col3" colsep="1">$26</entry>
+<entry align="right" colname="col4" colsep="1">$9</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$510</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$520</entry>
+<entry align="right" colname="col3" colsep="1">$27</entry>
+<entry align="right" colname="col4" colsep="1">$10</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$520</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$530</entry>
+<entry align="right" colname="col3" colsep="1">$28</entry>
+<entry align="right" colname="col4" colsep="1">$11</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$530</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$540</entry>
+<entry align="right" colname="col3" colsep="1">$29</entry>
+<entry align="right" colname="col4" colsep="1">$12</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$540</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$550</entry>
+<entry align="right" colname="col3" colsep="1">$30</entry>
+<entry align="right" colname="col4" colsep="1">$13</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$550</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$560</entry>
+<entry align="right" colname="col3" colsep="1">$31</entry>
+<entry align="right" colname="col4" colsep="1">$14</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$560</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$570</entry>
+<entry align="right" colname="col3" colsep="1">$32</entry>
+<entry align="right" colname="col4" colsep="1">$15</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$570</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$580</entry>
+<entry align="right" colname="col3" colsep="1">$33</entry>
+<entry align="right" colname="col4" colsep="1">$16</entry>
+<entry align="right" colname="col5" colsep="1">$0</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$580</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$590</entry>
+<entry align="right" colname="col3" colsep="1">$34</entry>
+<entry align="right" colname="col4" colsep="1">$17</entry>
+<entry align="right" colname="col5" colsep="1">$1</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$590</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$600</entry>
+<entry align="right" colname="col3" colsep="1">$35</entry>
+<entry align="right" colname="col4" colsep="1">$18</entry>
+<entry align="right" colname="col5" colsep="1">$2</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$600</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$610</entry>
+<entry align="right" colname="col3" colsep="1">$36</entry>
+<entry align="right" colname="col4" colsep="1">$19</entry>
+<entry align="right" colname="col5" colsep="1">$3</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$610</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$620</entry>
+<entry align="right" colname="col3" colsep="1">$37</entry>
+<entry align="right" colname="col4" colsep="1">$20</entry>
+<entry align="right" colname="col5" colsep="1">$4</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$620</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$630</entry>
+<entry align="right" colname="col3" colsep="1">$38</entry>
+<entry align="right" colname="col4" colsep="1">$21</entry>
+<entry align="right" colname="col5" colsep="1">$5</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$630</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$640</entry>
+<entry align="right" colname="col3" colsep="1">$39</entry>
+<entry align="right" colname="col4" colsep="1">$22</entry>
+<entry align="right" colname="col5" colsep="1">$6</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$640</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$650</entry>
+<entry align="right" colname="col3" colsep="1">$40</entry>
+<entry align="right" colname="col4" colsep="1">$23</entry>
+<entry align="right" colname="col5" colsep="1">$7</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$650</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$660</entry>
+<entry align="right" colname="col3" colsep="1">$41</entry>
+<entry align="right" colname="col4" colsep="1">$24</entry>
+<entry align="right" colname="col5" colsep="1">$8</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$660</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$670</entry>
+<entry align="right" colname="col3" colsep="1">$42</entry>
+<entry align="right" colname="col4" colsep="1">$25</entry>
+<entry align="right" colname="col5" colsep="1">$9</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$670</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$680</entry>
+<entry align="right" colname="col3" colsep="1">$43</entry>
+<entry align="right" colname="col4" colsep="1">$26</entry>
+<entry align="right" colname="col5" colsep="1">$10</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$680</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$690</entry>
+<entry align="right" colname="col3" colsep="1">$44</entry>
+<entry align="right" colname="col4" colsep="1">$27</entry>
+<entry align="right" colname="col5" colsep="1">$11</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$690</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$700</entry>
+<entry align="right" colname="col3" colsep="1">$45</entry>
+<entry align="right" colname="col4" colsep="1">$28</entry>
+<entry align="right" colname="col5" colsep="1">$12</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$700</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$730</entry>
+<entry align="right" colname="col3" colsep="1">$47</entry>
+<entry align="right" colname="col4" colsep="1">$30</entry>
+<entry align="right" colname="col5" colsep="1">$14</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$730</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$760</entry>
+<entry align="right" colname="col3" colsep="1">$51</entry>
+<entry align="right" colname="col4" colsep="1">$33</entry>
+<entry align="right" colname="col5" colsep="1">$17</entry>
+<entry align="right" colname="col6" colsep="1">$0</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$760</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$790</entry>
+<entry align="right" colname="col3" colsep="1">$54</entry>
+<entry align="right" colname="col4" colsep="1">$36</entry>
+<entry align="right" colname="col5" colsep="1">$20</entry>
+<entry align="right" colname="col6" colsep="1">$3</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$790</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$820</entry>
+<entry align="right" colname="col3" colsep="1">$58</entry>
+<entry align="right" colname="col4" colsep="1">$39</entry>
+<entry align="right" colname="col5" colsep="1">$23</entry>
+<entry align="right" colname="col6" colsep="1">$6</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$820</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$850</entry>
+<entry align="right" colname="col3" colsep="1">$61</entry>
+<entry align="right" colname="col4" colsep="1">$42</entry>
+<entry align="right" colname="col5" colsep="1">$26</entry>
+<entry align="right" colname="col6" colsep="1">$9</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$850</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$880</entry>
+<entry align="right" colname="col3" colsep="1">$65</entry>
+<entry align="right" colname="col4" colsep="1">$45</entry>
+<entry align="right" colname="col5" colsep="1">$29</entry>
+<entry align="right" colname="col6" colsep="1">$12</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$880</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$910</entry>
+<entry align="right" colname="col3" colsep="1">$69</entry>
+<entry align="right" colname="col4" colsep="1">$49</entry>
+<entry align="right" colname="col5" colsep="1">$32</entry>
+<entry align="right" colname="col6" colsep="1">$15</entry>
+<entry align="right" colname="col7" colsep="1">$0</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$910</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$940</entry>
+<entry align="right" colname="col3" colsep="1">$72</entry>
+<entry align="right" colname="col4" colsep="1">$52</entry>
+<entry align="right" colname="col5" colsep="1">$35</entry>
+<entry align="right" colname="col6" colsep="1">$18</entry>
+<entry align="right" colname="col7" colsep="1">$2</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$940</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$970</entry>
+<entry align="right" colname="col3" colsep="1">$76</entry>
+<entry align="right" colname="col4" colsep="1">$56</entry>
+<entry align="right" colname="col5" colsep="1">$38</entry>
+<entry align="right" colname="col6" colsep="1">$21</entry>
+<entry align="right" colname="col7" colsep="1">$5</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$970</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,000</entry>
+<entry align="right" colname="col3" colsep="1">$79</entry>
+<entry align="right" colname="col4" colsep="1">$60</entry>
+<entry align="right" colname="col5" colsep="1">$41</entry>
+<entry align="right" colname="col6" colsep="1">$24</entry>
+<entry align="right" colname="col7" colsep="1">$8</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,000</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,030</entry>
+<entry align="right" colname="col3" colsep="1">$83</entry>
+<entry align="right" colname="col4" colsep="1">$63</entry>
+<entry align="right" colname="col5" colsep="1">$44</entry>
+<entry align="right" colname="col6" colsep="1">$27</entry>
+<entry align="right" colname="col7" colsep="1">$11</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,030</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,060</entry>
+<entry align="right" colname="col3" colsep="1">$87</entry>
+<entry align="right" colname="col4" colsep="1">$67</entry>
+<entry align="right" colname="col5" colsep="1">$47</entry>
+<entry align="right" colname="col6" colsep="1">$30</entry>
+<entry align="right" colname="col7" colsep="1">$14</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,060</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,090</entry>
+<entry align="right" colname="col3" colsep="1">$90</entry>
+<entry align="right" colname="col4" colsep="1">$70</entry>
+<entry align="right" colname="col5" colsep="1">$51</entry>
+<entry align="right" colname="col6" colsep="1">$33</entry>
+<entry align="right" colname="col7" colsep="1">$17</entry>
+<entry align="right" colname="col8" colsep="1">$0</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,090</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,120</entry>
+<entry align="right" colname="col3" colsep="1">$94</entry>
+<entry align="right" colname="col4" colsep="1">$74</entry>
+<entry align="right" colname="col5" colsep="1">$54</entry>
+<entry align="right" colname="col6" colsep="1">$36</entry>
+<entry align="right" colname="col7" colsep="1">$20</entry>
+<entry align="right" colname="col8" colsep="1">$3</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,120</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,150</entry>
+<entry align="right" colname="col3" colsep="1">$97</entry>
+<entry align="right" colname="col4" colsep="1">$78</entry>
+<entry align="right" colname="col5" colsep="1">$58</entry>
+<entry align="right" colname="col6" colsep="1">$39</entry>
+<entry align="right" colname="col7" colsep="1">$23</entry>
+<entry align="right" colname="col8" colsep="1">$6</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,150</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,180</entry>
+<entry align="right" colname="col3" colsep="1">$101</entry>
+<entry align="right" colname="col4" colsep="1">$81</entry>
+<entry align="right" colname="col5" colsep="1">$61</entry>
+<entry align="right" colname="col6" colsep="1">$42</entry>
+<entry align="right" colname="col7" colsep="1">$26</entry>
+<entry align="right" colname="col8" colsep="1">$9</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,180</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,210</entry>
+<entry align="right" colname="col3" colsep="1">$105</entry>
+<entry align="right" colname="col4" colsep="1">$85</entry>
+<entry align="right" colname="col5" colsep="1">$65</entry>
+<entry align="right" colname="col6" colsep="1">$45</entry>
+<entry align="right" colname="col7" colsep="1">$29</entry>
+<entry align="right" colname="col8" colsep="1">$12</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,210</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,240</entry>
+<entry align="right" colname="col3" colsep="1">$108</entry>
+<entry align="right" colname="col4" colsep="1">$88</entry>
+<entry align="right" colname="col5" colsep="1">$69</entry>
+<entry align="right" colname="col6" colsep="1">$49</entry>
+<entry align="right" colname="col7" colsep="1">$32</entry>
+<entry align="right" colname="col8" colsep="1">$15</entry>
+<entry align="right" colname="col9" colsep="1">$0</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,240</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,270</entry>
+<entry align="right" colname="col3" colsep="1">$112</entry>
+<entry align="right" colname="col4" colsep="1">$92</entry>
+<entry align="right" colname="col5" colsep="1">$72</entry>
+<entry align="right" colname="col6" colsep="1">$52</entry>
+<entry align="right" colname="col7" colsep="1">$35</entry>
+<entry align="right" colname="col8" colsep="1">$18</entry>
+<entry align="right" colname="col9" colsep="1">$2</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,270</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,300</entry>
+<entry align="right" colname="col3" colsep="1">$115</entry>
+<entry align="right" colname="col4" colsep="1">$96</entry>
+<entry align="right" colname="col5" colsep="1">$76</entry>
+<entry align="right" colname="col6" colsep="1">$56</entry>
+<entry align="right" colname="col7" colsep="1">$38</entry>
+<entry align="right" colname="col8" colsep="1">$21</entry>
+<entry align="right" colname="col9" colsep="1">$5</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,300</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,330</entry>
+<entry align="right" colname="col3" colsep="1">$119</entry>
+<entry align="right" colname="col4" colsep="1">$99</entry>
+<entry align="right" colname="col5" colsep="1">$79</entry>
+<entry align="right" colname="col6" colsep="1">$60</entry>
+<entry align="right" colname="col7" colsep="1">$41</entry>
+<entry align="right" colname="col8" colsep="1">$24</entry>
+<entry align="right" colname="col9" colsep="1">$8</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,330</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,360</entry>
+<entry align="right" colname="col3" colsep="1">$123</entry>
+<entry align="right" colname="col4" colsep="1">$103</entry>
+<entry align="right" colname="col5" colsep="1">$83</entry>
+<entry align="right" colname="col6" colsep="1">$63</entry>
+<entry align="right" colname="col7" colsep="1">$44</entry>
+<entry align="right" colname="col8" colsep="1">$27</entry>
+<entry align="right" colname="col9" colsep="1">$11</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,360</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,390</entry>
+<entry align="right" colname="col3" colsep="1">$126</entry>
+<entry align="right" colname="col4" colsep="1">$106</entry>
+<entry align="right" colname="col5" colsep="1">$87</entry>
+<entry align="right" colname="col6" colsep="1">$67</entry>
+<entry align="right" colname="col7" colsep="1">$47</entry>
+<entry align="right" colname="col8" colsep="1">$30</entry>
+<entry align="right" colname="col9" colsep="1">$14</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,390</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,420</entry>
+<entry align="right" colname="col3" colsep="1">$130</entry>
+<entry align="right" colname="col4" colsep="1">$110</entry>
+<entry align="right" colname="col5" colsep="1">$90</entry>
+<entry align="right" colname="col6" colsep="1">$70</entry>
+<entry align="right" colname="col7" colsep="1">$51</entry>
+<entry align="right" colname="col8" colsep="1">$33</entry>
+<entry align="right" colname="col9" colsep="1">$17</entry>
+<entry align="right" colname="col10" colsep="1">$0</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,420</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,450</entry>
+<entry align="right" colname="col3" colsep="1">$133</entry>
+<entry align="right" colname="col4" colsep="1">$114</entry>
+<entry align="right" colname="col5" colsep="1">$94</entry>
+<entry align="right" colname="col6" colsep="1">$74</entry>
+<entry align="right" colname="col7" colsep="1">$54</entry>
+<entry align="right" colname="col8" colsep="1">$36</entry>
+<entry align="right" colname="col9" colsep="1">$20</entry>
+<entry align="right" colname="col10" colsep="1">$3</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,450</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,480</entry>
+<entry align="right" colname="col3" colsep="1">$137</entry>
+<entry align="right" colname="col4" colsep="1">$117</entry>
+<entry align="right" colname="col5" colsep="1">$97</entry>
+<entry align="right" colname="col6" colsep="1">$78</entry>
+<entry align="right" colname="col7" colsep="1">$58</entry>
+<entry align="right" colname="col8" colsep="1">$39</entry>
+<entry align="right" colname="col9" colsep="1">$23</entry>
+<entry align="right" colname="col10" colsep="1">$6</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,480</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,510</entry>
+<entry align="right" colname="col3" colsep="1">$141</entry>
+<entry align="right" colname="col4" colsep="1">$121</entry>
+<entry align="right" colname="col5" colsep="1">$101</entry>
+<entry align="right" colname="col6" colsep="1">$81</entry>
+<entry align="right" colname="col7" colsep="1">$61</entry>
+<entry align="right" colname="col8" colsep="1">$42</entry>
+<entry align="right" colname="col9" colsep="1">$26</entry>
+<entry align="right" colname="col10" colsep="1">$9</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,510</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,540</entry>
+<entry align="right" colname="col3" colsep="1">$144</entry>
+<entry align="right" colname="col4" colsep="1">$124</entry>
+<entry align="right" colname="col5" colsep="1">$105</entry>
+<entry align="right" colname="col6" colsep="1">$85</entry>
+<entry align="right" colname="col7" colsep="1">$65</entry>
+<entry align="right" colname="col8" colsep="1">$45</entry>
+<entry align="right" colname="col9" colsep="1">$29</entry>
+<entry align="right" colname="col10" colsep="1">$12</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,540</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,570</entry>
+<entry align="right" colname="col3" colsep="1">$148</entry>
+<entry align="right" colname="col4" colsep="1">$128</entry>
+<entry align="right" colname="col5" colsep="1">$108</entry>
+<entry align="right" colname="col6" colsep="1">$88</entry>
+<entry align="right" colname="col7" colsep="1">$69</entry>
+<entry align="right" colname="col8" colsep="1">$49</entry>
+<entry align="right" colname="col9" colsep="1">$32</entry>
+<entry align="right" colname="col10" colsep="1">$15</entry>
+<entry align="right" colname="col11" colsep="1">$0</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,570</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,600</entry>
+<entry align="right" colname="col3" colsep="1">$151</entry>
+<entry align="right" colname="col4" colsep="1">$132</entry>
+<entry align="right" colname="col5" colsep="1">$112</entry>
+<entry align="right" colname="col6" colsep="1">$92</entry>
+<entry align="right" colname="col7" colsep="1">$72</entry>
+<entry align="right" colname="col8" colsep="1">$52</entry>
+<entry align="right" colname="col9" colsep="1">$35</entry>
+<entry align="right" colname="col10" colsep="1">$18</entry>
+<entry align="right" colname="col11" colsep="1">$2</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,600</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,630</entry>
+<entry align="right" colname="col3" colsep="1">$155</entry>
+<entry align="right" colname="col4" colsep="1">$135</entry>
+<entry align="right" colname="col5" colsep="1">$115</entry>
+<entry align="right" colname="col6" colsep="1">$96</entry>
+<entry align="right" colname="col7" colsep="1">$76</entry>
+<entry align="right" colname="col8" colsep="1">$56</entry>
+<entry align="right" colname="col9" colsep="1">$38</entry>
+<entry align="right" colname="col10" colsep="1">$21</entry>
+<entry align="right" colname="col11" colsep="1">$5</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,630</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,660</entry>
+<entry align="right" colname="col3" colsep="1">$159</entry>
+<entry align="right" colname="col4" colsep="1">$139</entry>
+<entry align="right" colname="col5" colsep="1">$119</entry>
+<entry align="right" colname="col6" colsep="1">$99</entry>
+<entry align="right" colname="col7" colsep="1">$79</entry>
+<entry align="right" colname="col8" colsep="1">$59</entry>
+<entry align="right" colname="col9" colsep="1">$41</entry>
+<entry align="right" colname="col10" colsep="1">$24</entry>
+<entry align="right" colname="col11" colsep="1">$8</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,660</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,690</entry>
+<entry align="right" colname="col3" colsep="1">$162</entry>
+<entry align="right" colname="col4" colsep="1">$142</entry>
+<entry align="right" colname="col5" colsep="1">$123</entry>
+<entry align="right" colname="col6" colsep="1">$103</entry>
+<entry align="right" colname="col7" colsep="1">$83</entry>
+<entry align="right" colname="col8" colsep="1">$63</entry>
+<entry align="right" colname="col9" colsep="1">$44</entry>
+<entry align="right" colname="col10" colsep="1">$27</entry>
+<entry align="right" colname="col11" colsep="1">$11</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,690</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,720</entry>
+<entry align="right" colname="col3" colsep="1">$166</entry>
+<entry align="right" colname="col4" colsep="1">$146</entry>
+<entry align="right" colname="col5" colsep="1">$126</entry>
+<entry align="right" colname="col6" colsep="1">$106</entry>
+<entry align="right" colname="col7" colsep="1">$87</entry>
+<entry align="right" colname="col8" colsep="1">$67</entry>
+<entry align="right" colname="col9" colsep="1">$47</entry>
+<entry align="right" colname="col10" colsep="1">$30</entry>
+<entry align="right" colname="col11" colsep="1">$14</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,720</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,750</entry>
+<entry align="right" colname="col3" colsep="1">$169</entry>
+<entry align="right" colname="col4" colsep="1">$150</entry>
+<entry align="right" colname="col5" colsep="1">$130</entry>
+<entry align="right" colname="col6" colsep="1">$110</entry>
+<entry align="right" colname="col7" colsep="1">$90</entry>
+<entry align="right" colname="col8" colsep="1">$70</entry>
+<entry align="right" colname="col9" colsep="1">$50</entry>
+<entry align="right" colname="col10" colsep="1">$33</entry>
+<entry align="right" colname="col11" colsep="1">$17</entry>
+<entry align="right" colname="col12" colsep="1">$0</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,750</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,780</entry>
+<entry align="right" colname="col3" colsep="1">$173</entry>
+<entry align="right" colname="col4" colsep="1">$153</entry>
+<entry align="right" colname="col5" colsep="1">$133</entry>
+<entry align="right" colname="col6" colsep="1">$114</entry>
+<entry align="right" colname="col7" colsep="1">$94</entry>
+<entry align="right" colname="col8" colsep="1">$74</entry>
+<entry align="right" colname="col9" colsep="1">$54</entry>
+<entry align="right" colname="col10" colsep="1">$36</entry>
+<entry align="right" colname="col11" colsep="1">$20</entry>
+<entry align="right" colname="col12" colsep="1">$3</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,780</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,810</entry>
+<entry align="right" colname="col3" colsep="1">$177</entry>
+<entry align="right" colname="col4" colsep="1">$157</entry>
+<entry align="right" colname="col5" colsep="1">$137</entry>
+<entry align="right" colname="col6" colsep="1">$117</entry>
+<entry align="right" colname="col7" colsep="1">$97</entry>
+<entry align="right" colname="col8" colsep="1">$77</entry>
+<entry align="right" colname="col9" colsep="1">$58</entry>
+<entry align="right" colname="col10" colsep="1">$39</entry>
+<entry align="right" colname="col11" colsep="1">$23</entry>
+<entry align="right" colname="col12" colsep="1">$6</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,810</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,840</entry>
+<entry align="right" colname="col3" colsep="1">$180</entry>
+<entry align="right" colname="col4" colsep="1">$160</entry>
+<entry align="right" colname="col5" colsep="1">$141</entry>
+<entry align="right" colname="col6" colsep="1">$121</entry>
+<entry align="right" colname="col7" colsep="1">$101</entry>
+<entry align="right" colname="col8" colsep="1">$81</entry>
+<entry align="right" colname="col9" colsep="1">$61</entry>
+<entry align="right" colname="col10" colsep="1">$42</entry>
+<entry align="right" colname="col11" colsep="1">$26</entry>
+<entry align="right" colname="col12" colsep="1">$9</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,840</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,870</entry>
+<entry align="right" colname="col3" colsep="1">$184</entry>
+<entry align="right" colname="col4" colsep="1">$164</entry>
+<entry align="right" colname="col5" colsep="1">$144</entry>
+<entry align="right" colname="col6" colsep="1">$124</entry>
+<entry align="right" colname="col7" colsep="1">$105</entry>
+<entry align="right" colname="col8" colsep="1">$85</entry>
+<entry align="right" colname="col9" colsep="1">$65</entry>
+<entry align="right" colname="col10" colsep="1">$45</entry>
+<entry align="right" colname="col11" colsep="1">$29</entry>
+<entry align="right" colname="col12" colsep="1">$12</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,870</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,900</entry>
+<entry align="right" colname="col3" colsep="1">$187</entry>
+<entry align="right" colname="col4" colsep="1">$168</entry>
+<entry align="right" colname="col5" colsep="1">$148</entry>
+<entry align="right" colname="col6" colsep="1">$128</entry>
+<entry align="right" colname="col7" colsep="1">$108</entry>
+<entry align="right" colname="col8" colsep="1">$88</entry>
+<entry align="right" colname="col9" colsep="1">$68</entry>
+<entry align="right" colname="col10" colsep="1">$49</entry>
+<entry align="right" colname="col11" colsep="1">$32</entry>
+<entry align="right" colname="col12" colsep="1">$15</entry>
+<entry align="right" colname="col13">$0</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,900</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,930</entry>
+<entry align="right" colname="col3" colsep="1">$191</entry>
+<entry align="right" colname="col4" colsep="1">$171</entry>
+<entry align="right" colname="col5" colsep="1">$151</entry>
+<entry align="right" colname="col6" colsep="1">$132</entry>
+<entry align="right" colname="col7" colsep="1">$112</entry>
+<entry align="right" colname="col8" colsep="1">$92</entry>
+<entry align="right" colname="col9" colsep="1">$72</entry>
+<entry align="right" colname="col10" colsep="1">$52</entry>
+<entry align="right" colname="col11" colsep="1">$35</entry>
+<entry align="right" colname="col12" colsep="1">$18</entry>
+<entry align="right" colname="col13">$2</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,930</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,960</entry>
+<entry align="right" colname="col3" colsep="1">$195</entry>
+<entry align="right" colname="col4" colsep="1">$175</entry>
+<entry align="right" colname="col5" colsep="1">$155</entry>
+<entry align="right" colname="col6" colsep="1">$135</entry>
+<entry align="right" colname="col7" colsep="1">$115</entry>
+<entry align="right" colname="col8" colsep="1">$95</entry>
+<entry align="right" colname="col9" colsep="1">$76</entry>
+<entry align="right" colname="col10" colsep="1">$56</entry>
+<entry align="right" colname="col11" colsep="1">$38</entry>
+<entry align="right" colname="col12" colsep="1">$21</entry>
+<entry align="right" colname="col13">$5</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,960</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$1,990</entry>
+<entry align="right" colname="col3" colsep="1">$198</entry>
+<entry align="right" colname="col4" colsep="1">$178</entry>
+<entry align="right" colname="col5" colsep="1">$159</entry>
+<entry align="right" colname="col6" colsep="1">$139</entry>
+<entry align="right" colname="col7" colsep="1">$119</entry>
+<entry align="right" colname="col8" colsep="1">$99</entry>
+<entry align="right" colname="col9" colsep="1">$79</entry>
+<entry align="right" colname="col10" colsep="1">$59</entry>
+<entry align="right" colname="col11" colsep="1">$41</entry>
+<entry align="right" colname="col12" colsep="1">$24</entry>
+<entry align="right" colname="col13">$8</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$1,990</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,020</entry>
+<entry align="right" colname="col3" colsep="1">$202</entry>
+<entry align="right" colname="col4" colsep="1">$182</entry>
+<entry align="right" colname="col5" colsep="1">$162</entry>
+<entry align="right" colname="col6" colsep="1">$142</entry>
+<entry align="right" colname="col7" colsep="1">$123</entry>
+<entry align="right" colname="col8" colsep="1">$103</entry>
+<entry align="right" colname="col9" colsep="1">$83</entry>
+<entry align="right" colname="col10" colsep="1">$63</entry>
+<entry align="right" colname="col11" colsep="1">$44</entry>
+<entry align="right" colname="col12" colsep="1">$27</entry>
+<entry align="right" colname="col13">$11</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,020</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,050</entry>
+<entry align="right" colname="col3" colsep="1">$205</entry>
+<entry align="right" colname="col4" colsep="1">$186</entry>
+<entry align="right" colname="col5" colsep="1">$166</entry>
+<entry align="right" colname="col6" colsep="1">$146</entry>
+<entry align="right" colname="col7" colsep="1">$126</entry>
+<entry align="right" colname="col8" colsep="1">$106</entry>
+<entry align="right" colname="col9" colsep="1">$86</entry>
+<entry align="right" colname="col10" colsep="1">$67</entry>
+<entry align="right" colname="col11" colsep="1">$47</entry>
+<entry align="right" colname="col12" colsep="1">$30</entry>
+<entry align="right" colname="col13">$14</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,050</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,080</entry>
+<entry align="right" colname="col3" colsep="1">$209</entry>
+<entry align="right" colname="col4" colsep="1">$189</entry>
+<entry align="right" colname="col5" colsep="1">$169</entry>
+<entry align="right" colname="col6" colsep="1">$150</entry>
+<entry align="right" colname="col7" colsep="1">$130</entry>
+<entry align="right" colname="col8" colsep="1">$110</entry>
+<entry align="right" colname="col9" colsep="1">$90</entry>
+<entry align="right" colname="col10" colsep="1">$70</entry>
+<entry align="right" colname="col11" colsep="1">$50</entry>
+<entry align="right" colname="col12" colsep="1">$33</entry>
+<entry align="right" colname="col13">$17</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,080</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,110</entry>
+<entry align="right" colname="col3" colsep="1">$213</entry>
+<entry align="right" colname="col4" colsep="1">$193</entry>
+<entry align="right" colname="col5" colsep="1">$173</entry>
+<entry align="right" colname="col6" colsep="1">$153</entry>
+<entry align="right" colname="col7" colsep="1">$133</entry>
+<entry align="right" colname="col8" colsep="1">$113</entry>
+<entry align="right" colname="col9" colsep="1">$94</entry>
+<entry align="right" colname="col10" colsep="1">$74</entry>
+<entry align="right" colname="col11" colsep="1">$54</entry>
+<entry align="right" colname="col12" colsep="1">$36</entry>
+<entry align="right" colname="col13">$20</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,110</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,160</entry>
+<entry align="right" colname="col3" colsep="1">$220</entry>
+<entry align="right" colname="col4" colsep="1">$198</entry>
+<entry align="right" colname="col5" colsep="1">$178</entry>
+<entry align="right" colname="col6" colsep="1">$158</entry>
+<entry align="right" colname="col7" colsep="1">$138</entry>
+<entry align="right" colname="col8" colsep="1">$118</entry>
+<entry align="right" colname="col9" colsep="1">$98</entry>
+<entry align="right" colname="col10" colsep="1">$79</entry>
+<entry align="right" colname="col11" colsep="1">$59</entry>
+<entry align="right" colname="col12" colsep="1">$40</entry>
+<entry align="right" colname="col13">$24</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,160</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,210</entry>
+<entry align="right" colname="col3" colsep="1">$231</entry>
+<entry align="right" colname="col4" colsep="1">$204</entry>
+<entry align="right" colname="col5" colsep="1">$184</entry>
+<entry align="right" colname="col6" colsep="1">$164</entry>
+<entry align="right" colname="col7" colsep="1">$144</entry>
+<entry align="right" colname="col8" colsep="1">$124</entry>
+<entry align="right" colname="col9" colsep="1">$104</entry>
+<entry align="right" colname="col10" colsep="1">$85</entry>
+<entry align="right" colname="col11" colsep="1">$65</entry>
+<entry align="right" colname="col12" colsep="1">$45</entry>
+<entry align="right" colname="col13">$29</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,210</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,260</entry>
+<entry align="right" colname="col3" colsep="1">$242</entry>
+<entry align="right" colname="col4" colsep="1">$210</entry>
+<entry align="right" colname="col5" colsep="1">$190</entry>
+<entry align="right" colname="col6" colsep="1">$170</entry>
+<entry align="right" colname="col7" colsep="1">$150</entry>
+<entry align="right" colname="col8" colsep="1">$130</entry>
+<entry align="right" colname="col9" colsep="1">$110</entry>
+<entry align="right" colname="col10" colsep="1">$91</entry>
+<entry align="right" colname="col11" colsep="1">$71</entry>
+<entry align="right" colname="col12" colsep="1">$51</entry>
+<entry align="right" colname="col13">$34</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,260</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,310</entry>
+<entry align="right" colname="col3" colsep="1">$253</entry>
+<entry align="right" colname="col4" colsep="1">$217</entry>
+<entry align="right" colname="col5" colsep="1">$196</entry>
+<entry align="right" colname="col6" colsep="1">$176</entry>
+<entry align="right" colname="col7" colsep="1">$156</entry>
+<entry align="right" colname="col8" colsep="1">$136</entry>
+<entry align="right" colname="col9" colsep="1">$116</entry>
+<entry align="right" colname="col10" colsep="1">$97</entry>
+<entry align="right" colname="col11" colsep="1">$77</entry>
+<entry align="right" colname="col12" colsep="1">$57</entry>
+<entry align="right" colname="col13">$39</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,310</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,360</entry>
+<entry align="right" colname="col3" colsep="1">$264</entry>
+<entry align="right" colname="col4" colsep="1">$228</entry>
+<entry align="right" colname="col5" colsep="1">$202</entry>
+<entry align="right" colname="col6" colsep="1">$182</entry>
+<entry align="right" colname="col7" colsep="1">$162</entry>
+<entry align="right" colname="col8" colsep="1">$142</entry>
+<entry align="right" colname="col9" colsep="1">$122</entry>
+<entry align="right" colname="col10" colsep="1">$103</entry>
+<entry align="right" colname="col11" colsep="1">$83</entry>
+<entry align="right" colname="col12" colsep="1">$63</entry>
+<entry align="right" colname="col13">$44</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,360</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,410</entry>
+<entry align="right" colname="col3" colsep="1">$275</entry>
+<entry align="right" colname="col4" colsep="1">$239</entry>
+<entry align="right" colname="col5" colsep="1">$208</entry>
+<entry align="right" colname="col6" colsep="1">$188</entry>
+<entry align="right" colname="col7" colsep="1">$168</entry>
+<entry align="right" colname="col8" colsep="1">$148</entry>
+<entry align="right" colname="col9" colsep="1">$128</entry>
+<entry align="right" colname="col10" colsep="1">$109</entry>
+<entry align="right" colname="col11" colsep="1">$89</entry>
+<entry align="right" colname="col12" colsep="1">$69</entry>
+<entry align="right" colname="col13">$49</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,410</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,460</entry>
+<entry align="right" colname="col3" colsep="1">$286</entry>
+<entry align="right" colname="col4" colsep="1">$250</entry>
+<entry align="right" colname="col5" colsep="1">$214</entry>
+<entry align="right" colname="col6" colsep="1">$194</entry>
+<entry align="right" colname="col7" colsep="1">$174</entry>
+<entry align="right" colname="col8" colsep="1">$154</entry>
+<entry align="right" colname="col9" colsep="1">$134</entry>
+<entry align="right" colname="col10" colsep="1">$115</entry>
+<entry align="right" colname="col11" colsep="1">$95</entry>
+<entry align="right" colname="col12" colsep="1">$75</entry>
+<entry align="right" colname="col13">$55</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,460</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,510</entry>
+<entry align="right" colname="col3" colsep="1">$297</entry>
+<entry align="right" colname="col4" colsep="1">$261</entry>
+<entry align="right" colname="col5" colsep="1">$224</entry>
+<entry align="right" colname="col6" colsep="1">$200</entry>
+<entry align="right" colname="col7" colsep="1">$180</entry>
+<entry align="right" colname="col8" colsep="1">$160</entry>
+<entry align="right" colname="col9" colsep="1">$140</entry>
+<entry align="right" colname="col10" colsep="1">$121</entry>
+<entry align="right" colname="col11" colsep="1">$101</entry>
+<entry align="right" colname="col12" colsep="1">$81</entry>
+<entry align="right" colname="col13">$61</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,510</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,560</entry>
+<entry align="right" colname="col3" colsep="1">$308</entry>
+<entry align="right" colname="col4" colsep="1">$272</entry>
+<entry align="right" colname="col5" colsep="1">$235</entry>
+<entry align="right" colname="col6" colsep="1">$206</entry>
+<entry align="right" colname="col7" colsep="1">$186</entry>
+<entry align="right" colname="col8" colsep="1">$166</entry>
+<entry align="right" colname="col9" colsep="1">$146</entry>
+<entry align="right" colname="col10" colsep="1">$127</entry>
+<entry align="right" colname="col11" colsep="1">$107</entry>
+<entry align="right" colname="col12" colsep="1">$87</entry>
+<entry align="right" colname="col13">$67</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,560</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,610</entry>
+<entry align="right" colname="col3" colsep="1">$319</entry>
+<entry align="right" colname="col4" colsep="1">$283</entry>
+<entry align="right" colname="col5" colsep="1">$246</entry>
+<entry align="right" colname="col6" colsep="1">$212</entry>
+<entry align="right" colname="col7" colsep="1">$192</entry>
+<entry align="right" colname="col8" colsep="1">$172</entry>
+<entry align="right" colname="col9" colsep="1">$152</entry>
+<entry align="right" colname="col10" colsep="1">$133</entry>
+<entry align="right" colname="col11" colsep="1">$113</entry>
+<entry align="right" colname="col12" colsep="1">$93</entry>
+<entry align="right" colname="col13">$73</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,610</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,660</entry>
+<entry align="right" colname="col3" colsep="1">$330</entry>
+<entry align="right" colname="col4" colsep="1">$294</entry>
+<entry align="right" colname="col5" colsep="1">$257</entry>
+<entry align="right" colname="col6" colsep="1">$221</entry>
+<entry align="right" colname="col7" colsep="1">$198</entry>
+<entry align="right" colname="col8" colsep="1">$178</entry>
+<entry align="right" colname="col9" colsep="1">$158</entry>
+<entry align="right" colname="col10" colsep="1">$139</entry>
+<entry align="right" colname="col11" colsep="1">$119</entry>
+<entry align="right" colname="col12" colsep="1">$99</entry>
+<entry align="right" colname="col13">$79</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,660</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,710</entry>
+<entry align="right" colname="col3" colsep="1">$341</entry>
+<entry align="right" colname="col4" colsep="1">$305</entry>
+<entry align="right" colname="col5" colsep="1">$268</entry>
+<entry align="right" colname="col6" colsep="1">$232</entry>
+<entry align="right" colname="col7" colsep="1">$204</entry>
+<entry align="right" colname="col8" colsep="1">$184</entry>
+<entry align="right" colname="col9" colsep="1">$164</entry>
+<entry align="right" colname="col10" colsep="1">$145</entry>
+<entry align="right" colname="col11" colsep="1">$125</entry>
+<entry align="right" colname="col12" colsep="1">$105</entry>
+<entry align="right" colname="col13">$85</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,710</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,760</entry>
+<entry align="right" colname="col3" colsep="1">$352</entry>
+<entry align="right" colname="col4" colsep="1">$316</entry>
+<entry align="right" colname="col5" colsep="1">$279</entry>
+<entry align="right" colname="col6" colsep="1">$243</entry>
+<entry align="right" colname="col7" colsep="1">$210</entry>
+<entry align="right" colname="col8" colsep="1">$190</entry>
+<entry align="right" colname="col9" colsep="1">$170</entry>
+<entry align="right" colname="col10" colsep="1">$151</entry>
+<entry align="right" colname="col11" colsep="1">$131</entry>
+<entry align="right" colname="col12" colsep="1">$111</entry>
+<entry align="right" colname="col13">$91</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,760</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,810</entry>
+<entry align="right" colname="col3" colsep="1">$363</entry>
+<entry align="right" colname="col4" colsep="1">$327</entry>
+<entry align="right" colname="col5" colsep="1">$290</entry>
+<entry align="right" colname="col6" colsep="1">$254</entry>
+<entry align="right" colname="col7" colsep="1">$217</entry>
+<entry align="right" colname="col8" colsep="1">$196</entry>
+<entry align="right" colname="col9" colsep="1">$176</entry>
+<entry align="right" colname="col10" colsep="1">$157</entry>
+<entry align="right" colname="col11" colsep="1">$137</entry>
+<entry align="right" colname="col12" colsep="1">$117</entry>
+<entry align="right" colname="col13">$97</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,810</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,860</entry>
+<entry align="right" colname="col3" colsep="1">$374</entry>
+<entry align="right" colname="col4" colsep="1">$338</entry>
+<entry align="right" colname="col5" colsep="1">$301</entry>
+<entry align="right" colname="col6" colsep="1">$265</entry>
+<entry align="right" colname="col7" colsep="1">$228</entry>
+<entry align="right" colname="col8" colsep="1">$202</entry>
+<entry align="right" colname="col9" colsep="1">$182</entry>
+<entry align="right" colname="col10" colsep="1">$163</entry>
+<entry align="right" colname="col11" colsep="1">$143</entry>
+<entry align="right" colname="col12" colsep="1">$123</entry>
+<entry align="right" colname="col13">$103</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,860</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,910</entry>
+<entry align="right" colname="col3" colsep="1">$385</entry>
+<entry align="right" colname="col4" colsep="1">$349</entry>
+<entry align="right" colname="col5" colsep="1">$312</entry>
+<entry align="right" colname="col6" colsep="1">$276</entry>
+<entry align="right" colname="col7" colsep="1">$239</entry>
+<entry align="right" colname="col8" colsep="1">$208</entry>
+<entry align="right" colname="col9" colsep="1">$188</entry>
+<entry align="right" colname="col10" colsep="1">$169</entry>
+<entry align="right" colname="col11" colsep="1">$149</entry>
+<entry align="right" colname="col12" colsep="1">$129</entry>
+<entry align="right" colname="col13">$109</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,910</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$2,960</entry>
+<entry align="right" colname="col3" colsep="1">$396</entry>
+<entry align="right" colname="col4" colsep="1">$360</entry>
+<entry align="right" colname="col5" colsep="1">$323</entry>
+<entry align="right" colname="col6" colsep="1">$287</entry>
+<entry align="right" colname="col7" colsep="1">$250</entry>
+<entry align="right" colname="col8" colsep="1">$214</entry>
+<entry align="right" colname="col9" colsep="1">$194</entry>
+<entry align="right" colname="col10" colsep="1">$175</entry>
+<entry align="right" colname="col11" colsep="1">$155</entry>
+<entry align="right" colname="col12" colsep="1">$135</entry>
+<entry align="right" colname="col13">$115</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$2,960</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,010</entry>
+<entry align="right" colname="col3" colsep="1">$407</entry>
+<entry align="right" colname="col4" colsep="1">$371</entry>
+<entry align="right" colname="col5" colsep="1">$334</entry>
+<entry align="right" colname="col6" colsep="1">$298</entry>
+<entry align="right" colname="col7" colsep="1">$261</entry>
+<entry align="right" colname="col8" colsep="1">$225</entry>
+<entry align="right" colname="col9" colsep="1">$200</entry>
+<entry align="right" colname="col10" colsep="1">$181</entry>
+<entry align="right" colname="col11" colsep="1">$161</entry>
+<entry align="right" colname="col12" colsep="1">$141</entry>
+<entry align="right" colname="col13">$121</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,010</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,060</entry>
+<entry align="right" colname="col3" colsep="1">$418</entry>
+<entry align="right" colname="col4" colsep="1">$382</entry>
+<entry align="right" colname="col5" colsep="1">$345</entry>
+<entry align="right" colname="col6" colsep="1">$309</entry>
+<entry align="right" colname="col7" colsep="1">$272</entry>
+<entry align="right" colname="col8" colsep="1">$236</entry>
+<entry align="right" colname="col9" colsep="1">$206</entry>
+<entry align="right" colname="col10" colsep="1">$187</entry>
+<entry align="right" colname="col11" colsep="1">$167</entry>
+<entry align="right" colname="col12" colsep="1">$147</entry>
+<entry align="right" colname="col13">$127</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,060</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,110</entry>
+<entry align="right" colname="col3" colsep="1">$429</entry>
+<entry align="right" colname="col4" colsep="1">$393</entry>
+<entry align="right" colname="col5" colsep="1">$356</entry>
+<entry align="right" colname="col6" colsep="1">$320</entry>
+<entry align="right" colname="col7" colsep="1">$283</entry>
+<entry align="right" colname="col8" colsep="1">$247</entry>
+<entry align="right" colname="col9" colsep="1">$212</entry>
+<entry align="right" colname="col10" colsep="1">$193</entry>
+<entry align="right" colname="col11" colsep="1">$173</entry>
+<entry align="right" colname="col12" colsep="1">$153</entry>
+<entry align="right" colname="col13">$133</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,110</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,160</entry>
+<entry align="right" colname="col3" colsep="1">$440</entry>
+<entry align="right" colname="col4" colsep="1">$404</entry>
+<entry align="right" colname="col5" colsep="1">$367</entry>
+<entry align="right" colname="col6" colsep="1">$331</entry>
+<entry align="right" colname="col7" colsep="1">$294</entry>
+<entry align="right" colname="col8" colsep="1">$258</entry>
+<entry align="right" colname="col9" colsep="1">$222</entry>
+<entry align="right" colname="col10" colsep="1">$199</entry>
+<entry align="right" colname="col11" colsep="1">$179</entry>
+<entry align="right" colname="col12" colsep="1">$159</entry>
+<entry align="right" colname="col13">$139</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,160</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,210</entry>
+<entry align="right" colname="col3" colsep="1">$451</entry>
+<entry align="right" colname="col4" colsep="1">$415</entry>
+<entry align="right" colname="col5" colsep="1">$378</entry>
+<entry align="right" colname="col6" colsep="1">$342</entry>
+<entry align="right" colname="col7" colsep="1">$305</entry>
+<entry align="right" colname="col8" colsep="1">$269</entry>
+<entry align="right" colname="col9" colsep="1">$233</entry>
+<entry align="right" colname="col10" colsep="1">$205</entry>
+<entry align="right" colname="col11" colsep="1">$185</entry>
+<entry align="right" colname="col12" colsep="1">$165</entry>
+<entry align="right" colname="col13">$145</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,210</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,260</entry>
+<entry align="right" colname="col3" colsep="1">$462</entry>
+<entry align="right" colname="col4" colsep="1">$426</entry>
+<entry align="right" colname="col5" colsep="1">$389</entry>
+<entry align="right" colname="col6" colsep="1">$353</entry>
+<entry align="right" colname="col7" colsep="1">$316</entry>
+<entry align="right" colname="col8" colsep="1">$280</entry>
+<entry align="right" colname="col9" colsep="1">$244</entry>
+<entry align="right" colname="col10" colsep="1">$211</entry>
+<entry align="right" colname="col11" colsep="1">$191</entry>
+<entry align="right" colname="col12" colsep="1">$171</entry>
+<entry align="right" colname="col13">$151</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,260</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,310</entry>
+<entry align="right" colname="col3" colsep="1">$473</entry>
+<entry align="right" colname="col4" colsep="1">$437</entry>
+<entry align="right" colname="col5" colsep="1">$400</entry>
+<entry align="right" colname="col6" colsep="1">$364</entry>
+<entry align="right" colname="col7" colsep="1">$327</entry>
+<entry align="right" colname="col8" colsep="1">$291</entry>
+<entry align="right" colname="col9" colsep="1">$255</entry>
+<entry align="right" colname="col10" colsep="1">$218</entry>
+<entry align="right" colname="col11" colsep="1">$197</entry>
+<entry align="right" colname="col12" colsep="1">$177</entry>
+<entry align="right" colname="col13">$157</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,310</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,360</entry>
+<entry align="right" colname="col3" colsep="1">$484</entry>
+<entry align="right" colname="col4" colsep="1">$448</entry>
+<entry align="right" colname="col5" colsep="1">$411</entry>
+<entry align="right" colname="col6" colsep="1">$375</entry>
+<entry align="right" colname="col7" colsep="1">$338</entry>
+<entry align="right" colname="col8" colsep="1">$302</entry>
+<entry align="right" colname="col9" colsep="1">$266</entry>
+<entry align="right" colname="col10" colsep="1">$229</entry>
+<entry align="right" colname="col11" colsep="1">$203</entry>
+<entry align="right" colname="col12" colsep="1">$183</entry>
+<entry align="right" colname="col13">$163</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,360</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,410</entry>
+<entry align="right" colname="col3" colsep="1">$495</entry>
+<entry align="right" colname="col4" colsep="1">$459</entry>
+<entry align="right" colname="col5" colsep="1">$422</entry>
+<entry align="right" colname="col6" colsep="1">$386</entry>
+<entry align="right" colname="col7" colsep="1">$349</entry>
+<entry align="right" colname="col8" colsep="1">$313</entry>
+<entry align="right" colname="col9" colsep="1">$277</entry>
+<entry align="right" colname="col10" colsep="1">$240</entry>
+<entry align="right" colname="col11" colsep="1">$209</entry>
+<entry align="right" colname="col12" colsep="1">$189</entry>
+<entry align="right" colname="col13">$169</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,410</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,460</entry>
+<entry align="right" colname="col3" colsep="1">$506</entry>
+<entry align="right" colname="col4" colsep="1">$470</entry>
+<entry align="right" colname="col5" colsep="1">$433</entry>
+<entry align="right" colname="col6" colsep="1">$397</entry>
+<entry align="right" colname="col7" colsep="1">$360</entry>
+<entry align="right" colname="col8" colsep="1">$324</entry>
+<entry align="right" colname="col9" colsep="1">$288</entry>
+<entry align="right" colname="col10" colsep="1">$251</entry>
+<entry align="right" colname="col11" colsep="1">$215</entry>
+<entry align="right" colname="col12" colsep="1">$195</entry>
+<entry align="right" colname="col13">$175</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,460</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,510</entry>
+<entry align="right" colname="col3" colsep="1">$517</entry>
+<entry align="right" colname="col4" colsep="1">$481</entry>
+<entry align="right" colname="col5" colsep="1">$444</entry>
+<entry align="right" colname="col6" colsep="1">$408</entry>
+<entry align="right" colname="col7" colsep="1">$371</entry>
+<entry align="right" colname="col8" colsep="1">$335</entry>
+<entry align="right" colname="col9" colsep="1">$299</entry>
+<entry align="right" colname="col10" colsep="1">$262</entry>
+<entry align="right" colname="col11" colsep="1">$226</entry>
+<entry align="right" colname="col12" colsep="1">$201</entry>
+<entry align="right" colname="col13">$181</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,510</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,560</entry>
+<entry align="right" colname="col3" colsep="1">$528</entry>
+<entry align="right" colname="col4" colsep="1">$492</entry>
+<entry align="right" colname="col5" colsep="1">$455</entry>
+<entry align="right" colname="col6" colsep="1">$419</entry>
+<entry align="right" colname="col7" colsep="1">$382</entry>
+<entry align="right" colname="col8" colsep="1">$346</entry>
+<entry align="right" colname="col9" colsep="1">$310</entry>
+<entry align="right" colname="col10" colsep="1">$273</entry>
+<entry align="right" colname="col11" colsep="1">$237</entry>
+<entry align="right" colname="col12" colsep="1">$207</entry>
+<entry align="right" colname="col13">$187</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,560</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,610</entry>
+<entry align="right" colname="col3" colsep="1">$539</entry>
+<entry align="right" colname="col4" colsep="1">$503</entry>
+<entry align="right" colname="col5" colsep="1">$466</entry>
+<entry align="right" colname="col6" colsep="1">$430</entry>
+<entry align="right" colname="col7" colsep="1">$393</entry>
+<entry align="right" colname="col8" colsep="1">$357</entry>
+<entry align="right" colname="col9" colsep="1">$321</entry>
+<entry align="right" colname="col10" colsep="1">$284</entry>
+<entry align="right" colname="col11" colsep="1">$248</entry>
+<entry align="right" colname="col12" colsep="1">$213</entry>
+<entry align="right" colname="col13">$193</entry>
+</row>
+<row rowsep="1">
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,610</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,660</entry>
+<entry align="right" colname="col3" colsep="1">$550</entry>
+<entry align="right" colname="col4" colsep="1">$514</entry>
+<entry align="right" colname="col5" colsep="1">$477</entry>
+<entry align="right" colname="col6" colsep="1">$441</entry>
+<entry align="right" colname="col7" colsep="1">$404</entry>
+<entry align="right" colname="col8" colsep="1">$368</entry>
+<entry align="right" colname="col9" colsep="1">$332</entry>
+<entry align="right" colname="col10" colsep="1">$295</entry>
+<entry align="right" colname="col11" colsep="1">$259</entry>
+<entry align="right" colname="col12" colsep="1">$222</entry>
+<entry align="right" colname="col13">$199</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,660</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,710</entry>
+<entry align="right" colname="col3" colsep="1">$561</entry>
+<entry align="right" colname="col4" colsep="1">$525</entry>
+<entry align="right" colname="col5" colsep="1">$488</entry>
+<entry align="right" colname="col6" colsep="1">$452</entry>
+<entry align="right" colname="col7" colsep="1">$415</entry>
+<entry align="right" colname="col8" colsep="1">$379</entry>
+<entry align="right" colname="col9" colsep="1">$343</entry>
+<entry align="right" colname="col10" colsep="1">$306</entry>
+<entry align="right" colname="col11" colsep="1">$270</entry>
+<entry align="right" colname="col12" colsep="1">$233</entry>
+<entry align="right" colname="col13">$205</entry>
+</row>
+<row>
+<entry align="right" colname="col1" colsep="1" emph="bld">$3,710</entry>
+<entry align="right" colname="col2" colsep="1" emph="bld">$3,760</entry>
+<entry align="right" colname="col3" colsep="1">$572</entry>
+<entry align="right" colname="col4" colsep="1">$536</entry>
+<entry align="right" colname="col5" colsep="1">$499</entry>
+<entry align="right" colname="col6" colsep="1">$463</entry>
+<entry align="right" colname="col7" colsep="1">$426</entry>
+<entry align="right" colname="col8" colsep="1">$390</entry>
+<entry align="right" colname="col9" colsep="1">$354</entry>
+<entry align="right" colname="col10" colsep="1">$317</entry>
+<entry align="right" colname="col11" colsep="1">$281</entry>
+<entry align="right" colname="col12" colsep="1">$244</entry>
+<entry align="right" colname="col13">$211</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
