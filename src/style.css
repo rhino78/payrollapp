@@ -1339,3 +1339,44 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   color: white;
 }
+
+.about-header{
+  text-align: left;
+}
+
+#release-notes{
+  text-align: left;
+}
+
+.backup-now-btn:hover {
+  background-color: #1E3A8A;
+}
+
+.backup-now-btn {
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  display: block;
+  margin-left: 20px;
+}
+
+.database-info {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.info-label {
+  color: #888888;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.info-value {
+  color: #374151;
+  font-weight: 500;
+  margin-top: 0;
+}

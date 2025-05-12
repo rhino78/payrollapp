@@ -8,13 +8,15 @@ export async function initHomePage() {
   try {
     const [cvsRes, wbaRes] = await Promise.all([
       fetch(
-        `https://api.twelvedata.com/time_series?symbol=CVS&interval=5day&outputsize=30&apikey=${API_KEY}`,
+        `https://api.twelvedata.com/time_series?symbol=CVS&interval=1week&outputsize=30&apikey=${API_KEY}`,
       ),
       fetch(
-        `https://api.twelvedata.com/time_series?symbol=WBA&interval=5day&outputsize=30&apikey=${API_KEY}`,
+        `https://api.twelvedata.com/time_series?symbol=WBA&interval=1week&outputsize=30&apikey=${API_KEY}`,
       ),
     ]);
 
+    console.log(`Using API KEY: ${API_KEY}`);
+        console.log(`https://api.twelvedata.com/time_series?symbol=CVS&interval=1week&outputsize=30&apikey=${API_KEY}`);
     const cvsDataJson = await cvsRes.json();
     const wbaDataJson = await wbaRes.json();
 

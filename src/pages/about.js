@@ -1,13 +1,29 @@
 export const aboutPage = `
     <div class="page">
-      <h1>Release Notes</h1>
-      <div id="release-notes" style="white-space: pre-line; margin-top: 20px;"></div>
-      <h1>Database Info</h1>
-      <div id="database-info"></div>
-      <h2 style="margin-top: 30px;">Backup</h2>
-      <button id="backup-now-btn" style="padding: 8px 12px; font-size: 1rem; border-radius: 6px; background-color: #3b82f6; color: white; border: none;">
+      <h1 class="about-header"><strong>Release Notes</strong></h1>
+      <div id="release-notes"></div>
+      <hr>
+      <h1 class="about-header"><strong>Database Info</strong></h1>
+      <div id="database-info" class="database-info">
+          <p class="info-label">Database Location</p>
+          <p class="info-value" id="db-location"></p>
+
+          <div style="height: 16px;"></div>
+
+          <p class="info-label">Last Backup</p>
+          <p class="info-value" id="last-backup-time">Never</p>
+
+          <div style="height: 16px;"></div>
+
+          <p class="info-label">Number of Backups</p>
+          <p class="info-value" id="backup-count">—</p>
+
+        </div>
+      <hr>
+      <h1 class="about-header"><strong>Backup</strong></h1>
+      <button class="backup-now-btn" id="backup-now-btn">
         Backup Now
       </button>
-      <div id="backup-status" style="margin-top: 10px; font-size: 0.9rem;"></div>
+      <div id="backup-status"></div>
     </div>
   `;

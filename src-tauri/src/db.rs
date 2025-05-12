@@ -16,6 +16,13 @@ pub struct AppState {
 
 // returns the path of the database
 #[tauri::command]
+pub fn get_last_backup_time(state: State<'_, AppState>) -> Result<u64, String> {
+    let conn = state.db_connection.lock().map_err(|e| e.to_string())?;
+    let last_backup_time = get_last_backup_timestamp(&conn).map_err(|e| e.to_string())?;
+    Ok(last_backup_time.unwrap_or(0))
+}
+// returns the path of the database
+#[tauri::command]
 pub fn get_db_path(state: State<'_, AppState>) -> String {
     let db_path = state.db_path.join(DB_NAME);
     db_path.display().to_string()
@@ -34,6 +41,7 @@ pub fn count_backups(state: State<AppState>) -> Result<usize, String> {
                 .starts_with("payroll_backup")
         })
         .count();
+
     Ok(count)
 }
 
@@ -119,7 +127,6 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
         set_last_backup_timestamp(&src_conn, now)?;
         println!("Backup completed")
     } else {
-        println!("Backup skipped (only {} seconds since last)", age);
         info!(event = "backup", result = "skipped");
     }
 

@@ -12,7 +12,7 @@ mod import;
 mod payroll;
 mod updates;
 
-use db::{auto_backup, cleanup_old_backups, count_backups, get_db_path, init_database, AppState};
+use db::{get_last_backup_time, auto_backup, cleanup_old_backups, count_backups, get_db_path, init_database, AppState};
 use employee::{
     add_employee, delete_employee, get_employee_by_id, get_employees, get_employees_by_pay_date,
     update_employee,
@@ -29,6 +29,7 @@ use updates::{check_for_updates_tauri, perform_update_tauri};
 fn check_env_vars() -> Result<(), String> {
     dotenv().ok();
     if env::var("TWELVE_KEY").is_err() {
+        error!("TWELVE_KEY not set");
         return Err("Missing enviornment variable: TWELVE_KEY".into());
     }
 
@@ -100,6 +101,7 @@ pub fn run() {
             check_withholding_data,
             check_env_vars,
             count_backups,
+            get_last_backup_time,
             start_withholding_import
         ])
         .run(tauri::generate_context!())

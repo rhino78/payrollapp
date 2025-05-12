@@ -136,3 +136,5 @@
 2025-05-08T20:54:47.351839Z TRACE reqwest::blocking::client: (ThreadId(5)) finished    
 2025-05-08T20:54:47.392684Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(5))    
 2025-05-08T20:54:47.432214Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-08T20:57:15.723820Z  WARN tao::platform_impl::platform::event_loop::runner: NewEvents emitted without explicit RedrawEventsCleared    
+2025-05-08T20:57:15.725058Z  WARN tao::platform_impl::platform::event_loop::runner: RedrawEventsCleared emitted without explicit MainEventsCleared    
