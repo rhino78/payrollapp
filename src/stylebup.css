@@ -216,7 +216,7 @@ button {
 /* Page-specific styles */
 .page {
   padding: 20px;
-  width: 95%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -264,11 +264,10 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 
 .employee-item {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -286,14 +285,10 @@ button {
 }
 
 .employee-info {
-  flex: 1;
-  text-align: left;
+  flex: 2;
+  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  padding: 15px;
-  border-radius: 6px;
-  position: relative;
-  width: 100%;
 }
 
 .employee-info p {
@@ -316,42 +311,9 @@ button {
   color: #666;
 }
 
-.employee-actions .icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  transition: background-color 0.2s;
-}
-
-.employee-actions .edit-btn {
-  color: #4CAF50;
-}
-
-.employee-actions .edit-btn:hover {
-  background-color: rgba(76, 175, 80, 0.1);
-}
-
-.employee-actions .delete-btn {
-  color: #f44336;
-}
-
-.employee-actions .delete-btn:hover {
-  background-color: rgba(244, 67, 54, 0.1);
-}
-
 .employee-actions {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
+  flex: 1;
+  text-align: right;
 }
 
 
@@ -1312,101 +1274,34 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
 }
 
-.employee-main-container {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  transition: all 0.3s ease;
-}
-
-.employee-form-container {
-  width: 35%;
-  min-width: 300px;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-/* Employee list adjusts when form is visible */
-.employee-main-container.show-form .employee-list {
-  flex: 1;
-  transform: scale(0.95);
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-
 .employee-header {
-  width: 100%;
-  margin: 0 1 20px 0;
+  width: 100vw;
+  /* Full width of viewport */
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  background-color: #e5e7eb;
+  border-bottom: 1px solid #ccc;
   padding: 1rem 2rem;
 }
 
 
 .employee-card {
   width: 100%;
+  max-width: 900px;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;
   background-color: #f9f9f9;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .employee-card h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.employee-card h3 i {
-  color: #4b5563;
-  font-size: 1rem;
-}
-
-.employee-info-row {
-  display: flex;
-  justify-content: flex-start;
-  gap: 5rem;
-  margin-bottom: 0.5rem;
-}
-
-.employee-info-row .info-group {
-  flex: 0 0 auto;
-  min-width: 300px;
-}
-
-.info-group {
-  display: flex;
-  flex-direction: column;
-  width: 48%;
-}
-
-.info-label {
-  color: #6b7280;
-  font-size: 0.85rem;
-  margin-bottom: 0.2rem;
-}
-
-.info-value {
-  font-size: 0.95rem;
-}
-
-.employee-actions {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  gap: 0.5rem;
 }
 
 .employee-card p {

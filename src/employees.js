@@ -4,7 +4,7 @@ import { invoke } from '@tauri-apps/api/core';
 let employees = [];
 let currentEmployeeId = null;
 
-function showNotification(message, type= 'info') {
+function showNotification(message, type = 'info') {
   const notification = document.createElement('div');
   notification.className = `notification ${type}`;
   notification.textContent = message;
@@ -16,12 +16,22 @@ function showNotification(message, type= 'info') {
 }
 
 export async function initEmployeesPage() {
-  const employeeForm = document.getElementById('employee-form');
+  const addEmployeeBtn = document.getElementById('add-employee-btn');
+  const employeeFormContainer = document.getElementById('employee-form-container');
   const clearFormBtn = document.getElementById('clear-form-btn');
   const cancelEmployeeBtn = document.getElementById('cancel-employee-btn');
   const formTitle = document.getElementById('form-title');
+  const employeeForm = document.getElementById('employee-form');
+  const mainContainer = document.querySelector(".employee-main-container");
 
   await loadEmployees();
+
+  addEmployeeBtn.addEventListener('click', () => {
+    resetForm();
+    formTitle.textContent = 'Add New Employee';
+    employeeFormContainer.style.display = "block";
+    mainContainer.classList.add("show-form");
+  });
 
   clearFormBtn.addEventListener('click', () => {
     resetForm();
@@ -31,17 +41,21 @@ export async function initEmployeesPage() {
 
   cancelEmployeeBtn.addEventListener('click', () => {
     resetForm();
+    employeeFormContainer.style.display = 'none';
+    mainContainer.classList.remove("show-form");
   });
 
   employeeForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     await saveEmployee();
+    employeeFormContainer.style.display = 'none';
   });
 }
 
 async function loadEmployees() {
   try {
     employees = await invoke('get_employees');
+    console.log(employees);
     renderEmployeeList(employees);
   } catch (error) {
     console.error('Error loading employees:', error);
@@ -52,7 +66,7 @@ async function loadEmployees() {
 function renderEmployeeList(employeesToRender) {
   const employeeList = document.getElementById('employee-list');
   employeeList.innerHTML = '';
-  
+
   if (employeesToRender.length === 0) {
     employeeList.innerHTML = '<p class="no-items">No employees found.</p>';
     return;
@@ -62,14 +76,42 @@ function renderEmployeeList(employeesToRender) {
     const employeeItem = document.createElement('div');
     employeeItem.className = 'employee-item';
     employeeItem.innerHTML = `
-      <div class="employee-info">  
-        <span class="employee-name">${employee.first_name} ${employee.last_name}</span>
-        <span class="employee-details">Wage: $${employee.wage.toFixed(2)} | ${employee.filing_status}</span>
+  <div class="employee-card">
+    <h3>
+      <i class="fas fa-user"></i> ${employee.first_name} ${employee.last_name}
+    </h3>
+
+    <div class="employee-info-row">
+      <div class="info-group">
+        <span class="info-label">Address:</span>
+        <span class="info-value">${employee.address}</span>
       </div>
-      <div class="employee-actions">
-        <button class="edit-btn" data-id="${employee.id}">Edit</button>
-        <button class="delete-btn" data-id="${employee.id}">Delete</button>
+      <div class="info-group">
+        <span class="info-label">Contact:</span>
+        <span class="info-value">${employee.phone}</span>
       </div>
+    </div>
+
+    <div class="employee-info-row">
+      <div class="info-group">
+        <span class="info-label">Hired Date:</span>
+        <span class="info-value">${employee.hired_date}</span>
+      </div>
+      <div class="info-group">
+        <span class="info-label">Position:</span>
+        <span class="info-value">$${employee.wage.toFixed(2)}/hr</span>
+      </div>
+    </div>
+
+    <div class="employee-actions">
+      <button class="icon-btn edit-btn" data-id="${employee.id}" title="Edit">
+        <i class="fas fa-pencil-alt"></i>
+      </button>
+      <button class="icon-btn delete-btn" data-id="${employee.id}" title="Delete">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
     `;
 
     employeeList.appendChild(employeeItem);
@@ -103,6 +145,10 @@ function editEmployee(employee) {
   document.getElementById('state').value = employee.state;
   document.getElementById('zip').value = employee.zip;
   document.getElementById('phone').value = employee.phone;
+  document.getElementById('ssn').value = employee.ssn;
+  document.getElementById('hired_date').value = employee.hired_date;
+  document.getElementById('birthdate').value = employee.birthdate;
+  document.getElementById('notes').value = employee.notes;
   document.getElementById('wage').value = employee.wage;
   document.getElementById('dependents').value = employee.number_of_dependents;
   document.getElementById('filing-status').value = employee.filing_status;
@@ -142,6 +188,10 @@ async function saveEmployee() {
     wage: parseFloat(formData.get('wage')),
     number_of_dependents: parseInt(formData.get('number_of_dependents')),
     filing_status: formData.get('filing_status'),
+    ssn: formData.get('filing_status'),
+    hired_date: formData.get('hired_date'),
+    birthdate: formData.get('birthdate'),
+    notes: formData.get('notes'),
   };
 
   if (currentEmployeeId) {

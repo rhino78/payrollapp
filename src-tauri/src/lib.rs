@@ -2,9 +2,9 @@ use dotenvy::dotenv;
 use std::env;
 use std::sync::Mutex;
 use tauri::Manager;
-use tracing::{error, info, warn};
+use tracing::{error, info};
 use tracing_appender::rolling;
-use tracing_subscriber::{fmt, EnvFilter};
+use tracing_subscriber::{EnvFilter};
 
 mod db;
 mod employee;

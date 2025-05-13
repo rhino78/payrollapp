@@ -8,6 +8,7 @@ use tauri::State;
 use tracing::info;
 
 const DB_NAME: &str = "payroll.db";
+
 // Define a struct to represent the database connection
 pub struct AppState {
     pub db_connection: Mutex<Connection>,
@@ -125,7 +126,7 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
         backup.step(-1)?;
 
         set_last_backup_timestamp(&src_conn, now)?;
-        println!("Backup completed")
+        info!("Backup completed")
     } else {
         info!(event = "backup", result = "skipped");
     }
@@ -191,6 +192,10 @@ pub fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
             state TEXT NOT NULL,
             zip TEXT NOT NULL,
             phone TEXT NOT NULL,
+            ssn TEXT NOT NULL,
+            hired_date TEXT NOT NULL,
+            birthdate TEXT NOT NULL,
+            notes BLOB NOT NULL,
             wage REAL NOT NULL,
             number_of_dependents INTEGER NOT NULL,
             filing_status TEXT NOT NULL

@@ -15,6 +15,10 @@ pub struct Employee {
     state: String,
     zip: String,
     phone: String,
+    ssn: String,
+    hired_date: String,
+    birthdate: String,
+    notes: String,
     wage: f64,
     number_of_dependents: i32,
     filing_status: String,
@@ -38,9 +42,13 @@ pub fn get_employee_by_id(state: State<'_, AppState>, id: i64) -> Result<Option<
                 state: row.get(5)?,
                 zip: row.get(6)?,
                 phone: row.get(7)?,
-                wage: row.get(8)?,
-                number_of_dependents: row.get(9)?,
-                filing_status: row.get(10)?,
+                ssn: row.get(8)?,
+                hired_date: row.get(9)?,
+                birthdate: row.get(10)?,
+                notes: row.get(11)?,
+                wage: row.get(12)?,
+                number_of_dependents: row.get(13)?,
+                filing_status: row.get(14)?,
             })
         })
         .map_err(|e| e.to_string())?;
@@ -55,8 +63,8 @@ pub fn add_employee(employee: Employee, state: State<'_, AppState>) -> Result<i6
 
     let _employee_id = conn.execute(
         "INSERT INTO employees (
-            first_name, last_name, address, city, state, zip, phone, wage, number_of_dependents, filing_status
-        ) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)",
+            first_name, last_name, address, city, state, zip, phone, ssn, hired_date, birthdate, notes, wage, number_of_dependents, filing_status
+        ) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14)",
         params![
             employee.first_name,
             employee.last_name,
@@ -65,6 +73,10 @@ pub fn add_employee(employee: Employee, state: State<'_, AppState>) -> Result<i6
             employee.state,
             employee.zip,
             employee.phone,
+            employee.ssn,
+            employee.hired_date,
+            employee.birthdate,
+            employee.notes,
             employee.wage,
             employee.number_of_dependents,
             employee.filing_status,
@@ -98,10 +110,14 @@ pub fn update_employee(employee: Employee, state: State<'_, AppState>) -> Result
             state = ?5,
             zip = ?6,
             phone = ?7,
-            wage = ?8,
-            number_of_dependents = ?9,
-            filing_status = ?10
-        WHERE id = ?11",
+            ssn = ?8,
+            hired_date = ?9,
+            birthdate = ?10,
+            notes = ?11,
+            wage = ?12,
+            number_of_dependents = ?13,
+            filing_status = ?14
+        WHERE id = ?15",
         params![
             employee.first_name,
             employee.last_name,
@@ -110,6 +126,10 @@ pub fn update_employee(employee: Employee, state: State<'_, AppState>) -> Result
             employee.state,
             employee.zip,
             employee.phone,
+            employee.ssn,
+            employee.hired_date,
+            employee.birthdate,
+            employee.notes,
             employee.wage,
             employee.number_of_dependents,
             employee.filing_status,
@@ -140,9 +160,13 @@ pub fn get_employees(state: State<'_, AppState>) -> Result<Vec<Employee>, String
                 state: row.get(5)?,
                 zip: row.get(6)?,
                 phone: row.get(7)?,
-                wage: row.get(8)?,
-                number_of_dependents: row.get(9)?,
-                filing_status: row.get(10)?,
+                ssn: row.get(8)?,
+                hired_date: row.get(9)?,
+                birthdate: row.get(10)?,
+                notes: row.get(11)?,
+                wage: row.get(12)?,
+                number_of_dependents: row.get(13)?,
+                filing_status: row.get(14)?,
             })
         })
         .map_err(|e| e.to_string())?;
@@ -180,9 +204,13 @@ pub fn get_employees_by_pay_date(
                 state: row.get(5)?,
                 zip: row.get(6)?,
                 phone: row.get(7)?,
-                wage: row.get(8)?,
-                number_of_dependents: row.get(9)?,
-                filing_status: row.get(10)?,
+                ssn: row.get(8)?,
+                hired_date: row.get(9)?,
+                birthdate: row.get(10)?,
+                notes: row.get(11)?,
+                wage: row.get(12)?,
+                number_of_dependents: row.get(13)?,
+                filing_status: row.get(14)?,
             })
         })
         .map_err(|e| e.to_string())?;
@@ -210,6 +238,10 @@ mod tests {
                 state TEXT,
                 zip TEXT,
                 phone TEXT,
+                ssn TEXT,
+                hired_date TEXT,
+                birthdate TEXT,
+                notes BLOB,
                 wage REAL,
                 number_of_dependents INTEGER,
                 filing_status TEXT
@@ -231,6 +263,10 @@ mod tests {
             state: "Tx".into(),
             zip: "78681".into(),
             phone: "555-0000".into(),
+            ssn: "123-45-6789".into(),
+            hired_date: "2022-05-01".into(),
+            birthdate: "1990-01-01".into(),
+            notes: "notes".into(),
             wage: 25.0,
             number_of_dependents: 1,
             filing_status: "single".into(),
@@ -238,8 +274,8 @@ mod tests {
 
         let id = conn.execute(
             "INSERT INTO employees (
-                first_name, last_name, address, city, state, zip, phone, wage, number_of_dependents, filing_status
-            ) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)",
+                first_name, last_name, address, city, state, zip, phone, ssn, hired_date, birthdate, notes, wage, number_of_dependents, filing_status
+            ) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14)",
             rusqlite::params![
                 empoloyee.first_name,
                 empoloyee.last_name,
@@ -248,6 +284,10 @@ mod tests {
                 empoloyee.state,
                 empoloyee.zip,
                 empoloyee.phone,
+                empoloyee.ssn,
+                empoloyee.hired_date,
+                empoloyee.birthdate,
+                empoloyee.notes,
                 empoloyee.wage,
                 empoloyee.number_of_dependents,
                 empoloyee.filing_status,

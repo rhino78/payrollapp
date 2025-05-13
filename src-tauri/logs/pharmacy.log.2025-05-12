@@ -2467,3 +2467,5 @@
 2025-05-12T20:12:57.599070Z TRACE reqwest::blocking::client: (ThreadId(23)) end runtime::block_on    
 2025-05-12T20:12:57.600488Z TRACE reqwest::blocking::client: (ThreadId(23)) finished    
 2025-05-12T20:12:57.601046Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(23))    
+2025-05-12T20:17:02.531411Z  INFO app_lib: logging system initialized
+2025-05-12T20:17:03.662338Z  INFO app_lib::db: event="init" result="inititalized"
