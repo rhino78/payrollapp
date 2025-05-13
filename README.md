@@ -35,36 +35,6 @@ This is a custom-built desktop payroll management system created specifically fo
 
 ---
 
-## 🧪 Manual Testing Instructions
-
-You can assign these test cases to QA testers or Jim for verification:
-
-### ✅ Test Case 1: Add a New Employee
-- Go to **Employees** tab
-- Fill in form with name, address, phone, etc.
-- Click **Save**
-- **Expected:** Employee is listed and can be edited or deleted
-
-### ✅ Test Case 2: Run Payroll
-- Go to **Payroll**
-- Select employee, enter hours, choose pay period
-- Review calculated deductions and net
-- Submit and verify entry appears in payroll history
-
-### ✅ Test Case 3: Generate Report
-- Navigate to **Reports**
-- Choose a past pay period
-- Select employees
-- Click **Run Report**
-- **Expected:** Downloaded CSV contains accurate records
-
-### ✅ Test Case 4: Verify Database Backup
-- Go to **About**
-- Click **Backup Now**
-- **Expected:** Timestamp updates and backup file is created
-
----
-
 ## 🧑‍💼 Intended Use
 
 This app is used primarily by Jim Shave to:
