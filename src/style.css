@@ -161,6 +161,86 @@ input-group input:focus {
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    color: #f0f0f0;
+    background-color: #1e1e1e1e;
+  }
+
+  body {
+    background-color: #1e1e1e1e;
+    color: #f0f0f0;
+  }
+
+  .navbar a,
+  .navbar-brand,
+  .navbar la a i {
+    color: #f0f0f0;
+  }
+
+  .navbar a:hover {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  .navbar a.active {
+    background-color: #2a2a2a;
+    color: white;
+  }
+
+  .employee-card {
+    background-color: #2b2b2b;
+    border-color: #444;
+    color: #f0f0f0;
+  }
+
+  .employee-card h3 i {
+    color: #aaa;
+  }
+
+  .info-label {
+    color: #aaa;
+  }
+
+  .info-value {
+    color: #f0f0f0;
+  }
+
+  .market-update {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+  }
+
+  .stock-time {
+    color: #aaa;
+  }
+
+  .employee-toggle {
+    background-color: #1f3a5f;
+    border-color: #444;
+    color: #f0f0f0;
+  }
+
+  .backup-now-btn {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .backup-now-btn:hover {
+    background-color: #1e3a8a;
+  }
+
+  .database-info .info-label {
+    color: #aaa;
+  }
+
+  .database-info .info-value {
+    color: #f0f0f0;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
   .input-group {
     border-color: #444;
   }
@@ -220,6 +300,17 @@ button {
   margin: 0 auto;
 }
 
+.chart-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#stockChart {
+  width: 100% !important;
+  height: auto !important;
+}
+
 /* Enhanced Employee Management Styles */
 .employee-container {
   display: flex;
@@ -248,8 +339,13 @@ button {
 }
 
 .employee-list-section {
+  width: 100%;
   flex: 1 1 100%;
-  max-width: none;
+  max-width: 100%;
+}
+
+.employee-main-container:not(.show-form) {
+  flex-direction: column;
 }
 
 .employee-form-section {
@@ -261,10 +357,14 @@ button {
 }
 
 .employee-list {
+  flex: 0 0 30%;
   width: 100%;
+  max-width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-end;
 }
 
 .employee-item {
@@ -1313,6 +1413,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .employee-main-container {
+  width: 100%;
   display: flex;
   gap: 2rem;
   align-items: flex-start;
@@ -1321,16 +1422,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 .employee-form-container {
   width: 35%;
-  min-width: 300px;
+  min-width: 400px;
   background-color: #fff;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  flex: 0 0 65%;
 }
 
 /* Employee list adjusts when form is visible */
 .employee-main-container.show-form .employee-list {
+  flex-direction: row-reverse;
   flex: 1;
   transform: scale(0.95);
   opacity: 0.9;
@@ -1351,10 +1454,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .employee-card {
   width: 100%;
+  margin: 1rem 0;
+  max-width: 1200px;
+  width: 95%;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 1rem;
-  margin: 1rem 0;
+  padding: 1.5rem;
+  margin: 1rem auto;
   background-color: #f9f9f9;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -1376,7 +1482,8 @@ input[type=number]::-webkit-outer-spin-button {
 .employee-info-row {
   display: flex;
   justify-content: flex-start;
-  gap: 5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
   margin-bottom: 0.5rem;
 }
 
@@ -1386,8 +1493,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .info-group {
+  text-align: left;
   display: flex;
   flex-direction: column;
+  flex: 1 1 300px;
+  min-width: 200px;
   width: 48%;
 }
 

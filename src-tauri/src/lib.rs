@@ -4,7 +4,7 @@ use std::sync::Mutex;
 use tauri::Manager;
 use tracing::{error, info};
 use tracing_appender::rolling;
-use tracing_subscriber::{EnvFilter};
+use tracing_subscriber::EnvFilter;
 
 mod db;
 mod employee;
@@ -12,7 +12,10 @@ mod import;
 mod payroll;
 mod updates;
 
-use db::{get_last_backup_time, auto_backup, cleanup_old_backups, count_backups, get_db_path, init_database, AppState};
+use db::{
+    auto_backup, cleanup_old_backups, count_backups, get_db_path, get_last_backup_time,
+    init_database, AppState,
+};
 use employee::{
     add_employee, delete_employee, get_employee_by_id, get_employees, get_employees_by_pay_date,
     update_employee,

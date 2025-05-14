@@ -75,7 +75,7 @@ export const employeePage = `
             </div>
             <div class="form-group">
               <label for="hired-date">Hired Date:</label>
-              <input type="date" id="hired-date" name="hired_date" required>
+              <input type="date" id="hired_date" name="hired_date" required>
             </div>
             <div class="form-group">
               <label for="birthdate">Birthdate:</label>

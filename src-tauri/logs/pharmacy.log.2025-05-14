@@ -1,0 +1,368 @@
+2025-05-14T02:41:42.058808Z  INFO app_lib: logging system initialized
+2025-05-14T02:41:42.245096Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:41:42.650538Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T02:41:42.650569Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T02:41:42.666574Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:41:42.666630Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999998086s    
+2025-05-14T02:41:42.666772Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T02:41:42.666840Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T02:41:42.666872Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T02:41:42.711506Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.5:443
+2025-05-14T02:41:42.755215Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.5:443
+2025-05-14T02:41:42.813712Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T02:41:42.813844Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T02:41:42.889374Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T02:41:42.889440Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T02:41:42.889537Z TRACE hyper_util::client::legacy::pool: idle interval checking for expired
+2025-05-14T02:41:42.889549Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:41:42.889644Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T02:41:42.889663Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T02:41:42.889677Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T02:41:42.889702Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T02:41:42.889754Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T02:41:42.890532Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T02:41:42.890778Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T02:41:42.891950Z  INFO app_lib::db: Created dates backup at "/home/rhino/.local/share/com.payroll.app/backups/payroll_backup_2025-05-13.db"
+2025-05-14T02:41:42.897993Z  INFO app_lib::db: Backup completed
+2025-05-14T02:42:03.173187Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:03.294884Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:03.595102Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T02:42:03.595152Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T02:42:03.610978Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:03.611025Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999998056s    
+2025-05-14T02:42:03.611166Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T02:42:03.611252Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T02:42:03.611285Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T02:42:03.646560Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.6:443
+2025-05-14T02:42:03.690904Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.6:443
+2025-05-14T02:42:03.744817Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T02:42:03.744964Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T02:42:03.817009Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T02:42:03.817074Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T02:42:03.817185Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:03.817280Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T02:42:03.817296Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T02:42:03.817308Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T02:42:03.817322Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T02:42:03.817364Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T02:42:03.818145Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T02:42:03.818394Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T02:42:03.819108Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T02:42:05.396714Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:05.516713Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:05.813176Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T02:42:05.813231Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T02:42:05.829089Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:05.829124Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999998036s    
+2025-05-14T02:42:05.829301Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T02:42:05.829377Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T02:42:05.829412Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T02:42:05.830864Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.6:443
+2025-05-14T02:42:05.868543Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.6:443
+2025-05-14T02:42:05.927346Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T02:42:05.927477Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T02:42:05.997709Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T02:42:05.997776Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T02:42:05.997942Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:05.998113Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T02:42:05.998139Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T02:42:05.998155Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T02:42:05.998185Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T02:42:05.998247Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T02:42:05.998955Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T02:42:05.999189Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T02:42:05.999856Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T02:42:07.372920Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:07.490769Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:07.818231Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T02:42:07.818290Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T02:42:07.834016Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:07.834072Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999997615s    
+2025-05-14T02:42:07.834216Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T02:42:07.834295Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T02:42:07.834332Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T02:42:07.835950Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.6:443
+2025-05-14T02:42:07.879671Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.6:443
+2025-05-14T02:42:07.931654Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T02:42:07.931784Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T02:42:08.027961Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T02:42:08.028027Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T02:42:08.028137Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:08.028230Z TRACE hyper_util::client::legacy::pool: idle interval checking for expired
+2025-05-14T02:42:08.028243Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T02:42:08.028259Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T02:42:08.028273Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T02:42:08.028295Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T02:42:08.028339Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T02:42:08.029025Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T02:42:08.029262Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T02:42:08.029902Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T02:42:08.887511Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:09.623867Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:09.735203Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:10.391690Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:10.509119Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:11.139491Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:11.260495Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:12.131050Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:12.243146Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:12.882136Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:13.001049Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:13.634356Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:13.749939Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:14.389287Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:14.505384Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:15.142280Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:15.257185Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:15.884570Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:16.007626Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:16.635362Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:16.753089Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:17.391107Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:17.504018Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:18.137719Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:18.251532Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:18.882063Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:19.003341Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:19.638750Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:19.752880Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:20.393827Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:20.515469Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:21.133830Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:21.246775Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:22.125755Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:22.246438Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:22.629931Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:22.749757Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:23.019483Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T02:42:23.019513Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T02:42:23.034974Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:23.035001Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999997896s    
+2025-05-14T02:42:23.035224Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T02:42:23.035330Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T02:42:23.035364Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T02:42:23.073521Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.6:443
+2025-05-14T02:42:23.115736Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.6:443
+2025-05-14T02:42:23.164555Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T02:42:23.164683Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T02:42:23.232748Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T02:42:23.232814Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T02:42:23.232928Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:23.233024Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T02:42:23.233040Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T02:42:23.233055Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T02:42:23.233086Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T02:42:23.233136Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T02:42:23.233865Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T02:42:23.234084Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T02:42:23.234766Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T02:42:23.636228Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:23.753239Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:24.146523Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:24.624188Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:24.742884Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:25.139567Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:25.253515Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:25.628742Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:25.746756Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:26.139036Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:26.259652Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:26.624094Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:26.739878Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:27.134489Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:27.252317Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:27.640585Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:27.754505Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:28.131809Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:28.246297Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:28.649823Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:29.139112Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:29.253437Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:29.629686Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:30.190405Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:30.625871Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:30.740096Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:31.144442Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:31.259091Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:31.633848Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:31.753267Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:32.148814Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:32.632524Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:32.752259Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:33.137427Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:33.254124Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:33.637196Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:33.753953Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:34.138671Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:34.251922Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:34.634408Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:34.749677Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:35.731360Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:36.140872Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:36.259736Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:36.530863Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T02:42:36.530863Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T02:42:36.547378Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:36.547441Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999997816s    
+2025-05-14T02:42:36.547562Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T02:42:36.547644Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T02:42:36.547688Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T02:42:36.549137Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.6:443
+2025-05-14T02:42:36.588121Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.6:443
+2025-05-14T02:42:36.636147Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T02:42:36.636282Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T02:42:36.703285Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T02:42:36.703362Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T02:42:36.703516Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T02:42:36.703620Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T02:42:36.703642Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T02:42:36.703657Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T02:42:36.703672Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T02:42:36.703722Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T02:42:36.704585Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T02:42:36.704876Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T02:42:36.705687Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T02:42:37.140451Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:37.260163Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:37.634908Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:37.749455Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:38.141634Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:38.256457Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:38.647458Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:38.764219Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:39.138342Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:39.256592Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:39.639315Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:39.756801Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:40.139148Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:40.256634Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:40.642487Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:40.756302Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:41.140665Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:41.259144Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:41.646290Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:41.759925Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:42.134597Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:42.250192Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:42.643883Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:42.764194Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:43.147261Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:43.641818Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:43.763219Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:44.148148Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:44.263634Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:44.636862Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:44.753884Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:45.155604Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:45.644197Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:45.761375Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:46.136339Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:46.255178Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:46.659001Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:47.140280Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:47.263462Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:47.641603Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:47.755450Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:48.148668Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:48.263192Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:48.648028Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:48.766928Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:49.134645Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:49.259388Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:49.646038Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:49.763449Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:50.139133Z  INFO app_lib: logging system initialized
+2025-05-14T02:42:50.259430Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T02:42:50.652314Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:24.456050Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:24.580116Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T21:19:24.839117Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T21:19:24.839164Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T21:19:24.857427Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T21:19:24.857475Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999997756s    
+2025-05-14T21:19:24.857653Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T21:19:24.857762Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T21:19:24.857803Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T21:19:24.899584Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.5:443
+2025-05-14T21:19:24.947714Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.5:443
+2025-05-14T21:19:24.996033Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T21:19:24.996179Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T21:19:25.064875Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T21:19:25.064942Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T21:19:25.065052Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T21:19:25.065142Z TRACE hyper_util::client::legacy::pool: idle interval checking for expired
+2025-05-14T21:19:25.065158Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T21:19:25.065173Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T21:19:25.065184Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T21:19:25.065196Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T21:19:25.065232Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T21:19:25.065897Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T21:19:25.066126Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T21:19:25.066931Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T21:19:26.653364Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:26.770384Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T21:19:27.037765Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T21:19:27.037812Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T21:19:27.054369Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T21:19:27.054415Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999998126s    
+2025-05-14T21:19:27.054553Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T21:19:27.054623Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T21:19:27.054655Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T21:19:27.056151Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.5:443
+2025-05-14T21:19:27.100203Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.5:443
+2025-05-14T21:19:27.148858Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T21:19:27.148989Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T21:19:27.216527Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T21:19:27.216606Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T21:19:27.216764Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T21:19:27.216869Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T21:19:27.216864Z TRACE hyper_util::client::legacy::pool: idle interval checking for expired
+2025-05-14T21:19:27.216892Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T21:19:27.216904Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T21:19:27.216998Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T21:19:27.217038Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T21:19:27.217816Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T21:19:27.218065Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T21:19:27.218841Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T21:19:28.144888Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:28.267081Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T21:19:28.646012Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:28.766267Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T21:19:29.041905Z TRACE reqwest::blocking::wait: (ThreadId(1)) park without timeout    
+2025-05-14T21:19:29.041931Z TRACE reqwest::blocking::client: (ThreadId(4)) start runtime::block_on    
+2025-05-14T21:19:29.058184Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T21:19:29.058238Z TRACE reqwest::blocking::wait: (ThreadId(1)) park timeout 29.999997976s    
+2025-05-14T21:19:29.058403Z TRACE hyper_util::client::legacy::pool: checkout waiting for idle connection: ("https", api.github.com)
+2025-05-14T21:19:29.058485Z DEBUG reqwest::connect: starting new connection: https://api.github.com/    
+2025-05-14T21:19:29.058526Z TRACE hyper_util::client::legacy::connect::http: Http::connect; scheme=Some("https"), host=Some("api.github.com"), port=None
+2025-05-14T21:19:29.060043Z DEBUG hyper_util::client::legacy::connect::http: connecting to 140.82.114.5:443
+2025-05-14T21:19:29.106612Z DEBUG hyper_util::client::legacy::connect::http: connected to 140.82.114.5:443
+2025-05-14T21:19:29.153310Z TRACE hyper_util::client::legacy::client: http1 handshake complete, spawning background dispatcher task
+2025-05-14T21:19:29.153439Z TRACE hyper_util::client::legacy::pool: checkout dropped for ("https", api.github.com)
+2025-05-14T21:19:29.225735Z TRACE hyper_util::client::legacy::pool: put; add idle connection for ("https", api.github.com)
+2025-05-14T21:19:29.225803Z DEBUG hyper_util::client::legacy::pool: pooling idle connection for ("https", api.github.com)
+2025-05-14T21:19:29.225901Z TRACE hyper_util::client::legacy::pool: idle interval checking for expired
+2025-05-14T21:19:29.225923Z TRACE reqwest::blocking::wait: wait at most 30s    
+2025-05-14T21:19:29.226031Z ERROR app_lib::updates: Request error: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+2025-05-14T21:19:29.226051Z TRACE reqwest::blocking::client: closing runtime thread (ThreadId(4))    
+2025-05-14T21:19:29.226064Z TRACE reqwest::blocking::client: signaled close for runtime thread (ThreadId(4))    
+2025-05-14T21:19:29.226076Z TRACE reqwest::blocking::client: (ThreadId(4)) Receiver is shutdown    
+2025-05-14T21:19:29.226114Z TRACE reqwest::blocking::client: (ThreadId(4)) end runtime::block_on    
+2025-05-14T21:19:29.226870Z TRACE reqwest::blocking::client: (ThreadId(4)) finished    
+2025-05-14T21:19:29.227129Z TRACE reqwest::blocking::client: closed runtime thread (ThreadId(4))    
+2025-05-14T21:19:29.228094Z  INFO app_lib::db: event="backup" result="skipped"
+2025-05-14T21:19:29.649633Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:29.767010Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T21:19:30.150374Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:30.264174Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T21:19:30.650390Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:30.770569Z  INFO app_lib::db: event="init" result="inititalized"
+2025-05-14T21:19:31.157625Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:31.656439Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:32.164634Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:32.658733Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:33.165572Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:33.656936Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:34.152112Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:34.643945Z  INFO app_lib: logging system initialized
+2025-05-14T21:19:34.770305Z  INFO app_lib::db: event="init" result="inititalized"
