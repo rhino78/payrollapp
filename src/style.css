@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 20px;
   font-weight: 400;
 
   color: #374151;
@@ -340,7 +340,7 @@ button {
 
 .employee-list-section {
   width: 100%;
-  flex: 1 1 100%;
+  flex: 0 0 50%;
   max-width: 100%;
 }
 
@@ -357,9 +357,12 @@ button {
 }
 
 .employee-list {
+  overflow-x: hidden;
+  overflow-y: auto;
   flex: 0 0 30%;
   width: 100%;
   max-width: 100%;
+  max-height: 80vh;
   padding: 0 2rem;
   box-sizing: border-box;
   display: flex;
@@ -372,9 +375,10 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 0px;
   border-bottom: 1px solid #eee;
   transition: background-color 0.3s;
+  line-height: 15px;
 }
 
 .employee-item:hover {
@@ -1418,22 +1422,25 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 2rem;
   align-items: flex-start;
   transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
 .employee-form-container {
   width: 35%;
-  min-width: 400px;
+  min-width: 350px;
   background-color: #fff;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  flex: 0 0 65%;
+  flex: 0 0 45%;
+
 }
 
 /* Employee list adjusts when form is visible */
 .employee-main-container.show-form .employee-list {
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: stretch;
   flex: 1;
   transform: scale(0.95);
   opacity: 0.9;
@@ -1454,12 +1461,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .employee-card {
   width: 100%;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   max-width: 1200px;
   width: 95%;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1rem;
   margin: 1rem auto;
   background-color: #f9f9f9;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -1468,7 +1475,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .employee-card h3 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1482,9 +1489,9 @@ input[type=number]::-webkit-outer-spin-button {
 .employee-info-row {
   display: flex;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .employee-info-row .info-group {
@@ -1503,12 +1510,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .info-label {
   color: #6b7280;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin-bottom: 0.2rem;
 }
 
 .info-value {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .employee-actions {

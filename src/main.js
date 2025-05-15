@@ -39,8 +39,6 @@ async function checkEnvAndWithholding() {
 async function cleanUpOldBackups() {
   try {
     await invoke("cleanup_old_backups", { keepDays: 5 });
-
-    console.log("Auto backup clean check complete");
   } catch (err) {
     console.error("backup clean error: ", err);
   }
@@ -49,7 +47,6 @@ async function cleanUpOldBackups() {
 async function checkForBackupOnLoad() {
   try {
     await invoke("auto_backup");
-    console.log("Auto backup check complete");
   } catch (err) {
     console.error("backup error: ", err);
   }

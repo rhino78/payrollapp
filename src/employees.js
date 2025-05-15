@@ -57,7 +57,6 @@ export async function initEmployeesPage() {
 async function loadEmployees() {
   try {
     employees = await invoke("get_employees");
-    console.log(employees);
     renderEmployeeList(employees);
   } catch (error) {
     console.error("Error loading employees:", error);
@@ -136,7 +135,6 @@ function resetForm() {
 }
 
 function editEmployee(employee) {
-  console.log("editing employee");
   const formTitle = document.getElementById("form-title");
   const employeeFormContainer = document.getElementById(
     "employee-form-container",
@@ -199,7 +197,7 @@ async function saveEmployee() {
     wage: parseFloat(formData.get("wage")),
     number_of_dependents: parseInt(formData.get("number_of_dependents")),
     filing_status: formData.get("filing_status"),
-    ssn: formData.get("filing_status"),
+    ssn: formData.get("ssn"),
     hired_date: formData.get("hired_date"),
     birthdate: formData.get("birthdate"),
     notes: formData.get("notes"),

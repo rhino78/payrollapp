@@ -39,7 +39,6 @@ export async function navigateToPage(page) {
   }
 
   if (page === 'pub15') {
-    console.log("intting pub15");
     await initPub15Page();
   }
 }

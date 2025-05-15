@@ -15,8 +15,6 @@ export async function initHomePage() {
       ),
     ]);
 
-    console.log(`Using API KEY: ${API_KEY}`);
-        console.log(`https://api.twelvedata.com/time_series?symbol=CVS&interval=1week&outputsize=30&apikey=${API_KEY}`);
     const cvsDataJson = await cvsRes.json();
     const wbaDataJson = await wbaRes.json();
 

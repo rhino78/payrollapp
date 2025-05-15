@@ -30,10 +30,10 @@ function generatePayPeriods() {
   payPeriodSelect.innerHTML = `
   <option value="">Select Pay Period</option>
   ${payPeriods
-    .map(
-      (period) => `<option value="${period.value}">${period.display}</option>`,
-    )
-    .join("")}
+      .map(
+        (period) => `<option value="${period.value}">${period.display}</option>`,
+      )
+      .join("")}
 `;
 }
 
@@ -75,11 +75,11 @@ async function filterPayPeriods(empId) {
     payPeriodSelect.innerHTML = `
                         <option value="">Select Pay Period</option>
                         ${payPeriods
-                          .map(
-                            (p) =>
-                              `<option value="${p.value}">${p.display}</option>`,
-                          )
-                          .join("")}
+        .map(
+          (p) =>
+            `<option value="${p.value}">${p.display}</option>`,
+        )
+        .join("")}
                 `;
   } catch (error) {
     console.error("Error filtering pay periods:", error);
@@ -165,10 +165,15 @@ export async function initPayrollPage() {
   const payrollForm = document.getElementById("payroll-form");
   if (!payrollForm) return;
 
+  const payPeroidSelect = document.getElementById("pay-period");
   const employeeSelect = document.getElementById("payroll-employee");
   const hoursInput = document.getElementById("payroll-hours");
   employeeSelect.addEventListener("change", loadEmployeeRate);
   hoursInput.addEventListener("change", calculateGross);
+
+  payPeroidSelect.addEventListener("change", () => {
+    calculateGross();
+  });
 
   generatePayPeriods();
 
@@ -186,6 +191,12 @@ export async function initPayrollPage() {
   } catch (error) {
     console.error("Error loading employees:", error);
   }
+
+  hoursInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  });
 
   payrollForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -241,6 +252,8 @@ async function savePayrollRecord() {
     const result = await invoke("add_payroll", { payroll: formData });
     showNotification("Payroll saved!", "info");
     payrollForm.reset();
+
+    await loadEmployeeRate();
     await loadPayrollHistory(formData.emp_id);
     return result;
   } catch (error) {

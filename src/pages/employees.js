@@ -1,10 +1,10 @@
 export const employeePage = `
   <div class="page">
-    <h1>Employee Management System</h1>
+    <h1>Employee Management</h1>
 
     <div class="employee-main-container">
       <!-- Hidden form -->
-      <div id="employee-form-container" class="employee-form-container" style="display: none; flex 0 0 70%">
+      <div id="employee-form-container" class="employee-form-container" style="display: none;">
         <h2 id="form-title">Add New Employee</h2>
         <form id="employee-form">
           <!-- First Row: First Name and Last Name -->
@@ -100,7 +100,7 @@ export const employeePage = `
         </form>
       </div>
 
-      <div class="employee-list-section" style="flex: 0 0 30%;">
+      <div class="employee-list-section">
         <div class="employee-header">
           <h2>Current Employees</h2>
           <button id="add-employee-btn" class="action-button">+ Add Employee</button>
