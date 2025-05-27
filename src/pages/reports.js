@@ -18,9 +18,6 @@ export const reportsPage = `
         <button id="run-report-btn">Run Report</button>
       </div>
     </div>
-  
-
     <div id="report-output" class="report-output"></div>
   </div>
 `;
-
