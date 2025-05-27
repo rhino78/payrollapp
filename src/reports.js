@@ -3,7 +3,7 @@ import { invoke } from '@tauri-apps/api/core';
 export async function initReportsPage() {
   const listContainer = document.getElementById('employee-toggle-list');
   const runButton = document.getElementById('run-report-btn');
-  const reportOutput = document.getElementById('report-output');
+  // const reportOutput = document.getElementById('report-output');
   const payPeriodSelect = document.getElementById('report-pay-period');
 
   listContainer.innerHTML = '<p class="no-items">Please select a pay period.</p>';
@@ -34,6 +34,12 @@ export async function initReportsPage() {
       console.error("Error loading employees for reports:", err);
       listContainer.innerHTML = '<p class="no-items">Failed to load employees.</p>';
     }
+  });
+
+  const selectAllBtn = document.getElementById('select-all-btn');
+  selectAllBtn.addEventListener('click', () => {
+    const checkBoxes = listContainer.querySelectorAll('input[type="checkbox"]');
+    checkBoxes.forEach(cb => cb.checked = true);
   });
 
   runButton.addEventListener('click', async () => {
@@ -130,8 +136,7 @@ function generatePayPeriods() {
 `;
 
   if (payPeriodSelect.options.length > 1) {
-    payPeriodSelect.selectedIndex = 1;
-    calculateGross();
+    payPeriodSelect.selectedIndex = 0;
   }
 }
 

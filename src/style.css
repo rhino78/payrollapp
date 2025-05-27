@@ -1264,6 +1264,10 @@ input[type=number]::-webkit-outer-spin-button {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+#report-pay-period {
+  width: 200px;
+}
+
 #payroll-history-table {
   width: 100%;
   border-collapse: collapse;
@@ -1327,6 +1331,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-position: right 0.75em center;
   background-size: 0.65em auto;
   padding-right: 2em;
+  width: 200px;
 }
 
 .uniform-select:focus {
@@ -1414,6 +1419,16 @@ input[type=number]::-webkit-outer-spin-button {
 .dollar-input {
   padding-left: 24px;
   width: 100%;
+}
+
+.reports-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
 }
 
 .employee-main-container {
@@ -1534,7 +1549,10 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 10px;
+  margin: 20px auto;
+  max-width: 200px;
+  align-items: center;
+
 }
 
 .employee-toggle {
@@ -1601,6 +1619,22 @@ input[type=number]::-webkit-outer-spin-button {
 
 #release-notes {
   text-align: left;
+}
+
+#run-report-btn:hover,
+#start-import:hover,
+#select-all-btn:hover {
+  background-color: #1E3A8A;
+}
+
+#run-report-btn,
+#start-import,
+#select-all-btn {
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .backup-now-btn:hover {
