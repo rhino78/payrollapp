@@ -265,6 +265,7 @@ async function savePayrollRecord() {
 async function loadPayrollHistory(empId) {
   const historyTable = document.querySelector("#payroll-history-table");
   const tbody = historyTable.querySelector("tbody");
+  const yearFilter = document.getElementById("year-filter");
 
   if (!empId || !tbody) return;
 
@@ -277,25 +278,35 @@ async function loadPayrollHistory(empId) {
       return;
     }
 
-    generatePayPeriods();
+    const years = [...new Set(payrolls.map(p => new Date(p.date_of_pay).getFullYear()))].sort((a, b) => b - a);
+    yearFilter.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
 
-    tbody.innerHTML = payrolls
-      .map(
-        (payroll) => `
-                <tr data-id="${payroll.id}">
-                        <td id="payroll-id">${payroll.id}</td>
-                        <td>${formatDate(payroll.date_of_pay)}</td>
-                        <td>${Math.round(payroll.hours_worked)}</td>
-                        <td>$${payroll.gross.toFixed(2)}</td>
-                        <td>$${payroll.withholding.toFixed(2)}</td>
-                        <td>$${payroll.social_security.toFixed(2)}</td>
-                        <td>$${payroll.ira.toFixed(2)}</td>
-                        <td>$${payroll.net.toFixed(2)}</td>
-                         <td><button class="delete-payroll-btn">🗑️</button></td>
-                      </tr>
-                    `,
-      )
-      .join("");
+    const selectedYear = parseInt(yearFilter.value || years[0]);
+
+    function renderFilteredPayrolls(selectedYear) {
+      const filtered = payrolls.filter(p => new Date(p.date_of_pay).getFullYear() === selectedYear);
+      tbody.innerHTML = filtered.map(p => `
+        <tr data-id="${p.id}">
+          <td>${p.id}</td>
+          <td>${formatDate(p.date_of_pay)}</td>
+          <td>${Math.round(p.hours_worked)}</td>
+          <td>$${p.gross.toFixed(2)}</td>
+          <td>$${p.withholding.toFixed(2)}</td>
+          <td>$${p.social_security.toFixed(2)}</td>
+          <td>$${p.ira.toFixed(2)}</td>
+          <td>$${p.net.toFixed(2)}</td>
+          <td><button class="delete-payroll-btn">🗑️</button></td>
+        </tr>
+      `).join("");
+    }
+
+    yearFilter.onchange = () => {
+      const newYear = parseInt(yearFilter.value);
+      renderFilteredPayrolls(newYear);
+    }
+
+    renderFilteredPayrolls(selectedYear);
+    generatePayPeriods();
 
     tbody.querySelectorAll(".delete-payroll-btn").forEach((button) => {
       button.addEventListener("click", async (e) => {

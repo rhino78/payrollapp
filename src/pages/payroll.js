@@ -85,6 +85,12 @@ export const payrollPage = `
       <div id="payroll-results" class="payroll-results"></div>
     <div id="payroll-history" class="payroll-history-section">
       <h2>Payroll History</h2>
+      <div class="form-group">
+        <label for="year-filter">Filter by Year:</label>
+        <select id="year-filter" class="uniform-select">
+        <!-- Year options will be populated here -->
+        </select>
+      </div>
       <table id="payroll-history-table">
         <thead>
           <tr>

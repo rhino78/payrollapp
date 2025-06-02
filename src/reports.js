@@ -38,19 +38,7 @@ export async function initReportsPage() {
       `,
         )
         .join("");
-      const selectAllBottomBtn = document.createElement("button");
-      selectAllBottomBtn.textContent = "Select All Employees";
-      selectAllBottomBtn.className = "select-all-btn";
-      selectAllBottomBtn.addEventListener("click", () => {
-        const checkboxes = listContainer.querySelectorAll(
-          "input[type='checkbox']",
-        );
-        checkboxes.forEach((cb) => (cb.checked = true));
-      });
-      const employeeListSection = document.getElementById(
-        "employee-toggle-list",
-      );
-      employeeListSection.appendChild(selectAllBottomBtn);
+
     } catch (err) {
       console.error("Error loading employees for reports:", err);
       listContainer.innerHTML =
