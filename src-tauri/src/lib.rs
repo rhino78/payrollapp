@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+use dotenvy::from_path;
 use dotenvy::dotenv;
 use std::env;
 use std::sync::Mutex;
@@ -47,6 +49,17 @@ fn get_api_key() -> Result<String, String> {
     Ok(api_key)
 }
 
+//load the env vars
+fn load_env() {
+    let exe_path = env::current_exe().unwrap_or_else(|_| PathBuf::from("."));
+    let exe_dir = exe_path.parent().map(PathBuf::from).unwrap_or_else(|| PathBuf::from("."));
+    let env_path = exe_dir.join(".env");
+
+    if let Err(e) = from_path(&env_path) {
+        eprintln!("Error loading .env file from {:?}: {}", env_path, e);
+    }
+}
+
 // Setup the application state
 fn setup_app(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     let app_dir = app
@@ -77,6 +90,7 @@ pub fn run() {
         .init();
 
     info!("logging system initialized");
+    load_env();
 
     tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())

@@ -1,10 +1,12 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "payroll",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "identifier": "com.payroll.app",
   "build": {
-    "frontendDist": "../src",
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "frontendDist": "../dist",
     "devUrl": "http://localhost:5173"
   },
   "plugins": {
@@ -15,7 +17,7 @@
         "https://github.com/rhino78/payrollapp/releases/latest/download/latest.json"
       ],
       "dialog": false,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVEREQwN0U3RDEyODdCNEUKUldST2V5alI1d2ZkWFljaVJSb2VEY2ltdDhSOW5mK21Pd0JxT29nMFR1WjAvZGpzNUpmbTIwaVkK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDgxNzAxOEIxNjlGMDlGOUUKUldTZW4vQnBzUmh3Z2IvUi9YVzBnL00wWGdTZXpOYTNjU2wyaEk4eEk3TW5SaGJHVFQ1MFgzUUcK"
     }
   },
   "app": {
@@ -34,7 +36,9 @@
   "bundle": {
     "active": true,
     "createUpdaterArtifacts": true,
-    "targets": "all",
+    "targets": [
+      "msi"
+    ],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
