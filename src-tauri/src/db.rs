@@ -138,7 +138,8 @@ fn backup_db(app_dir: &PathBuf) -> SqlResult<()> {
 pub fn init_database(app_dir: PathBuf) -> SqlResult<Connection> {
     info!(event = "init", result = "inititalized");
     let db_path = app_dir.join(DB_NAME);
-    let conn = Connection::open(db_path)?;
+    let conn = Connection::open(&db_path)?;
+    println!("the db is in: {:?}", &db_path);
 
     conn.execute(
         "CREATE TABLE IF NOT EXISTS withholding (

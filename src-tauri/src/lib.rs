@@ -1,7 +1,7 @@
-use std::path::PathBuf;
-use dotenvy::from_path;
 use dotenvy::dotenv;
+use dotenvy::from_path;
 use std::env;
+use std::path::PathBuf;
 use std::sync::Mutex;
 use tauri::Manager;
 use tracing::{error, info};
@@ -44,15 +44,23 @@ fn check_env_vars() -> Result<(), String> {
 //get api key for chart api
 #[tauri::command]
 fn get_api_key() -> Result<String, String> {
-    dotenv().ok();
-    let api_key = env::var("TWELVE_KEY").expect("TWELVE_KEY not set");
+    if let Ok(exe_path) = std::env::current_exe() {
+        if let Some(dir) = exe_path.parent() {
+            let env_path = dir.join(".env");
+            dotenvy::from_path(env_path).ok();
+        }
+    }
+    let api_key = env::var("TWELVE_KEY").map_err(|e| e.to_string())?;
     Ok(api_key)
 }
 
 //load the env vars
 fn load_env() {
     let exe_path = env::current_exe().unwrap_or_else(|_| PathBuf::from("."));
-    let exe_dir = exe_path.parent().map(PathBuf::from).unwrap_or_else(|| PathBuf::from("."));
+    let exe_dir = exe_path
+        .parent()
+        .map(PathBuf::from)
+        .unwrap_or_else(|| PathBuf::from("."));
     let env_path = exe_dir.join(".env");
 
     if let Err(e) = from_path(&env_path) {

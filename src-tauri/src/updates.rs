@@ -2,11 +2,12 @@ use dotenvy::dotenv;
 use semver::Version;
 use serde_json::Value;
 use std::env;
-use tracing::info;
 use tracing::error;
+use tracing::info;
 
 const CURRENT_VERSION: &str = env!("CARGO_PKG_VERSION");
-const API_URL: &str = "https://api.github.com/repos/rhino78/payrollapp/releases/latest";
+// const API_URL: &str = "https://api.github.com/repos/rhino78/payrollapp/releases/latest";
+const API_URL: &str = "https://github.com/rhino78/payrollapp/releases/latest/download/latest.json";
 
 struct AppVersion {
     current_rev: String,
@@ -44,7 +45,7 @@ pub fn perform_update_tauri() -> Result<String, String> {
 fn check_for_updates_blocking() -> Result<AppVersion, String> {
     dotenv().ok();
 
-    match env::var("GITHUB_PAT") {
+    match dotenvy::var("GITHUB_PAT") {
         Ok(s) => _ = s,
         Err(e) => {
             error!("No token: {}", e);
@@ -59,7 +60,7 @@ fn check_for_updates_blocking() -> Result<AppVersion, String> {
         .header("User-Agent", "payroll/1.0(rshave@gmail.com)")
         .header(
             "Authorization",
-            format!("token {}", env::var("GITHUB_PAT").unwrap()),
+            format!("token {}", dotenvy::var("GITHUB_PAT").unwrap()),
         )
         .send()
         .map_err(|e| e.to_string())?;
@@ -75,14 +76,14 @@ fn check_for_updates_blocking() -> Result<AppVersion, String> {
     let json: Value = serde_json::from_str(&body).map_err(|e| e.to_string())?;
 
     let release_notes = json
-        .get("body")
+        .get("notes")
         .and_then(Value::as_str)
         .unwrap_or("No release notes available")
         .to_string();
 
-    let latest_version_str = match json.get("tag_name") {
-        Some(Value::String(s)) => s.trim_start_matches('v').to_string(),
-        _ => return Err("Could not find a tag name or it's string".into()),
+    let latest_version_str = match json.get("version") {
+        Some(Value::String(s)) => s.to_string(),
+        _ => return Err("Could not find a version field  or it's missing".into()),
     };
 
     let current_version = Version::parse(CURRENT_VERSION).map_err(|e| e.to_string())?;

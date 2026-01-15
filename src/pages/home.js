@@ -7,7 +7,6 @@ export const homePage = `
     <div class="market-update">
       <h2>Pharmacy Market Update</h2>
       <div id="stock-cvs" class="stock-item">Loading CVS...</div>
-      <div id="stock-wba" class="stock-item">Loading Walgreens...</div>
         <div class="chart-container">
           <canvas id="stockChart"></canvas>
         </div>

@@ -1,8 +1,8 @@
 [package]
 name = "payroll"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+version = "0.1.1"
+description = "Payroll App for Medical Arts Pharmacy"
+authors = ["Ryan Shave"]
 license = ""
 repository = ""
 edition = "2021"
